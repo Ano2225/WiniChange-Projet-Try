@@ -64,7 +64,7 @@ export default function Footer() {
               <h5 className="text-xl text-white font-bold  mb-4">Liens Utiles</h5>
               <ul className="list-none space-y-2 text-white/60">
                 <li>
-                  <a href="#" >Nos services</a>
+                  <a href="/ourServices" >Nos services</a>
                 </li>
                 <li>
                   <a href="/aboutUs" >À propos de Nous</a>
@@ -98,16 +98,16 @@ export default function Footer() {
               <h5 className="text-xl text-white font-bold  mb-4">Légal</h5>
               <ul className="list-none none space-y-2 text-white/60">
                 <li>
-                  <a href="#" >Conditions générales</a>
+                  <a href="/genreal-conditions" >Conditions générales</a>
                 </li>
                 <li>
                   <a href="#" >Mentions légales</a>
                 </li>
                 <li>
-                  <a href="#" >Politique <br /> de confidentialité</a>
+                  <a href="/genreal-conditions" >Politique <br /> de confidentialité</a>
                 </li>
                 <li>
-                  <a href="#" >Cookie</a>
+                  <a href="/cookies" >Cookie</a>
                 </li>
               </ul>
             </div>

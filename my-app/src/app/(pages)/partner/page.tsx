@@ -5,8 +5,8 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import walletSky from "@/app/assets/wallsky.png"
 import { twMerge } from 'tailwind-merge'
-import partner from "@/app/assets/servPhotos.png"
-import crypPart from "@/app/assets/crypPart.webp"
+import partner from "@/app/assets/p2.png"
+import crypPart from "@/app/assets/p4.jpg"
 import secured from "@/app/assets/SecureLogo.png"
 import partner2 from "@/app/assets/partner2.jpg"
 import paid from "@/app/assets/paid.png"
@@ -91,7 +91,7 @@ const Partner = () => {
     <>
       <Header />
       <div className='pt-10 md:py-24 h-full w-full'>
-        <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-12'>
+        <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
             <div className='lg:flex'>
               <div>
                 <h5 className='text-[#126e51] text-lg lg:text-4xl font-semibold leading-normal mb-4'>
@@ -119,7 +119,7 @@ const Partner = () => {
               />
             </div>
             <div className='flex flex-col items-center align-center'>
-                <h1 className='font-bold text-sm md:text-3xl'>Condition Pour Devenir Un Partenaire</h1>
+                <h1 className='font-bold text-xl md:text-3xl'>Condition Pour Devenir Un Partenaire</h1>
                 {/* <div>
                   <div className='flex flex-col gap-5 md:flex-row items-center align-center'>
                       <Image
@@ -179,8 +179,8 @@ const Partner = () => {
                       </div>
                   </div>
                 </div> */}
-                <div>
-                <div className='flex flex-col gap-5 md:flex-row items-center'>
+                <div className='mt-10'>
+                <div className='flex flex-col gap-10 md:flex-row items-center'>
                     <motion.div
                       initial="hidden"
                       whileInView="visible"
@@ -193,7 +193,7 @@ const Partner = () => {
                         width={400}
                         height={400}
                         alt="PartnerSmile"
-                        className='max-w-[400px] ml-10'
+                        className='max-w-[400px] rounded-2xl shadow-xl mt-5 items-center'
                       />
                     </motion.div>
                     <motion.div
@@ -280,7 +280,7 @@ const Partner = () => {
             </div>
             </div>
             <div className='flex flex-col items-center align-center'>
-                <h1 className='font-bold text-sm md:text-3xl'>Avantages du partenariat WinChange</h1>
+                <h1 className='font-bold text-xl md:text-3xl'>Avantages du partenariat WinChange</h1>
                 <div className='flex flex-col gap-5 my-10 md:flex-row md:ml-40'>
                   {
                     Advantages.map((items, index) => (
@@ -336,10 +336,11 @@ const Partner = () => {
               
               <Image
                 src={partner}
-                width={500}
-                height={500}
+                width={400}
+                height={400}
                 alt="PartnerSmile"
                 objectFit="cover"
+                className='rounded-2xl shadow-xl mt-5 items-center ml-5'
               />
             </div>
         </div>
