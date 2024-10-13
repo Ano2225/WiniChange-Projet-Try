@@ -29,7 +29,7 @@ const Apropos = () => {
               À Propos de <br /> WiniChange
             </h1>
             <p className='text-black/80 text-sm md:text-[1rem] md:leading-6'>
-              Winichange est la plus grande plateforme d'achat et de vente de cryptomonnaies en Afrique.
+              Winichange est une plateforme d'achat et de vente de cryptomonnaies en Afrique.
               Notre vision est de promouvoir l'inclusion financière pour les populations africaines.
             </p>
             <Image
