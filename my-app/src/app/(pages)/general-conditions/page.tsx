@@ -67,41 +67,53 @@ const GeneralConditions = () => {
   return (
     <>
       <Header />
+      <div className=''>
+          <h1 className='bg-gradient-to-tl from-[#126e51]  to-black min-h-56 py-56 text-white text-3xl text-center '>
+            <span className='font-semibold text-[#126e51] bg-white py-0.5 px-2'>TERMES, <br /> CONDITION D'UTILSATION & POLITIQUE DE CONFIDENTIALITES</span>
+          </h1>
+      </div>
       <div className='pt-10 md:py-20 h-full w-full'>
         <div className='container mx-auto px-5 lg:px-20 py-10 '>
-            <div className='flex flex-col gap-12'>
-                <div>
-                    <h1 className='font-bold text-2xl text-green-800'>Termes, Conditions d'utilisation et police de confidentialité</h1>
-                    <p className='mt-5'>
-                        Les conditions générales d'utilisation de ce site web sont structurées en plusieurs sections.
-                        Avant d'accepter ces conditions, il est impératif de prendre connaissance des sections suivantes
-                        et de consulter les liens figurant dans la boîte ci-dessous. Ensemble, ces sections constituent les Conditions Générales et 
-                        la Politique de Confidentialité de la plateforme WiniChange.
-                    </p>
-                </div>
-                <div>
-                    <h1 className='font-bold text-2xl text-green-800'>Qui Sommes-Nous ?</h1>
-                    <p className='mt-5'>
-                        WiniChange est une société par actions simplifiée (SAS) enregistrée au RCCM de la République du Bénin
-                        sous le numéro RB/ABC/21 B 4180 et dont le siège social est situé à Abomey-Calavi Quartier TOKPA ZOUNGO Immeuble Fondation Suzane MEDE 02 BP 348 Cotonou Bénin.
-                    </p>
-                </div>
-                <div>
-                    <h1 className='font-bold text-2xl text-green-800'>Que faisons-nous ?</h1>
-                    <p className='mt-5'>
-                        WiniChange SAS (ci-après « WiniChange ») permet aux personnes physiques (ci-après les « Utilisateurs » ou les « Clients ») d’accéder à des Services (tel que ce terme est défini dans le Lexique en annexe) relatifs aux Crypto-actifs. Sans préjudice de la définition du terme « Services », ceux-ci comprennent exclusivement :
-                        <ul>
-                            <li>L’achat et la vente de crypto-actifs en contrepartie de monnaies ayant cours légal (monnaie fiat).</li>
-                            <li>L’échange de crypto-actifs, autrement dit la conversion d’un crypto-actif contre un autre.</li>
-                        </ul>
-                    </p>
-                    <p>WiniChange permet aux Utilisateurs de bénéficier des Services qu’il propose à travers la présente Plateforme WiniChange (ci-après « la Plateforme »).</p>
-                </div>
-                <div>
-                    <h1 className='font-bold text-2xl text-green-800'>Que contiennent ces Conditions Générales et quel est leur champ d’application ?</h1>
-                    <p className='mt-5'>Les présentes Conditions Générales incluent les Conditions Générales d’Utilisation (CGU) ainsi que les Conditions Générales de Service (l’ensemble desdits documents étant ci-après désigné sous le terme « Conditions Générales ») de la Plateforme WiniChange. Ces Conditions Générales régissent les Services offerts à tout Utilisateur sur la Plateforme. Elles constituent, avec la facture, les Conditions Particulières, le cas échéant, et le document de Connaissance du Client (KYC) ou tout autre document en lieu et place, les seuls documents contractuels liant les Parties, à l'exclusion de tout autre document/support (prospectus, présentation des Services, catalogues ou photographies de Crypto-actifs, etc.) qui sont seulement indicatifs et non contractuels. Ces Conditions Générales sont applicables dans tous les pays où l’Éditeur propose ses services. Toute utilisation de la présente Plateforme est soumise au respect des présentes Conditions Générales, ainsi qu’au Glossaire WiniChange et à la Politique de Confidentialité en annexes. Ces documents font partie intégrante des documents contractuels. Le Glossaire WiniChange définit les termes, notions et concepts utilisés dans les présentes Conditions Générales. La Politique de Confidentialité définit les conditions dans lesquelles WiniChange traite les données personnelles que l’Utilisateur collecte ou que l’Utilisateur fournit à la plateforme.</p>
-                </div>
+        <div>
+    <p className='mt-5'>
+        Les présentes Conditions Générales d'Utilisation de ce site sont réparties en plusieurs sections. 
+        Avant d'accepter ces conditions, il est essentiel de lire attentivement chacune des sections ci-dessous 
+        et de consulter les liens correspondants. Ensemble, ces éléments constituent les Conditions Générales et 
+        la Politique de Confidentialité de la plateforme WiniChange.
+    </p>
+      </div>
+        <div className='mt-10'>
+            <h1 className='font-bold text-2xl text-green-800'>Qui Sommes-Nous ?</h1>
+            <p className='mt-2'>
+                WiniChange est une société par actions simplifiée (SAS) inscrite au RCCM de la République du Bénin 
+                sous le numéro RB/ABC/21 B 4180. Son siège social se situe à Abomey-Calavi, Quartier TOKPA ZOUNGO, 
+                dans l'Immeuble Fondation Suzane MEDE, 02 BP 348, Cotonou, Bénin.
+            </p>
+        </div>
+        <div className='mt-10'>
+        <div>
+            <h1 className='font-bold text-2xl text-green-800'>Que faisons-nous ?</h1>
+            <div className='mt-5'>
+                <p>
+                    WiniChange SAS (ci-après « WiniChange ») permet aux particuliers (ci-après les « Utilisateurs » ou les « Clients ») d’accéder à des services liés aux crypto-actifs. Ces services, définis plus en détail dans le Lexique annexé, incluent notamment :
+                </p>
+                <ul>
+                    <li>L'achat et la vente de crypto-actifs en échange de monnaies légales (monnaie fiat).</li>
+                    <li>L'échange de crypto-actifs, autrement dit la conversion d’un crypto-actif en un autre.</li>
+                </ul>
             </div>
+            <p>WiniChange propose ces services aux Utilisateurs via la présente plateforme WiniChange (ci-après « la Plateforme »).</p>
+        </div>
+        </div>
+        <div className='mt-10'>
+            <h1 className='font-bold text-2xl text-green-800'>Que contiennent ces Conditions Générales et quel est leur champ d’application ?</h1>
+            <p className='mt-2'>
+                Les présentes Conditions Générales incluent les Conditions Générales d'Utilisation (CGU) ainsi que les Conditions Générales de Service (ci-après désignées ensemble « Conditions Générales ») de la plateforme WiniChange. Ces conditions régissent l'utilisation des services offerts aux utilisateurs sur la plateforme. 
+                Elles forment, avec la facture, les Conditions Particulières (le cas échéant), le document de Connaissance du Client (KYC), ou tout autre document pertinent, les seuls documents contractuels engageant les parties. Tout autre support (prospectus, présentation des services, catalogues ou photographies de crypto-actifs, etc.) est uniquement fourni à titre indicatif et n'a pas de valeur contractuelle. 
+                Ces Conditions Générales sont applicables dans tous les pays où WiniChange opère. Toute utilisation de la Plateforme implique l'acceptation de ces Conditions Générales, ainsi que du Glossaire WiniChange et de la Politique de Confidentialité annexée. Ces documents font partie intégrante du cadre contractuel. Le Glossaire WiniChange précise les termes et concepts employés dans les Conditions Générales, tandis que la Politique de Confidentialité détaille les modalités de traitement des données personnelles collectées ou fournies par les utilisateurs.
+            </p>
+        </div>
+
         </div>
       </div>
       <Footer />
