@@ -4,6 +4,9 @@ import React from 'react'
 import Image from "next/image"
 import { motion } from "framer-motion"
 import walletSky from "@/app/assets/wallsky.png"
+import { FaArrowRightLong } from "react-icons/fa6";
+import Logo from '@/app/assets/logo.png';
+import Cookies  from "@/app/components/cookies"
 import { twMerge } from 'tailwind-merge'
 import partner from "@/app/assets/p2.png"
 import crypPart from "@/app/assets/p4.jpg"
@@ -38,28 +41,28 @@ const Partner = () => {
   const becomePartner1 = [
     {
       id: "1",
-      text: "Être propriétaire d'une entreprise ",
+      text: "Détenir une entreprise ",
       specialText:"officiellement enregistrée.",
       color:"blue",
     },
     {
       id: "2",
-      text: "Avoir des activités qui impliquent l'utilisation de crypto-monnaies.", 
-      specialText:"Ex : (être un trader de crypto-monnaies, un revendeur de crypto-monnaies...).",
+      text: "Exercer des activités nécessitant l'utilisation de crypto-monnaies.", 
+      specialText:"Par exemple : trader ou revendeur de crypto-monnaies.",
       color:"indigo",
     },
   ];
   const becomePartner2 = [
     {
       id: "3",
-      text: "Effectuez des transactions jusqu’à un volume moyen de ",
-      specialText:"2 000 ou plus par semaine.",
+      text: "Réalisez des transactions allant jusqu'à ",
+      specialText:"2 000 ou plus par semaine, en toute simplicité et sécurité.",
       color:"green",
     },
     {
       id: "4",
-      text: "Disposer de moyens de paiement tels que ",
-      specialText:"Mobile Money ou compte bancaire.",
+      text: "Accédez à des options de paiement variées telles que ",
+      specialText:"Mobile Money ou votre compte bancaire, pour plus de flexibilité dans vos transactions.",
       color:"blue",
     },
   ];
@@ -67,22 +70,22 @@ const Partner = () => {
     {
       id:1,
       images: walletSky,
-      title: "Meilleur taux",
-      text:"Profitez d'un taux des plus avantageux.",
+      title: "Taux imbattables",
+      text:"Bénéficiez des meilleurs taux du marché pour maximiser vos gains à chaque transaction.",
       color:"green"
     },
     {
       id:2,
       images: secured,
-      title: "Nombreuses transactions",
-      text:"Effectuez des transactions volumineuses en une seule fois et de manière sécurisée",
+      title: "Transaction simplifiée",
+      text:"Simplifiez vos opérations en traitant des volumes importants rapidement et sans compromis sur la sécurité.",
       color:"blue"
     },
     {
       id:3,
       images: paid,
-      title: "Diversités de paiement",
-      text:"Bénéficiez d'une large gamme de moyens de paiement",
+      title: "Multiples options de paiement",
+      text:"Profitez d'une diversité de solutions de paiement adaptées à vos besoins.",
       color:"indigo"
     }
   ];
@@ -90,22 +93,27 @@ const Partner = () => {
   return (
     <>
       <Header />
-      <div className='pt-10 md:py-24 h-full w-full'>
-        <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
-            <div className='lg:flex'>
+      <div className='bg-gradient-to-tl from-[#126e51]  to-black min-h-48 py-28 text-white text-3xl'>
+          <div className='container lg:flex overflow-hidden'>
               <div>
-                <h5 className='text-[#126e51] text-lg lg:text-4xl font-semibold leading-normal mb-4'>
-                  Devenir
-                </h5>
-                <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
-                    Un Partenaire Winichange
-                </h1>
-                <p className='text-black/80 text-sm md:text-[1rem] md:leading-6'>
-                Effectuez vos transactions en toute <span className='font-bold text-[#126e51]'>liberté, avec simplicité et aux meilleurs taux.</span>
-              </p>
-              <button className='rounded-xl bg-[#126e51] text-white mt-5 px-4 py-2 text-sm'>
-                  <span>Devenir Partenaire</span>
-                  
+                <div className='flex flex-col gap-1'>
+                  <h5 className='text-white text-lg lg:text-4xl font-semibold leading-normal mb-4'>
+                  Saisissez de 
+                  </h5>
+                  <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
+                    nouvelles opportunités avec WiniChange !
+                  </h1>
+                </div>
+                <p className='text-white text-sm md:text-[1rem] md:leading-6'>
+                  Un partenariat gagnant-gagnant, avec <br /> <span className='font-semibold bg-white py-0.5 px-2 text-green-700 '>des conditions d'accès simplifiées et des taux imbattables.</span>
+                  {/* Effectuez vos transactions en toute <span className='font-semibold text-white'>liberté, avec simplicité et aux meilleurs taux.</span> */}
+                </p>
+                <p className='text-white text-sm md:text-[1rem] md:leading-6 mt-2'>
+                  Effectuez vos transactions en toute <span className='font-semibold text-[#126e51] bg-white py-0.5 px-2'>liberté, avec une simplicité et aux meilleurs taux.</span>
+                </p>
+              <button className='flex gap-2 items-center rounded-xl bg-white text-[#126e51] font-bold mt-5 px-4 py-2 text-sm shadow-sm border-2 border-green-00'>
+                  <span>Devenir partenaire </span>
+                  <FaArrowRightLong/> 
               </button>
               </div>
               
@@ -118,6 +126,12 @@ const Partner = () => {
                 className="rounded-2xl shadow-xl mt-5 items-center"
               />
             </div>
+            {/* <div className='absolute -right-20 md:absolute md:-right-3 md:top-25 overflow-hidden'>
+              <Image src={Logo} alt="logo Izichange" width={200} height={200} className='max-w-[50px] w-1/2 md:w-full'/>
+            </div> */}
+      </div>
+      <div className='pt-10 md:py-24 h-full w-full'>
+        <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
             <div className='flex flex-col items-center align-center'>
                 <h1 className='font-bold text-xl md:text-3xl'>Condition Pour Devenir Un Partenaire</h1>
                 {/* <div>
@@ -180,7 +194,7 @@ const Partner = () => {
                   </div>
                 </div> */}
                 <div className='mt-10'>
-                <div className='flex flex-col gap-10 md:flex-row items-center'>
+                <div className='flex flex-col gap-10 lg:flex-row items-center'>
                     <motion.div
                       initial="hidden"
                       whileInView="visible"
@@ -326,9 +340,9 @@ const Partner = () => {
                     Un Partenaire Winichange
                 </h1>
                 <p className='text-black/80 text-sm md:text-[1rem] md:leading-6'>
-                Effectuez vos transactions en toute <span className='font-bold text-[#126e51]'>liberté, avec simplicité et aux meilleurs taux.</span>
+                WiniChange vous offre <span className='font-bold text-[#126e51]'>une solution flexible et accessible, pour des transactions rapides et sécurisées à l'échelle internationale.</span>
               </p>
-              <button className='rounded-xl bg-[#126e51] text-white mt-5 px-4 py-2 text-sm'>
+              <button className='rounded-xl bg-[#126e51] text-white mt-5 px-4 py-2 text-sm hover:bg-white '>
                   <span>Devenir Partenaire</span>
                   
               </button>
