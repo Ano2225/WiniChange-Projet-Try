@@ -96,6 +96,7 @@ const Partner = () => {
       <div className='bg-gradient-to-tl from-[#126e51]  to-black min-h-48 py-28 text-white text-3xl'>
           <div className='container lg:flex overflow-hidden'>
               <div>
+                <div className='flex flex-col gap-1'>
                 <div className='flex flex-col gap-1 py-8'>
                   <h5 className='text-white text-lg lg:text-4xl font-semibold leading-normal mb-4'>
                   Saisissez de 
