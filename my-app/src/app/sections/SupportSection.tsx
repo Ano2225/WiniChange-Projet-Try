@@ -52,7 +52,7 @@ const SupportSection = () => {
     <section className="pb-20 md:py-20 bg-black">
       <div className="container md:max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 w-full mb-8 lg:mb-0">
-          <div className="relative h-64 lg:h-96 w-full overflow-hidden mt-14">
+          <div className="relative h-64 lg:h-80 w-full overflow-hidden mt-14">
             <Image
               src={support}
               alt="Support"
@@ -86,13 +86,13 @@ const SupportSection = () => {
         </div>
         <div className="lg:w-1/2 max-w-xl w-full flex flex-col space-y-8 lg:pl-12 text-white">
           <h2 className="text-2xl md:text-3xl font-semibold mb-10 md:mb-4">
-            Un service client à votre écoute, 24h/24 et 7j/7, parce que votre satisfaction est notre priorité !
+          Notre équipe dévouée du service client est à votre disposition 24h/7 
           </h2>
           {supportOptions.map((option) => (
             <a
               key={option.title}
               href={option.link}
-              className="flex items-center p-6 bg-[#126e51] text-white rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
+              className="flex items-center p-4 bg-[#126e51] text-white rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
             >
               <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-white rounded-full">
                 <option.icon className="h-6 w-6 text-[#126e51]" aria-hidden="true" />

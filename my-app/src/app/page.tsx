@@ -13,6 +13,8 @@ import TestimonialsSection from "./sections/Testimonialss";
 import SupportSection from "./sections/SupportSection";
 import BlogSection from "./sections/BlogSection";
 import NosMoyensDePaiement from "./sections/NosMoyensDePaiement";
+import NosCrypto from "./sections/NosCrypto";
+import CallToAction from "./sections/CallToAction";
 
 export default function Home() {
   return (
@@ -23,9 +25,11 @@ export default function Home() {
     {/* <Cookies/> */}
     <LogoTickerSection/>
     <NosMoyensDePaiement/>
-    <Features />
+    <NosCrypto />
     <HowItWorks />
+    <Features />
     <TestimonialsSection/>
+    <CallToAction />
     <SupportSection/>
     {/*<Faq/>*/}
     <BlogSection/>
