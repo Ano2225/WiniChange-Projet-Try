@@ -13,10 +13,10 @@ const MoyensDePaiement = () => {
           <div className="w-full md:w-1/2 flex items-center justify-center mb-8 md:mb-0">
             <div className="text-start">
               <h3 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-gray-400">
-                Plus de <span className="font-bold">40</span> Moyens <br /> de Paiement
+                Plus de <span className="font-bold">40</span> Moyens <br /> de paiement
               </h3>
               <h6 className="text-lg font-medium mb-4 text-gray-300 leading-relaxed">
-                Achetez et vendez vos cryptos aux meilleurs tarifs du marché avec plus de 30 moyens de paiement mobile money:
+              Transférez de l’argent ou achetez et vendez de la cryptomonnaie à des taux préférentiels via plus de 40 moyens de paiement mobiles et bancaires : 
                 <span className="ml-2 font-bold">MTN, MOOV, Orange, Airtel, Tmoney, Wave, Safaricom, Equity Bank, et bien d'autres.</span>
               </h6>
             </div>

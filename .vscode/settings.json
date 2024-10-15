@@ -4,6 +4,9 @@
         "editor.lineHighlightBorder": "#9fced11f",
         "activityBar.background": "#481D46",
         "titleBar.activeBackground": "#642861",
-        "titleBar.activeForeground": "#FCF9FC"
+        "titleBar.activeForeground": "#FCF9FC",
+        "activityBar.background": "#50124B",
+        "titleBar.activeBackground": "#701A69",
+        "titleBar.activeForeground": "#FDF8FD"
     }
 }
