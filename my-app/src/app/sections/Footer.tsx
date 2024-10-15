@@ -98,13 +98,13 @@ export default function Footer() {
               <h5 className="text-xl text-white font-bold  mb-4">Légal</h5>
               <ul className="list-none none space-y-2 text-white/60">
                 <li>
-                  <a href="/genreal-conditions" >Conditions générales</a>
+                  <a href="/general-conditions" >Conditions générales</a>
                 </li>
                 <li>
                   <a href="#" >Mentions légales</a>
                 </li>
                 <li>
-                  <a href="/genreal-conditions" >Politique <br /> de confidentialité</a>
+                  <a href="/general-conditions" >Politique <br /> de confidentialité</a>
                 </li>
                 <li>
                   <a href="/cookies" >Cookie</a>
