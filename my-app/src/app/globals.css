@@ -125,3 +125,732 @@ footer a {
 }
 
 
+.container,
+.container-content {
+    margin: 0 auto
+}
+
+.style-banner-container {
+    display: flex;
+}
+
+/*GlobalImage*/
+
+.africa-map-container, .globe-base-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .africa-map-container.active, .globe-base-wrapper.active {
+    opacity: 1;
+  }
+  
+  .scale-fade-hide {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .globe-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .globe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img img {
+    width: 100%;
+    height: auto;
+  }
+
+  
+.africa-map-container,
+.africa-map-container svg,
+.globe-base-wrapper,
+.globe-container {
+  height: 100%;
+  width: 100%;
+}
+
+.scale-fade-hide {
+  -webkit-animation: scale-fade-in--hide .5s forwards;
+  animation: scale-fade-in--hide .5s forwards;
+  opacity: 1;
+}
+
+.scale-fade-show {
+  -webkit-animation: scale-fade-out--show .5s forwards;
+  animation: scale-fade-out--show .5s forwards;
+  opacity: 0;
+  
+}
+
+.africa-map-container,
+.globe-base-wrapper {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.globe-container {
+  height: 80%;
+  left: 50%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80%
+}
+
+.globe-base-wrapper {
+  opacity: 0
+}
+
+@-webkit-keyframes scale-in {
+  0% {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0)
+  }
+  40% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+  60% {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0)
+  }
+  to {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0)
+  }
+}
+
+@keyframes scale-in {
+  0% {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0)
+  }
+  40% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+  60% {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0)
+  }
+  to {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0)
+  }
+}
+
+@-webkit-keyframes scale-fade-in--hide {
+  1% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+  to {
+      opacity: 0;
+      -webkit-transform: scale(.7);
+      transform: scale(.7)
+  }
+}
+
+@keyframes scale-fade-in--hide {
+  1% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+  to {
+      opacity: 0;
+      -webkit-transform: scale(.7);
+      transform: scale(.7)
+  }
+}
+
+@-webkit-keyframes scale-fade-out--show {
+  1% {
+      opacity: 0;
+      -webkit-transform: scale(.7);
+      transform: scale(.7)
+  }
+  to {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+@keyframes scale-fade-out--show {
+  1% {
+      opacity: 0;
+      -webkit-transform: scale(.7);
+      transform: scale(.7)
+  }
+  to {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+@-webkit-keyframes path-drawer-animation-right {
+  0% {
+      stroke-dashoffset: -1
+  }
+  to {
+      stroke-dashoffset: 0
+  }
+}
+
+@keyframes path-drawer-animation-right {
+  0% {
+      stroke-dashoffset: -1
+  }
+  to {
+      stroke-dashoffset: 0
+  }
+}
+
+@-webkit-keyframes fade {
+  to {
+      opacity: 1
+  }
+}
+
+@keyframes fade {
+  to {
+      opacity: 1
+  }
+}
+
+
+.__animation_transaction {
+  background: #000000;
+  border-radius: 18px;
+  box-shadow: 0 30px 100px 35px rgba(0, 0, 0, .1);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: .5rem .75rem
+}
+
+.__animation_transaction .__animation_transaction_user_image {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px
+}
+
+.__animation_transaction .__animation_transaction_details_container {
+  padding-left: 1rem
+}
+
+.__animation_transaction .__animation_transaction_details_container .__animation_transaction_details_fiat_img {
+  border-radius: 50%;
+  height: 20px;
+  margin-left: .5rem;
+  width: 20px
+}
+
+.__animation_transaction .__animation_transaction_state_container {
+  align-items: center;
+  display: flex;
+  margin-top: -.3rem
+}
+
+.__animation_transaction .__animation_transaction_state_container span {
+  margin-left: .5rem
+}
+
+.__animation_transaction .__animation_transaction_details_container h6 {
+  font-size: .9rem !important
+}
+
+.__animation_transaction .__animation_transaction_state_container p {
+  font-size: .6rem
+}
+
+.move.__animation_transaction_container>.__animation_transaction:first-child {
+  left: 0
+}
+
+.move.__animation_transaction_container>.__animation_transaction:nth-child(2) {
+  right: 30%;
+  top: 15%
+}
+
+.move.__animation_transaction_container>.__animation_transaction:nth-child(3) {
+  bottom: 15%;
+  left: 35%
+}
+
+.move .__animation_transaction_arrow_left {
+  left: 20%;
+  top: 22%
+}
+
+.move .__animation_transaction_arrow_right {
+  bottom: 25%;
+  right: 20%
+}
+
+.move.__animation_transaction_container .__animation_transaction_arrow_left path:first-child,
+.move.__animation_transaction_container .__animation_transaction_arrow_left path:last-child,
+.move.__animation_transaction_container .__animation_transaction_arrow_right path:first-child,
+.move.__animation_transaction_container .__animation_transaction_arrow_right path:last-child {
+  stroke: #fff
+}
+
+.__animation_transaction_container>.__animation_transaction {
+  transition: all .5s
+}
+
+.__animation_transaction_container>.__animation_transaction:first-child {
+  -webkit-animation: scale-fade .5s 2.9s forwards;
+  animation: scale-fade .5s 2.9s forwards;
+  -webkit-animation: scale-fade .5s var(--animation-duration) forwards;
+  animation: scale-fade .5s var(--animation-duration) forwards;
+  left: 20%;
+  opacity: 0;
+  position: absolute;
+  top: 40%
+}
+
+.__animation_transaction_container>.__animation_transaction:nth-child(2) {
+  -webkit-animation: scale-fade .5s 3.4s forwards;
+  animation: scale-fade .5s 3.4s forwards;
+  -webkit-animation: scale-fade .5s calc(var(--animation-duration) + .5s) forwards;
+  animation: scale-fade .5s calc(var(--animation-duration) + .5s) forwards;
+  opacity: 0;
+  position: absolute;
+  right: 20%;
+  top: 20%
+}
+
+.__animation_transaction_arrow_left path:first-child {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: path-drawer-animation-right .5s 3.9s forwards;
+  animation: path-drawer-animation-right .5s 3.9s forwards;
+  -webkit-animation: path-drawer-animation-right .5s calc(var(--animation-duration) + 1s) forwards;
+  animation: path-drawer-animation-right .5s calc(var(--animation-duration) + 1s) forwards
+}
+
+.__animation_transaction_arrow_left path:last-child {
+  -webkit-animation: fade .5s 4.4s forwards;
+  animation: fade .5s 4.4s forwards;
+  -webkit-animation: fade .5s calc(var(--animation-duration) + 1.5s) forwards;
+  animation: fade .5s calc(var(--animation-duration) + 1.5s) forwards;
+  opacity: 0
+}
+
+.__animation_transaction_container>.__animation_transaction:nth-child(3) {
+  -webkit-animation: scale-fade .5s 4.9s forwards;
+  animation: scale-fade .5s 4.9s forwards;
+  -webkit-animation: scale-fade .5s calc(var(--animation-duration) + 2s) forwards;
+  animation: scale-fade .5s calc(var(--animation-duration) + 2s) forwards;
+  bottom: 27%;
+  left: 27%;
+  opacity: 0;
+  position: absolute
+}
+
+.__animation_transaction_container>.__animation_transaction:nth-child(4) {
+  -webkit-animation: scale-fade .5s 5.4s forwards;
+  animation: scale-fade .5s 5.4s forwards;
+  -webkit-animation: scale-fade .5s calc(var(--animation-duration) + 2.5s) forwards;
+  animation: scale-fade .5s calc(var(--animation-duration) + 2.5s) forwards;
+  bottom: 41%;
+  opacity: 0;
+  position: absolute;
+  right: 0
+}
+
+.__animation_transaction_arrow_right path:first-child {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: path-drawer-animation-right .5s 5.9s forwards;
+  animation: path-drawer-animation-right .5s 5.9s forwards;
+  -webkit-animation: path-drawer-animation-right .5s calc(var(--animation-duration) + 3s) forwards;
+  animation: path-drawer-animation-right .5s calc(var(--animation-duration) + 3s) forwards
+}
+
+.__animation_transaction_arrow_right path:last-child {
+  -webkit-animation: fade .5s 6.4s forwards;
+  animation: fade .5s 6.4s forwards;
+  -webkit-animation: fade .5s calc(var(--animation-duration) + 3.5s) forwards;
+  animation: fade .5s calc(var(--animation-duration) + 3.5s) forwards;
+  opacity: 0
+}
+
+.__animation_transaction_arrow_left {
+  left: 30%;
+  position: absolute;
+  top: 22%
+}
+
+.__animation_transaction_arrow_left svg {
+  width: 100px
+}
+
+.__animation_transaction_arrow_right {
+  bottom: 25%;
+  position: absolute;
+  right: 27%
+}
+
+.__animation_transaction_arrow_right svg {
+  width: 80px
+}
+
+.__animation_wrapper {
+  position: relative
+}
+
+
+@-webkit-keyframes turn-sphere {
+  0% {
+      opacity: 1
+  }
+  to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn)
+  }
+}
+
+@keyframes turn-sphere {
+  0% {
+      opacity: 1
+  }
+  to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn)
+  }
+}
+
+
+svg {
+  overflow: overlay;
+  position: relative
+}
+
+.africa-line,
+.africa-line-border {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1
+}
+
+.draw .africa-line,
+.draw .africa-line-border {
+  -webkit-animation: path-drawer-animation 2.9s 1s forwards;
+  animation: path-drawer-animation 2.9s 1s forwards;
+  -webkit-animation: path-drawer-animation var(--animation-duration) var(--animation-delay) forwards;
+  animation: path-drawer-animation var(--animation-duration) var(--animation-delay) forwards
+}
+
+.africa-dots path.africa-dot:first-child,
+.africa-dots path.africa-dot:nth-child(10),
+.africa-dots path.africa-dot:nth-child(11),
+.africa-dots path.africa-dot:nth-child(12),
+.africa-dots path.africa-dot:nth-child(13),
+.africa-dots path.africa-dot:nth-child(14),
+.africa-dots path.africa-dot:nth-child(15),
+.africa-dots path.africa-dot:nth-child(2),
+.africa-dots path.africa-dot:nth-child(3),
+.africa-dots path.africa-dot:nth-child(4),
+.africa-dots path.africa-dot:nth-child(5),
+.africa-dots path.africa-dot:nth-child(6),
+.africa-dots path.africa-dot:nth-child(7),
+.africa-dots path.africa-dot:nth-child(8),
+.africa-dots path.africa-dot:nth-child(9) {
+  opacity: 0
+}
+
+.draw .africa-dots path.africa-dot:first-child {
+  -webkit-animation: fade-in .2s 1.2s forwards;
+  animation: fade-in .2s 1.2s forwards;
+  -webkit-animation: fade-in .2s calc(.2s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.2s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(2) {
+  -webkit-animation: fade-in .2s 1.35s forwards;
+  animation: fade-in .2s 1.35s forwards;
+  -webkit-animation: fade-in .2s calc(.35s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.35s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(3) {
+  -webkit-animation: fade-in .2s 1.55s forwards;
+  animation: fade-in .2s 1.55s forwards;
+  -webkit-animation: fade-in .2s calc(.55s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.55s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(4) {
+  -webkit-animation: fade-in .2s 1.65s forwards;
+  animation: fade-in .2s 1.65s forwards;
+  -webkit-animation: fade-in .2s calc(.65s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.65s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(5) {
+  -webkit-animation: fade-in .2s 1.7s forwards;
+  animation: fade-in .2s 1.7s forwards;
+  -webkit-animation: fade-in .2s calc(.7s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.7s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(6) {
+  -webkit-animation: fade-in .2s 1.85s forwards;
+  animation: fade-in .2s 1.85s forwards;
+  -webkit-animation: fade-in .2s calc(.85s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.85s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(7) {
+  -webkit-animation: fade-in .2s 1.9s forwards;
+  animation: fade-in .2s 1.9s forwards;
+  -webkit-animation: fade-in .2s calc(.9s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(.9s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(8) {
+  -webkit-animation: fade-in .2s 2s forwards;
+  animation: fade-in .2s 2s forwards;
+  -webkit-animation: fade-in .2s calc(1s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(1s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(9) {
+  -webkit-animation: fade-in .2s 2.05s forwards;
+  animation: fade-in .2s 2.05s forwards;
+  -webkit-animation: fade-in .2s calc(1.05s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(1.05s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(10) {
+  -webkit-animation: fade-in .2s 2.25s forwards;
+  animation: fade-in .2s 2.25s forwards;
+  -webkit-animation: fade-in .2s calc(1.25s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(1.25s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(11) {
+  -webkit-animation: fade-in .2s 2.45s forwards;
+  animation: fade-in .2s 2.45s forwards;
+  -webkit-animation: fade-in .2s calc(1.45s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(1.45s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(12) {
+  -webkit-animation: fade-in .2s 2.6s forwards;
+  animation: fade-in .2s 2.6s forwards;
+  -webkit-animation: fade-in .2s calc(1.6s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(1.6s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(13) {
+  -webkit-animation: fade-in .2s 2.9s forwards;
+  animation: fade-in .2s 2.9s forwards;
+  -webkit-animation: fade-in .2s calc(1.9s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(1.9s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(14) {
+  -webkit-animation: fade-in .2s 3.1s forwards;
+  animation: fade-in .2s 3.1s forwards;
+  -webkit-animation: fade-in .2s calc(2.1s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(2.1s + var(--animation-delay)) forwards
+}
+
+.draw .africa-dots path.africa-dot:nth-child(15) {
+  -webkit-animation: fade-in .2s 3.7s forwards;
+  animation: fade-in .2s 3.7s forwards;
+  -webkit-animation: fade-in .2s calc(2.7s + var(--animation-delay)) forwards;
+  animation: fade-in .2s calc(2.7s + var(--animation-delay)) forwards
+}
+
+
+
+.sphere-container {
+  position: relative;
+}
+
+.sphere {
+  position: absolute;
+}
+
+.end-sphere,
+.start-sphere {
+  -webkit-animation: turn-sphere 30s linear infinite forwards;
+  animation: turn-sphere 30s linear infinite forwards;
+  position: absolute;
+  -webkit-transform-origin: center;
+  transform-origin: center
+}
+
+.globe-container {
+  height: 100%;
+  width: 100%;
+}
+
+
+.globe-wrapper {
+  background-color: rgb(8, 107, 107);
+  border-radius: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%
+}
+
+.globe-wrapper img {
+  height: 50%;
+  width: 50%;
+}
+
+.globe-wrapper .img {
+  -webkit-animation: slide 12s linear infinite;
+  animation: slide 12s linear infinite;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0
+}
+
+.globe-wrapper .img>* {
+  flex-shrink: 0
+}
+
+.globe-wrapper .img img:last-child {
+  bottom: 0;
+  left: 100%;
+  position: absolute;
+  top: 0
+}
+
+
+.globe-border {
+  height: 155%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-51%, -50%);
+  transform: translate(-51%, -50%);
+  width: 155%;
+  z-index: 0;
+
+}
+
+@-webkit-keyframes slide {
+  to {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%)
+  }
+}
+
+@keyframes slide {
+  to {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%)
+  }
+}
+
+@-webkit-keyframes path-drawer-animation-globe {
+  0% {
+      stroke-dashoffset: 1
+  }
+  25% {
+      stroke-dashoffset: 0
+  }
+  50% {
+      stroke-dashoffset: -1
+  }
+  to {
+      stroke-dashoffset: 0
+  }
+}
+
+@keyframes path-drawer-animation-globe {
+  0% {
+      stroke-dashoffset: 1
+  }
+  25% {
+      stroke-dashoffset: 0
+  }
+  50% {
+      stroke-dashoffset: -1
+  }
+  to {
+      stroke-dashoffset: 0
+  }
+}
+
+.globe-border path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+
+}
+
+.globe-border>path:first-child {
+  stroke: #ab0000;
+  -webkit-animation: path-drawer-animation-globe 3s linear 0s infinite forwards;
+  animation: path-drawer-animation-globe 3s linear 0s infinite forwards
+}
+
+.globe-border>path:nth-child(2) {
+  stroke: #fb9129;
+  -webkit-animation: path-drawer-animation-globe 3s linear .5s infinite forwards;
+  animation: path-drawer-animation-globe 3s linear .5s infinite forwards
+}
+
+.globe-border>path:nth-child(3) {
+  stroke: #1b2786;
+  -webkit-animation: path-drawer-animation-globe 3s linear 1s infinite forwards;
+  animation: path-drawer-animation-globe 3s linear 1s infinite forwards
+}
+
+.globe-border>path:nth-child(4) {
+  stroke: #576a18;
+  -webkit-animation: path-drawer-animation-globe 3s linear 1.5s infinite forwards;
+  animation: path-drawer-animation-globe 3s linear 1.5s infinite forwards
+}
+
+.animation-container {
+  position: relative
+}
+
+
+
+
