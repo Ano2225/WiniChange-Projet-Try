@@ -1,11 +1,12 @@
 import React from 'react'
+import CallToAction from '../components/CallToAction'
 
-const CallToAction = () => {
+const CallToActionSection = () => {
   return (
     <div>
-      CallToAction
+       <CallToAction/>
     </div>
   )
 }
 
-export default CallToAction
+export default CallToActionSection
