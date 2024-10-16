@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { FaArrowRightLong } from "react-icons/fa6"
 import { twMerge } from 'tailwind-merge'
+import AffiliateCondition from './AffiliateSection'
 
 // Assets
 import walletSky from "@/app/assets/wallsky.png"
@@ -72,6 +73,7 @@ const becomePartner2 = [
   },
 ];
 
+
 const advantages = [
   {
     id: 1,
@@ -96,16 +98,38 @@ const advantages = [
   },
 ];
 
+const affiliateConditions = [
+  {
+    id: "Condition 1",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    specialText: "10% de réduction",
+    color: "blue",
+  },
+  {
+    id: "Condition 2",
+    text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    specialText: "20€ en crédit",
+    color: "indigo",
+  },
+  {
+    id: "Condition 3",
+    text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    specialText: "des produits gratuits",
+    color: "green",
+  },
+];
+
 const Partner = () => {
   return (
     <>
       <Header />
-      <div className='bg-white min-h-48 py-28 text-black text-3xl'>
+      {/* 
+      <div className='min-h-48 py-28 text-black text-3xl'>
         <div className='container lg:flex overflow-hidden'>
           <div>
             <div className='flex flex-col gap-1'>
               <div className='flex flex-col gap-1 py-4'>
-                <h5 className='text-black text-lg lg:text-4xl font-semibold leading-normal mb-4'>
+                <h5 className='text-black text-3xl md:text-4xl  font-semibold leading-normal mb-4'>
                   Saisissez de
                 </h5>
                 <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
@@ -142,7 +166,7 @@ const Partner = () => {
         <div className='pt-10 md:py-24 h-full w-full'>
           <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
             <div className='flex flex-col items-center align-center'>
-              <h1 className='font-bold text-xl md:text-3xl'>Condition Pour Devenir Un Partenaire</h1>
+              <h1 className='font-bold text-3xl md:text-4xl '>Condition Pour Devenir Un Partenaire</h1>
               <div className='mt-10'>
                 <div className='flex flex-col gap-10 lg:flex-row items-center'>
                   <motion.div
@@ -262,6 +286,33 @@ const Partner = () => {
           </div>
         </div>
       </div>
+      */}
+        <section className="flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full">
+          <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
+            <Image
+              src={partner2}
+              width={500}
+              height={500}
+              alt="PartnerSmile"
+              objectFit="cover"
+              className="rounded-2xl shadow-xl mt-5 w-full md:w-auto"
+            />
+          </div>
+          <div className="flex-1 w-full md:ml-5 py-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Conditions d'Affiliation</h2>
+            <div className="flex flex-col space-y-4">
+              {affiliateConditions.map((item) => (
+                <AffiliateCondition
+                  key={item.id}
+                  id={item.id}
+                  text={item.text}
+                  specialText={item.specialText}
+                  color={item.color}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       <Footer />
       <Cookies />
     </>

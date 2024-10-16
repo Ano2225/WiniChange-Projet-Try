@@ -88,12 +88,12 @@ const Partner = () => {
             <CircleTrans />
           </div>
       </div>
-      <div className='pt-10 md:py-24 h-full w-full'>
-        <div className='container mx-auto px-5 lg:px-20 py-8 flex flex-col items-center gap-20'>
+      <div className='pt-10 md:py-16 h-full w-full'>
+        <div className='container mx-auto px-5 lg:px-20 py-0 flex flex-col items-center gap-20'>
             <div className='flex flex-col items-center align-center'>
-                <h1 className='font-bold text-3xl lg:text-4xl'>Tous nos services</h1>
+                <h1 className='font-bold text-3xl md:text-4xl '>Tous nos services</h1>
                 
-                <div className='mt-10'>
+                <div className='my-8'>
                 <div className='flex flex-col gap-10 lg:flex-row items-center'>
                     <motion.div
                       initial="hidden"
@@ -102,7 +102,6 @@ const Partner = () => {
                       variants={imageVariants}
                       className="md:order-first"  
                     >
-                    
                     </motion.div>
                     <motion.div
                       initial="hidden"
