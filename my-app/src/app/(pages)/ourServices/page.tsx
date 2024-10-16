@@ -74,7 +74,7 @@ const Partner = () => {
     <>
       <Header />
       <div className='bg-gradient-to-tl from-[#126e51]  to-black min-h-48 py-28 text-white'>
-          <div className='container lg:flex items-center justify-center'>
+          <div className='container lg:flex items-center justify-center py-10'>
             <div>
               <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
                   C'est quoi WiniChange ?
@@ -89,9 +89,9 @@ const Partner = () => {
           </div>
       </div>
       <div className='pt-10 md:py-24 h-full w-full'>
-        <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
+        <div className='container mx-auto px-5 lg:px-20 py-8 flex flex-col items-center gap-20'>
             <div className='flex flex-col items-center align-center'>
-                <h1 className='font-bold text-xl md:text-3xl'>Tous nos services</h1>
+                <h1 className='font-bold text-3xl lg:text-4xl'>Tous nos services</h1>
                 
                 <div className='mt-10'>
                 <div className='flex flex-col gap-10 lg:flex-row items-center'>
@@ -100,15 +100,9 @@ const Partner = () => {
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.2 }}
                       variants={imageVariants}
-                      className="md:order-first"  // Classe pour changer l'ordre
+                      className="md:order-first"  
                     >
-                      {/* <Image
-                        src={crypPart}
-                        width={400}
-                        height={400}
-                        alt="PartnerSmile"
-                        className='max-w-[400px] rounded-2xl shadow-xl mt-5 items-center'
-                      /> */}
+                    
                     </motion.div>
                     <motion.div
                       initial="hidden"
