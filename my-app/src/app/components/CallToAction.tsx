@@ -23,7 +23,6 @@ const CallToAction = () => {
         </div>
       <CircleTrans />
     </div>
- 
     </div>
   )
 }
