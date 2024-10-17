@@ -32,7 +32,7 @@ const transactions = [
 ];
 
 const Transaction = ({ amount, image, currencyImage, status }) => (
-  <div className="flex items-center p-4  shadow-lg rounded-lg space-x-4 animate-fadeIn">
+  <div className="flex items-center p-4  shadow-lg rounded-lg space-x-4 animate-fadeIn bg-white radius-[10px] w-fit max-w-fit">
     <div className="w-16 h-16">
       <img className="w-full h-full object-cover rounded-full" src={image} alt="Transaction User" />
     </div>

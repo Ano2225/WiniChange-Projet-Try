@@ -10,7 +10,7 @@ import MoyensDePaiementGlobe from '../components/MoyenDePaimentGlobe';
 const MoyensDePaiement = () => {
   return (
     <div className="bg-gradient-to-b from-black via-gray-800 to-black">
-      <div className="container mx-auto px-4 py-24 text-white" id="countrysection">
+      <div className="mx-auto px-24 py-24 text-white" id="countrysection">
         <div className="flex flex-col md:flex-row items-center justify-center p-8">
           <div className="w-full md:w-1/2 flex items-center justify-center mb-8 md:mb-0">
             <div className="text-start">

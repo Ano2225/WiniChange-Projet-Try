@@ -22,7 +22,6 @@ export default function Home() {
    <FloatingButtons/>
     <Header/>
     <Hero/>
-    {/* <Cookies/> */}
     <LogoTickerSection/>
     <NosMoyensDePaiement/>
     <NosCrypto />

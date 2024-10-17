@@ -42,7 +42,7 @@ export const Hero = () => {
                      >
                       <Image src={ExchangeIcon} alt="Image-Exchange"
                         height={200} width={200}
-                        className="max-w-none"
+                        className="max-w-[100px] lg:max-w-none"
                         draggable="false"
                         
                         />
