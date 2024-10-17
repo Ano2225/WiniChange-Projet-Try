@@ -25,9 +25,11 @@ export const LogoTickerSection = () => {
   const [paused, setPaused] = useState(false);
 
   return (
-    <div className="bg-black text-white py-[20px] sm:py-24">
-      <div className="md:container">
-        <h2 className="text-xl text-center text-white/70 mb-6">Découvrez les pays que nous couvrons</h2>
+    <div className="bg-black text-white py-6 sm:py-12">
+      <div className="md:container mx-auto">
+        <h2 className="text-lg sm:text-xl text-center text-white/70 mb-4 sm:mb-6">
+          Découvrez les pays que nous couvrons
+        </h2>
         <div 
           className="flex overflow-hidden relative" 
           onMouseEnter={() => setPaused(true)} 
@@ -35,46 +37,27 @@ export const LogoTickerSection = () => {
         >
           <motion.div
             transition={{
-              duration: 100,
+              duration: 60, 
               ease: "linear",
               repeat: Infinity,
             }}
             initial={{ translateX: 0 }}
-            animate={{ translateX: paused ? 0 : "-50%" }}
-            className="flex gap-8 flex-none pr-16 mt-10"
+            animate={{ translateX: paused ? 0 : "-100%" }}
+            className="flex gap-4 sm:gap-8 flex-none pr-8 mt-4"
           >
-            {images.map(({ src, alt, description }, index) => (
+            {images.concat(images).map(({ src, alt, description }, index) => (
               <div
                 key={`${alt}-${index}`}
-                className="rounded-[10px] shadow-xl flex-none text-black h-12 bg-white px-2 flex items-center justify-center relative brightness-90 hover:brightness-100"
+                className="rounded-md shadow-md flex-none text-black h-12 bg-white px-2 flex items-center justify-center relative brightness-90 hover:brightness-100 w-32 sm:w-40"
               >
-                <div className='flex justify-center align-center space-x-2 h-[30px] text-green'>
+                <div className="flex justify-center items-center space-x-2 h-[30px]">
                   <Image
                     src={src}
                     alt={alt}
-                    className="h-auto w-auto"
+                    className="h-auto w-auto max-w-[40px] sm:max-w-[50px]"
                     priority
                   />
-                  <span className='mt-1'> {description} </span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 text-center text-xs text-black bg-white/80 p-1 rounded-b-md opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  {description}
-                </div>
-              </div>
-            ))}
-            {images.map(({ src, alt, description }, index) => (
-              <div
-                key={`${alt}-${index}`}
-                className="rounded-[10px] shadow-xl flex-none text-black h-12 bg-white px-2 flex items-center justify-center relative brightness-90 hover:brightness-100"
-              >
-                <div className='flex justify-center align-center space-x-2 h-[30px] text-green'>
-                  <Image
-                    src={src}
-                    alt={alt}
-                    className="h-auto w-auto"
-                    priority
-                  />
-                  <span className='mt-1'> {description} </span>
+                  <span className="text-xs sm:text-sm">{description}</span>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 text-center text-xs text-black bg-white/80 p-1 rounded-b-md opacity-0 hover:opacity-100 transition-opacity duration-300">
                   {description}
