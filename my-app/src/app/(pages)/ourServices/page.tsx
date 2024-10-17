@@ -10,6 +10,8 @@ import sendMoney from "@/app/assets/ph2.webp";
 import Send from "@/app/assets/Send.png";
 import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
+import CallToAction from '@/app/components/CallToAction';
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 const OurService = () => {
   const containerVariants = {
@@ -73,7 +75,7 @@ const OurService = () => {
       <div className='pt-10 md:py-16 h-full w-full'>
         <div className='container mx-auto px-5 lg:px-20 py-0 flex flex-col items-center gap-20'>
           <div className='flex flex-col items-center'>
-            <h1 className='font-bold text-3xl md:text-4xl'>Tous nos services</h1>
+            <h1 className='font-bold text-4xl md:text-5xl'>Tous nos services</h1>
             <div className='my-8'>
               <div className='flex flex-col gap-10 lg:flex-row items-center'>
                 <motion.div
@@ -128,7 +130,7 @@ const OurService = () => {
                           blue: 'bg-blue-300',
                           indigo: 'bg-indigo-300',
                           green: 'bg-green-300',
-                        }[item.color] || 'bg-gray-300',
+                        }[item.color] || 'bg-gray-00',
                         'p-2 rounded-lg mt-5 max-w-[350px]'
                       )}
                     >
@@ -147,6 +149,24 @@ const OurService = () => {
                     </motion.div>
                   ))}
                 </motion.div>
+              </div>
+              <div className='py-10'>
+              <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
+              <div className="max-w-xl">
+                <h1 className="text-3xl lg:text-4xl font-extrabold text-black leading-tight my-10">
+                  Rejoignez-nous dès aujourd'hui !
+                </h1>
+                <p className="text-base lg:text-lg text-black/80 mb-8">
+                  Profitez des meilleurs taux et d'une rapidité inégalée pour vos transactions. 
+                  </p>
+              <div className='flex items-center justify-center'>
+                  <button className="flex gap-3 rounded-full bg-[#126e51] text-white font-bold px-6 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
+                      <span>Je m'inscris</span>
+                      <FaArrowRightLong />
+                  </button>
+              </div>
+              </div>
+            </div>
               </div>
             </div>
           </div>
