@@ -2,10 +2,10 @@
 
 const supportedCoins = [
   { name: "Bitcoin", symbol: "BTC", logo: "/images/bitcoin.png" },
-  { name: "Ethereum", symbol: "ETH", logo: "/images/bitcoin.png" },
-  { name: "Litecoin", symbol: "LTC", logo: "/images/bitcoin.png" },
-  { name: "Ripple", symbol: "XRP", logo: "/images/bitcoin.png" },
-  { name: "Cardano", symbol: "ADA", logo: "/images/bitcoin.png" },
+  { name: "Ethereum", symbol: "ETH", logo: "/images/Ether.png" },
+  { name: "Litecoin", symbol: "LTC", logo: "/images/Crypto/coin.png" },
+  { name: "Ripple", symbol: "XRP", logo: "/images/Crypto/rippleXRP.png" },
+  { name: "Cardano", symbol: "ADA", logo: "/images/Crypto/cardona.png" },
   { name: "Polkadot", symbol: "DOT", logo: "/images/polkadot_.webp" },
   { name: "Dogecoin", symbol: "DOGE", logo: "/images/doge.webp" },
   { name: "Chainlink", symbol: "LINK", logo: "/images/shiba_inu.webp"},
@@ -14,12 +14,12 @@ const supportedCoins = [
 const NosCrypto = () => {
   return (
     <section className="py-8 bg-black text-white overflow-hidden">
-      <div className="container mx-auto px-4 my-14 mb-24">
+      <div className="lg:container mx-auto px-4 my-14 mb-20 lg:my-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
           Coins et Blockchains pris en charge
         </h2>
-        <div className="relative">
-          <div className="hidden md:flex space-x-8">
+        <div className="relative flex flex-col">
+          <div className="hidden lg:flex lg:space-x-24 justify-center container">
             {supportedCoins.map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12" />
@@ -30,8 +30,8 @@ const NosCrypto = () => {
               </div>
             ))}
           </div>
-          <div className="flex space-x-12 animate-scroll-left md:hidden">
-            {supportedCoins.map((coin) => (
+          <div className="flex space-x-16 animate-scroll-left lg:hidden">
+            {supportedCoins.slice(0,4).map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12" />
                 <div>
@@ -41,8 +41,8 @@ const NosCrypto = () => {
               </div>
             ))}
           </div>
-          <div className="flex space-x-12 animate-scroll-right md:hidden absolute top-24 left-0">
-            {supportedCoins.map((coin) => (
+          <div className="flex space-x-16 animate-scroll-right lg:hidden absolute top-24 left-0">
+            {supportedCoins.slice(4).map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12" />
                 <div>
@@ -71,7 +71,7 @@ const NosCrypto = () => {
         }
         @keyframes scroll-right {
           0% {
-            transform: translateX(-100%);
+            transform: translateX(-120%);
           }
           100% {
             transform: translateX(100%);

@@ -50,7 +50,7 @@ const FloatingButtons: React.FC = () => {
     <>
       <div
         onClick={openChat}
-        className="fixed bottom-20 right-5 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors cursor-pointer"
+        className="fixed bottom-20 right-5 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors cursor-pointer z-50"
       >
         <FaWhatsapp className="w-8 h-8" />
       </div>
@@ -82,7 +82,7 @@ const FloatingButtons: React.FC = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 bg-white text-black/30 p-3 rounded-full shadow-lg hover:bg-white transition-colors"
+          className="fixed bottom-5 right-5 bg-white text-black/30 p-3 rounded-full shadow-lg hover:bg-white transition-colors z-50"
         >
           <svg
             className="w-8 h-8 transform rotate-180 text-black py-2"
