@@ -22,7 +22,7 @@ const AffiliateCondition = ({ id, text, specialText, color }) => {
           indigo: 'bg-indigo-300',
           green: 'bg-green-300',
         }[color] || 'bg-gray-300',
-        'p-2 rounded-lg mt-5 max-w-[350px]'
+        'p-2 rounded-lg mt-5 max-w-[450px]'
       )}
     >
       <h1
@@ -32,7 +32,7 @@ const AffiliateCondition = ({ id, text, specialText, color }) => {
             indigo: 'text-indigo-800',
             green: 'text-green-800',
           }[color] || 'text-gray-800',
-          'text-lg font-bold mb-2'
+          'text-lg font-bold mb-4'
         )}
       >
         {id}
