@@ -287,7 +287,7 @@ const Partner = () => {
         </div>
       </div>
       */}
-        <section className="flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full">
+        <section className="md:px-16 flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full">
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
               src={partner2}
@@ -298,7 +298,7 @@ const Partner = () => {
               className="rounded-2xl shadow-xl mt-5 w-full md:w-auto"
             />
           </div>
-          <div className="flex-1 w-full md:ml-5 py-8">
+          <div className="flex-1 w-full md:ml-5 py-8 md:px-20">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Conditions d'Affiliation</h2>
             <div className="flex flex-col space-y-4">
               {affiliateConditions.map((item) => (
@@ -312,7 +312,26 @@ const Partner = () => {
               ))}
             </div>
           </div>
+          
         </section>
+        <div className="py-16">
+      <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
+        <div className="max-w-xl">
+          <h1 className="text-4xl lg:text-5xl font-extrabold text-black leading-tight mb-6">
+            Rejoignez-nous  !
+          </h1>
+          <p className="text-base lg:text-lg text-black/80 mb-8">
+            Devenez partenaire de Winichange et profitez des meilleurs taux ainsi que d'une rapidité inégalée pour vos transactions. Rejoignez notre réseau de partenaires de confiance dès aujourd'hui.
+          </p>
+        <div className='flex items-center justify-center'>
+            <button className="flex gap-3 rounded-full bg-[#126e51] text-white font-bold px-6 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
+                <span>Nous rejoindre</span>
+                <FaArrowRightLong />
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
       <Footer />
       <Cookies />
     </>
