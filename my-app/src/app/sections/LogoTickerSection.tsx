@@ -35,7 +35,7 @@ export const LogoTickerSection = () => {
         >
           <motion.div
             transition={{
-              duration: 20,
+              duration: 100,
               ease: "linear",
               repeat: Infinity,
             }}
