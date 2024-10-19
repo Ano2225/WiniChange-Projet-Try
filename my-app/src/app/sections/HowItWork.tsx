@@ -9,13 +9,13 @@ const steps = [
     id: 1,
     title: 'Étape 1: Créez un Compte',
     description: 'Commencez par créer votre compte en quelques clics. C’est rapide et facile.',
-    image: '/images/mockuuup.png',
+    image: '/images/mockupIphone.png',
   },
   {
     id: 2,
     title: 'Étape 2: Choisissez un Service',
     description: 'Choisissez le service qui vous convient parmi nos nombreuses options.',
-    image: '/images/mockuuup.png', 
+    image: '/images/mockup2.png', 
   },
   {
     id: 3,
@@ -59,8 +59,8 @@ export default function HowItWorks() {
               <Image
                 src={selectedContent.image}
                 alt={selectedContent.title}
-                width={400}
-                height={300}
+                width={200}
+                height={100}
                 className="relative z-10 rounded-lg shadow-2xl"
               />
             )}
@@ -121,9 +121,9 @@ export default function HowItWorks() {
               <Image
                 src={selectedContent.image}
                 alt={selectedContent.title}
-                width={400}
-                height={300}
-                className="mb-4"
+                width={200}
+                height={100}
+                className="mb-4 ralative z-20"
               />
             )}
           </motion.div>
