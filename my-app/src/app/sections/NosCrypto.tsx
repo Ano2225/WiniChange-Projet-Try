@@ -24,23 +24,12 @@ const supportedCoins = [
 
 const NosCrypto = () => {
   return (
-    <section className="py-8 bg-black text-white overflow-x-hidden min-h-max no-scrollbar">
+    <section className="py-8 bg-black text-white overflow-hidden md:min-h-auto min-h-[450px] h-auto">
       <div className="lg:container mx-auto px-4 my-14 mb-20 lg:my-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
           Coins et Blockchains pris en charge
         </h2>
-        <div className="relative flex flex-col">
-          {/* <div className="hidden lg:flex lg:space-x-24 justify-center container">
-            {supportedCoins.map((coin) => (
-              <div key={coin.symbol} className="flex items-center space-x-2">
-                <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
-                <div>
-                  <h3 className="font-semibold">{coin.name}</h3>
-                  <p className="text-gray-500">{coin.symbol}</p>
-                </div>
-              </div>
-            ))}
-          </div> */}
+        <div className="relative flex flex-col h-full min-h-fit">
           <div className="hidden lg:flex lg:flex-col lg:space-y-10 justify-center container">
             <div className="lg:flex lg:space-x-24 justify-center container">
               {supportedCoins.slice(1,6).map((coin) => (
@@ -98,7 +87,7 @@ const NosCrypto = () => {
               </div>
             ))}
           </div>
-          <div className="flex space-x-16 animate-scroll-left lg:hidden absolute top-48 left-0">
+          <div className="flex space-x-16 animate-scroll-left lg:hidden absolute top-40 left-0">
             {supportedCoins.slice(12,19).map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
