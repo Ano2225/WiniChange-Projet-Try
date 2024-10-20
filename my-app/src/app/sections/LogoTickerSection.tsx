@@ -45,15 +45,15 @@ export const LogoTickerSection = () => {
         >
           <motion.div
             transition={{
-              duration: 20,
+              duration: 60, 
               ease: "linear",
               repeat: Infinity,
             }}
             initial={{ translateX: 0 }}
-            animate={{ translateX: paused ? 0 : "-50%" }}
-            className="flex gap-8 flex-none pr-16 mt-10"
+            animate={{ translateX: paused ? 0 : "-100%" }}
+            className="flex gap-4 sm:gap-8 flex-none pr-8 mt-4"
           >
-            {images.map(({ src, alt, description }, index) => (
+            {images.concat(images).map(({ src, alt, description }, index) => (
               <div
                 key={`${alt}-${index}`}
                 className="rounded-full shadow-xl flex-none text-black h-12 bg-white px-2 flex items-center justify-center relative brightness-90 hover:brightness-100"

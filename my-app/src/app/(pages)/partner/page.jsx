@@ -20,6 +20,7 @@ import paid from "@/app/assets/paid.png"
 import { Header } from "@/app/sections/Header"
 import Footer from "@/app/sections/Footer"
 import Cookies from "@/app/components/cookies"
+import Link from 'next/link'
 
 // Variants for animation
 const containerVariants = {
@@ -100,193 +101,24 @@ const advantages = [
 
 const affiliateConditions = [
   {
-    id: "Condition 1",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    specialText: "10% de réduction",
+    id: "🚀  Inscription rapide",
+    text: "Nous avons simplifié au maximum votre inscription et la vérification de votre compte. Recevez ",
+    specialText: "votre premier lien d'affiliation en ou votre code de parrainage un rien de temps !",
     color: "blue",
   },
   {
-    id: "Condition 2",
-    text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    specialText: "20€ en crédit",
+    id: "Paiements rapides et faciles",
+    text: "Nous avons réduit nos temps d'attente au strict minimum, ainsi que la limite de retrait minimum du programme . Vous pouvez maintenant retirer n'importe quel montant ",
+    specialText: "à partir de 500 XOF à travers un choix de 40 options de paiement.",
     color: "indigo",
-  },
-  {
-    id: "Condition 3",
-    text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    specialText: "des produits gratuits",
-    color: "green",
-  },
+  }
 ];
 
 const Partner = () => {
   return (
     <>
       <Header />
-      {/* 
-      <div className='min-h-48 py-28 text-black text-3xl'>
-        <div className='container lg:flex overflow-hidden'>
-          <div>
-            <div className='flex flex-col gap-1'>
-              <div className='flex flex-col gap-1 py-4'>
-                <h5 className='text-black text-3xl md:text-4xl  font-semibold leading-normal mb-4'>
-                  Saisissez de
-                </h5>
-                <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
-                  nouvelles opportunités avec WiniChange !
-                </h1>
-              </div>
-              <p className=' text-sm md:text-[1rem] md:leading-6'>
-                Un partenariat gagnant-gagnant, avec <br />
-                <span className='font-semibold py-0.5 px-2 '>
-                  des conditions d'accès simplifiées et des taux imbattables.
-                </span>
-              </p>
-              <p className=' text-sm md:text-[1rem] md:leading-6 mt-2'>
-                Effectuez vos transactions en toute 
-                <span className='font-semibold  py-0.5 px-2'>
-                  liberté, avec une simplicité et aux meilleurs taux.
-                </span>
-              </p>
-              <button className='flex gap-2 w-[200px] items-center rounded-xl bg-black/80 text-white font-bold mt-5 px-4 py-2 text-sm shadow-sm border-2 border-green-00'>
-                <span>Devenir partenaire</span>
-                <FaArrowRightLong />
-              </button>
-            </div>
-            <Image
-              src={partner2}
-              width={500}
-              height={500}
-              alt="PartnerSmile"
-              objectFit="cover"
-              className="rounded-2xl shadow-xl mt-5 items-center"
-            />
-          </div>
-        </div>
-        <div className='pt-10 md:py-24 h-full w-full'>
-          <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
-            <div className='flex flex-col items-center align-center'>
-              <h1 className='font-bold text-3xl md:text-4xl '>Condition Pour Devenir Un Partenaire</h1>
-              <div className='mt-10'>
-                <div className='flex flex-col gap-10 lg:flex-row items-center'>
-                  <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={imageVariants}
-                    className="md:order-first"
-                  >
-                    <Image
-                      src={crypPart}
-                      width={400}
-                      height={400}
-                      alt="Partner"
-                      className='max-w-[400px] rounded-2xl shadow-xl mt-5 items-center'
-                    />
-                  </motion.div>
-                  {[becomePartner1, becomePartner2].map((list, i) => (
-                    <motion.div
-                      key={i}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true, amount: 0.2 }}
-                      variants={containerVariants}
-                    >
-                      {list.map((item, index) => (
-                        <motion.div
-                          key={item.id}
-                          custom={index}
-                          variants={itemVariants}
-                          className={twMerge(
-                            {
-                              blue: 'bg-blue-300',
-                              indigo: 'bg-indigo-300',
-                              green: 'bg-green-300',
-                            }[item.color] || 'bg-gray-300',
-                            'p-2 rounded-lg mt-5 max-w-[350px]'
-                          )}
-                        >
-                          <h1
-                            className={twMerge(
-                              {
-                                blue: 'text-blue-800',
-                                indigo: 'text-indigo-800',
-                                green: 'text-green-800',
-                              }[item.color] || 'text-gray-800',
-                              'text-lg font-bold mb-2'
-                            )}
-                          >
-                            {item.id}
-                          </h1>
-                          <p className='ml-5 text-lg'>
-                            {item.text} <span className='font-bold'>{item.specialText}</span>
-                          </p>
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className='flex flex-col items-center align-center'>
-              <h1 className='font-bold text-xl md:text-3xl'>Avantages du partenariat WinChange</h1>
-              <div className='flex flex-col gap-5 my-10 md:flex-row md:ml-40'>
-                {advantages.map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    custom={index}
-                    variants={itemVariants}
-                    className='flex flex-col'
-                  >
-                    <div className={twMerge(
-                      {
-                        blue: 'bg-blue-600',
-                        indigo: 'bg-indigo-600',
-                        green: 'bg-green-600',
-                      }[item.color] || 'bg-green-600', "p-2 center w-[70px] h-[70px] rounded-full"
-                    )}>
-                      <Image
-                        src={item.images}
-                        width={400}
-                        height={400}
-                        alt={item.title}
-                        className='translate-y-1'
-                      />
-                    </div>
-                    <div className='mt-5 max-w-[350px]'>
-                      <h5 className='text-lg font-bold'>{item.title}</h5>
-                      <p className='text-2xl'>{item.text}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-              <div className='lg:flex'>
-              <div>
-                <h5 className=' text-lg lg:text-4xl font-semibold leading-normal mb-4'>
-                  Rejoignez-nous aujourd'hui pour une expérience de partenariat exceptionnelle et fructueuse !
-                </h5>
-                <button className='flex gap-2 w-[200px] items-center rounded-xl bg-black/60 text-white font-bold mt-5 px-4 py-2 text-sm shadow-sm border-2 border-green-00'>
-                  <span>Devenir partenaire</span>
-                  <FaArrowRightLong />
-                </button>
-              </div>
-              <Image
-                src={partner2}
-                width={500}
-                height={500}
-                alt="PartnerSmile"
-                objectFit="cover"
-                className="rounded-2xl shadow-xl mt-5 items-center"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      */}
+   
         <section className="md:px-16 flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full">
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
@@ -299,7 +131,10 @@ const Partner = () => {
             />
           </div>
           <div className="flex-1 w-full md:ml-5 py-8 md:px-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Conditions d'Affiliation</h2>
+           <div className='text-center'>
+           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Programme d'Affiliation</h2>
+           <p className='text-black/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
+           </div>
             <div className="flex flex-col space-y-4">
               {affiliateConditions.map((item) => (
                 <AffiliateCondition
@@ -325,13 +160,35 @@ const Partner = () => {
           </p>
         <div className='flex items-center justify-center'>
             <button className="flex gap-3 rounded-full bg-[#126e51] text-white font-bold px-6 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
-                <span>Nous rejoindre</span>
+                <span>Je me lance</span>
                 <FaArrowRightLong />
             </button>
         </div>
         </div>
       </div>
     </div>
+    <section className="bg-white py-12 px-6 md:px-12">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Deviens Partenaire Maintenant</h2>
+        <p className="text-black/80 mb-6">
+          Vous êtes une Entreprise officiellement enregistrée, et votre activité fait appel à l’usage de la cryptomonnaie :
+          <br />
+          <span className="font-semibold">Exemples :</span> Trader, Revendeur de crypto…
+        </p>
+        <p className="text-gray-600 mb-6">
+          Votre activité implique l’usage des transferts d’argent.
+        </p>
+        <p className="text-gray-600 mb-6">
+          Vous êtes investisseur.
+        </p>
+        <p className="text-gray-600 mb-6">
+          Saisissez cette opportunité en nous envoyant soigneusement votre demande de partenariat à travers ce formulaire.
+        </p>
+        <Link href="#" className="inline-block bg-[#126e51] text-white py-3 px-6 rounded-lg shadow-lg  transition">
+            Deviens Partenaire
+        </Link>
+      </div>
+     </section>
       <Footer />
       <Cookies />
     </>
