@@ -132,8 +132,8 @@ const Partner = () => {
           </div>
           <div className="flex-1 w-full md:ml-5 py-8 md:px-20">
            <div className='text-center'>
-           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Programme d'Affiliation</h2>
-           <p className='text-black/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
+           <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Programme d'Affiliation</h2>
+           <p className='text-white/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
            </div>
             <div className="flex flex-col space-y-4">
               {affiliateConditions.map((item) => (
@@ -152,15 +152,12 @@ const Partner = () => {
         <div className="py-16">
       <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
         <div className="max-w-xl">
-          <h1 className="text-4xl lg:text-5xl font-extrabold text-black leading-tight mb-6">
+          <h1 className="text-3xl lg:text-4x text-whitel font-extrabold text-white leading-tight mb-8">
             Rejoignez-nous  !
           </h1>
-          <p className="text-base lg:text-lg text-black/80 mb-8">
-            Devenez partenaire de Winichange et profitez des meilleurs taux ainsi que d'une rapidité inégalée pour vos transactions. Rejoignez notre réseau de partenaires de confiance dès aujourd'hui.
-          </p>
         <div className='flex items-center justify-center'>
-            <button className="flex gap-3 rounded-full bg-[#126e51] text-white font-bold px-6 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
-                <span>Je me lance</span>
+            <button className="flex gap-3 rounded-full bg-white text-[#126e51] font-bold px-8 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
+                <span>Go </span>
                 <FaArrowRightLong />
             </button>
         </div>
@@ -169,7 +166,7 @@ const Partner = () => {
     </div>
     <section className="bg-white py-12 px-6 md:px-12">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Deviens Partenaire Maintenant</h2>
+        <h2 className="text-[#126e51] text-3xl md:text-4xl font-bold mb-8">Deviens Partenaire Maintenant</h2>
         <p className="text-black/80 mb-6">
           Vous êtes une Entreprise officiellement enregistrée, et votre activité fait appel à l’usage de la cryptomonnaie :
           <br />
@@ -184,7 +181,7 @@ const Partner = () => {
         <p className="text-gray-600 mb-6">
           Saisissez cette opportunité en nous envoyant soigneusement votre demande de partenariat à travers ce formulaire.
         </p>
-        <Link href="#" className="inline-block bg-[#126e51] text-white py-3 px-6 rounded-lg shadow-lg  transition">
+        <Link href="#" className="inline-block bg-[#126e51] hover:bg-[#126e51f2] text-white py-3 px-6 rounded-lg shadow-lg  transition">
             Deviens Partenaire
         </Link>
       </div>
