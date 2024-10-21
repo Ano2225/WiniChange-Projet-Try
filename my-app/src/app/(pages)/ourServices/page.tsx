@@ -10,9 +10,7 @@ import sendMoney from "@/app/assets/ph2.webp";
 import Send from "@/app/assets/Send.png";
 import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
-import CallToAction from '@/app/components/CallToAction';
 import { FaArrowRightLong } from 'react-icons/fa6';
-
 
 const OurService = () => {
   const containerVariants = {
@@ -40,16 +38,18 @@ const OurService = () => {
     {
       id: "1",
       image: exchange,
-      text: "Découvrez une plateforme intuitive pour acheter et vendre des cryptomonnaies avec facilité.",
+      text: "Nous simplifions vos achats et ventes de cryptomonnaies et de monnaies électroniques avec divers moyens de paiement.",
       specialText: "officiellement enregistrée.",
       color: "blue",
+      title: "Achat et vente",
     },
     {
       id: "2",
       image: binance,
-      text: "Accédez à Binance directement depuis notre plateforme pour des transactions simplifiées.",
+      text: "Ce service vous permet de recharger instantanément votre wallet Binance depuis notre plateforme avec divers moyens de paiement.",
       specialText: "Par exemple : trader ou revendeur de crypto-monnaies.",
       color: "indigo",
+      title:"Binance Direct"
     },
   ];
 
@@ -57,14 +57,16 @@ const OurService = () => {
     {
       id: "3",
       image: sendMoney,
-      text: "Envoyez de l'argent à vos proches rapidement et en toute sécurité.",
+      text: "Ce service vous permet de transférer de l'argent entre différents moyens de paiement, y compris à l'international, via notre plateforme et ses multiples options de paiement.",
       color: "green",
+      title: "Transfert d'argent",
     },
     {
       id: "4",
       image: Send,
-      text: "Achetez facilement des crédits de communication pour rester connecté.",
+      text: "Ce service vous permet d'acheter du crédit de communication de la manière la plus simple, via notre plateforme et ses multiples moyens de paiement.",
       color: "blue",
+      title: "Achat de crédit d'appel"
     },
   ];
   
@@ -76,9 +78,10 @@ const OurService = () => {
       <div className='pt-10 md:py-16 h-full w-full min-h-48'>
         <div className='container mx-auto px-5 lg:px-20 py-0 flex flex-col items-center gap-20'>
           <div className='flex flex-col items-center'>
-            <h1 className='font-bold text-4xl md:text-5xl text-white'>Tous nos services</h1>
+            <h1 className='font-bold text-4xl md:text-5xl text-white'>Nos services</h1>
+            <p className='max-w-xl text-center text-white/80 mt-10'>Chaque jour, nous travaillons pour vous garantir la meilleure expérience possible et répondre au mieux à vos besoins.</p>
             <div className='my-8'>
-              <div className='flex flex-col gap-10 lg:flex-row items-center'>
+              <div className='flex justify-center flex-col gap-10 lg:flex-row items-center'>
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
@@ -96,17 +99,20 @@ const OurService = () => {
                           indigo: 'bg-indigo-300',
                           green: 'bg-green-300',
                         }[item.color] || 'bg-gray-300',
-                        'p-2 rounded-lg mt-5 max-w-[350px]'
+                        'p-2 rounded-lg mt-5 max-w-[450px]'
                       )}
                     >
                       <motion.div variants={imageVariants}>
+                     <div className='flex items-center gap-4'>
                         <Image
-                          src={item.image}
-                          width={400}
-                          height={400}
-                          alt="PartnerSmile"
-                          className='max-w-[70px] mb-5 rounded-2xl'
-                        />
+                            src={item.image}
+                            width={400}
+                            height={400}
+                            alt="PartnerSmile"
+                            className='max-w-[70px] mb-5 rounded-2xl'
+                          />
+                          <span className='text-black font-bold text-xl'>{item.title}</span>
+                     </div>
                       </motion.div>
                       <p className='ml-5'>
                         {item.text} <span className='text-black'>{item.specialText}</span>
@@ -131,18 +137,21 @@ const OurService = () => {
                           blue: 'bg-blue-300',
                           indigo: 'bg-indigo-300',
                           green: 'bg-green-300',
-                        }[item.color] || 'bg-gray-00',
-                        'p-2 rounded-lg mt-5 max-w-[350px]'
+                        }[item.color] || 'bg-gray-300',
+                        'p-2 rounded-lg mt-5 max-w-[450px]'
                       )}
                     >
                       <motion.div variants={imageVariants}>
+                      <div className='flex items-center gap-4'>
                         <Image
-                          src={item.image}
-                          width={400}
-                          height={400}
-                          alt="PartnerSmile"
-                          className='max-w-[70px] mb-5 rounded-2xl'
-                        />
+                            src={item.image}
+                            width={400}
+                            height={400}
+                            alt="PartnerSmile"
+                            className='max-w-[70px] mb-5 rounded-2xl'
+                          />
+                          <span className='text-black font-bold text-xl'>{item.title}</span>
+                     </div>
                       </motion.div>
                       <p className='ml-5'>
                         {item.text}
@@ -151,22 +160,31 @@ const OurService = () => {
                   ))}
                 </motion.div>
               </div>
-              <div className='py-10'>
-              <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
-              <div className="max-w-xl">
-                <h1 className="text-white text-3xl lg:text-4xl font-extrabold  leading-tight my-10">
-                  Rejoignez-nous dès aujourd'hui !
-                </h1>
-                <p className="text-base lg:text-lg text-white/80 mb-8">
-                  Profitez des meilleurs taux et d'une rapidité inégalée pour vos transactions. 
-                  </p>
-              <div className='flex items-center justify-center'>
-                  <button className="flex gap-3 rounded-full bg-white text-[#126e51] font-bold px-6 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
-                      <span>Je m'inscris</span>
-                      <FaArrowRightLong />
-                  </button>
-              </div>
-              </div>
+              <div className='py-10 mt-4 lg:mt-10'>
+              <div className="container  mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8 lg:flex-row-reverse">
+                <div className="max-w-xl">
+                  <h1 className="text-white text-3xl lg:text-4xl font-extrabold  leading-tight my-10">
+                    Rejoignez-nous dès aujourd'hui !
+                  </h1>
+                  <p className="text-base lg:text-lg text-white/80 mb-8">
+                    Profitez des meilleurs taux et d'une rapidité inégalée pour vos transactions. 
+                    </p>
+                  <div className='flex items-center justify-center'>
+                      <button className="flex gap-3 rounded-full bg-white text-[#126e51] font-bold px-6 py-3 text-sm lg:text-base shadow-lg hover:bg-[#0e5741] transition duration-300 ease-in-out transform hover:scale-105">
+                          <span>Je m'inscris</span>
+                          <FaArrowRightLong />
+                      </button>
+                  </div>
+                 </div>
+                 <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center mx-4">
+                  <Image
+                    src="/images/black-men.jpg"
+                    alt="Join Us"
+                    width={500}
+                    height={500}
+                    className="rounded-2xl shadow-xl"
+                  />
+                </div>
             </div>
               </div>
             </div>
