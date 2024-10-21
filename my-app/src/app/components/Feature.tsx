@@ -37,7 +37,7 @@ export const Feature = ({ title, description, icon: Icon }: { title: string; des
 
     return (
         <div key={title} 
-            className="border border-[#126e51] text-center rounded-2xl sm:flex-1 relative overflow-hidden bg-gray-800"
+            className="border max-w-[19rem] items-center border-[#126e51] text-center rounded-2xl sm:flex-1 relative overflow-hidden bg-gray-800"
         >
             <motion.div
                 className="absolute inset-0 border-4 border-white rounded-lg"
@@ -49,7 +49,7 @@ export const Feature = ({ title, description, icon: Icon }: { title: string; des
             >
             </motion.div>
             <div className="bg-[#126e51] flex justify-center items-center py-8 md:py-12 rounded-b-3xl">
-                <div className="relative h-28 w-24 rounded-full">
+                <div className="relative h-24 w-20 rounded-full">
                     <Image 
                         src={Icon.src} 
                         alt={title} 
@@ -59,7 +59,7 @@ export const Feature = ({ title, description, icon: Icon }: { title: string; des
                     />
                 </div>
             </div>
-            <div className="bg-gray-800 p-6 rounded-b-2xl">
+            <div className="bg-gray-800 p-5 rounded-b-2xl">
                 <h3 className="text-lg font-bold text-white">{title}</h3>
                 <div className="max-w-xl mx-auto text-sm">
                     <p className="mt-2 text-white/70">{description}</p>

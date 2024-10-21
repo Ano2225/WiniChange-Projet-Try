@@ -6,17 +6,17 @@ import Vitesse from '@/app/assets/Features/vitesse.webp'
 export const features = [
     {
         title: 'Frais compétitifs',
-        description: "Bénéficiez des taux parmi les plus bas du marché pour vos transferts d'argent, sans frais cachés",
+        description: "Profitez des taux les plus bas du marché pour vos transactions, sans frais cachés",
         icon: FraisCompetif
     },
     {
         title: 'Interopérabilité mondiale',
-        description: "Reliez vos cryptomonnaies aux services bancaires et de mobile money partout dans le monde, facilement et rapidement",
+        description: "Profitez d'une expérience d'interopérabilité inégalée pour chaque transaction, de manière simple et rapide",
         icon: Interoperabilite
     },
     {
         title: 'Vitesse de transaction ultra rapide',
-        description: "Profitez de transferts d'argent quasi instantanés, où que vous soyez",
+        description: "Notre système automatisé garantit un service rapide et efficace",
         icon: Vitesse
     },
     {

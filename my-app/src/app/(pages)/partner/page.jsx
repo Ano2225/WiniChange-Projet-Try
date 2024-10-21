@@ -81,7 +81,7 @@ const Partner = () => {
         </div>
       </div>
     </div>
-    <section className="bg-gradient-to-b from-white via-white to-[#126e5145]  rounded-t-[5rem] py-12 px-6 md:px-12">
+    <section className="bg-white rounded-t-[5rem] py-12 px-6 md:px-12">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-[#126e51] text-3xl md:text-4xl font-bold mb-8">Deviens Partenaire Maintenant</h2>
         <p className="text-black/80 mb-6">
@@ -103,7 +103,7 @@ const Partner = () => {
         </Link>
       </div>
      </section>
-      <Footer />
+      <Footer color="bg-white"/>
       <Cookies />
     </>
   )

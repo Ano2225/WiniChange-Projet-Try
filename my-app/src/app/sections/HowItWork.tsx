@@ -8,19 +8,19 @@ const steps = [
   {
     id: 1,
     title: 'Étape 1: Créez un Compte',
-    description: 'Commencez par créer votre compte en quelques clics. C’est rapide et facile.',
+    description: "Commencez par créer votre compte en quelques clics. C'est simple et rapide.",
     image: '/images/mockupIphone.png',
   },
   {
     id: 2,
-    title: 'Étape 2: Choisissez un Service',
-    description: 'Choisissez le service qui vous convient parmi nos nombreuses options.',
+    title: 'Étape 2: Vérification',
+    description: "Vérifiez votre compte en moins de 24 heures en soumettant votre carte d'identité, votre passeport ou d'autres documents requis.",
     image: '/images/mockup2.png', 
   },
   {
     id: 3,
-    title: 'Étape 3: Profitez de nos Avantages',
-    description: 'Profitez de services rapides et sécurisés avec de nombreux avantages pour vous.',
+    title: "Étape 3: 1ère Transaction",
+    description:"Vous êtes prêt ! Connectez-vous et réalisez votre première transaction.",
     image: '/images/mockuuup.png',
   },
 ];
@@ -49,7 +49,7 @@ export default function HowItWorks() {
   return (
     <div className="bg-black text-white py-12">
       <div className="container mx-auto px-4">
-        <h2 className="font-bold text-center mb-16 text-3xl md:text-5xl">Comment ça marche ?</h2>
+        <h2 className="font-bold text-center mb-16 text-3xl md:text-4xl">Comment <span className='text-[#126e51]'>ça marche ?</span></h2>
 
         {/* Mobile Section */}
         <div className="md:hidden mt-10 md:mt-20 flex flex-col items-center justify-center">

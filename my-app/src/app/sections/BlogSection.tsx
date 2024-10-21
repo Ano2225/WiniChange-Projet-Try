@@ -29,21 +29,21 @@ const BlogSection = () => {
   return (
    <div className='bg-white'>
        <div className="container mx-auto py-12 px-6 lg:px-8">
-      <h2 className="text-4xl lg:text-5xl font-bold text-center mb-14">Nos derniers articles</h2>
+      <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14">Nos derniers <span className='text-[#126e51]'>articles</span></h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {articles.map((article) => (
           <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
             <Image
               src={article.image}
               alt={article.title}
-              width={400}
-              height={250}
-              className="w-full h-48 object-cover"
+              width={300}
+              height={200}
+              className="w-full h-40 object-cover"
             />
-            <div className="p-6">
+            <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
-              <p className="text-gray-700 mb-4">{article.description}</p>
-              <a href={article.link} className="text-[#126e51] hover:text-green-900 transition">
+              <p className="text-black/80 mb-4">{article.description}</p>
+              <a href={article.link} className="text-[#126e51] underline hover:text-green-900 transition">
                 Lire la suite
               </a>
             </div>

@@ -86,7 +86,7 @@ const SupportSection = () => {
         </div>
         <div className="lg:w-1/2 max-w-xl w-full flex flex-col space-y-8 lg:pl-12 text-white">
           <h2 className="text-2xl md:text-3xl font-semibold mb-10 md:mb-4">
-          Notre équipe dévouée du service client est à votre disposition 24h/7 
+          <span className='text-[#126e51]'>Notre équipe dévouée</span> du service client est à votre disposition 24h/7 
           </h2>
           {supportOptions.map((option) => (
             <a

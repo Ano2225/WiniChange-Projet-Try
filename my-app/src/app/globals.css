@@ -17,6 +17,20 @@ body {
   background-color: #126e51 !important;
 }
 
+@keyframes rotate-circle {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-circle {
+  animation: rotate-circle 80s linear infinite;
+}
+
+
 footer a {
   text-decoration: none;
 
@@ -53,79 +67,7 @@ footer a {
   );
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: 0;
-}
-.no-scrollbar {
-  -ms-overflow-style: 0;  /* IE and Edge */
-  scrollbar-width: 0;  /* Firefox */
-}
-
-}
-
-.rotate-45 {
-  @apply rotate-[45deg]
-}
-
-.rotate-90 {
-  @apply rotate-[90deg]
-}
-
-.rotate-135 {
-  @apply rotate-[135deg]
-}
-
-.rotate-180 {
-  @apply rotate-[180deg]
-}
-
-.rotate-225 {
-  @apply rotate-[225deg]
-}
-
-.rotate-270 {
-  @apply rotate-[270deg]
-}
-
-.rotate-315 {
-  @apply rotate-[315deg]
-}
-
-.rotate-360 {
-  @apply rotate-[360deg]
-}
-
-.-rotate-45 {
-  @apply rotate-[-45deg]
-}
-
-.-rotate-90 {
-  @apply rotate-[-90deg]
-}
-
-.-rotate-135 {
-  @apply rotate-[-135deg]
-}
-
-.-rotate-180 {
-  @apply rotate-[-180deg]
-}
-
-.-rotate-225 {
-  @apply rotate-[-225deg]
-}
-
-.-rotate-270 {
-  @apply rotate-[-270deg]
-}
-
-.-rotate-315 {
-  @apply rotate-[-315deg]
-}
-
-.-rotate-360 {
-  @apply rotate-[-360deg]
-}
+ }
 
 .no-scroll {
   overflow: hidden;

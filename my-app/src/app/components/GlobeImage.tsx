@@ -19,7 +19,7 @@ const GlobeImage = () => {
       }, []);
 
   return (
-    <div className="mt-12"
+    <div className="mt-12 container"
       style={{position:'relative', opacity:1, transform:'none',backgroundImage: 'url(/images/globe.png)',
         backgroundSize: 'cover', 
         backgroundPosition: 'center',}}>

@@ -5,9 +5,10 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
 
-export default function Footer() {
+export default function Footer({color}: any) {
   return (
-    <footer className='bg-gradient-to-tl from-[#126e51]  to-black pt-14 pb-2 rounded-t-[1rem] md:rounded-t-[4rem]'>
+    <footer className={`${color}`}>
+      <div className='bg-gradient-to-tl from-[#126e51]  to-black pt-14 pb-2 rounded-t-[1rem] md:rounded-t-[4rem]'>
         <div className="w-full px-2 md:container text-white rounded-lg" id="footerCustom py-14">
           <div className="flex flex-col md:flex-row justify-between p-4 flex-wrap">
             <div className="flex flex-col items-start mb-8 space-y-2">
@@ -136,6 +137,7 @@ export default function Footer() {
             © 2024 Winichange. Tous droits réservés. | <a href="#">CGU</a> - <a href="#">Politique de confidentialité</a>
           </div>
       </div>
-      </footer>
+      </div>
+    </footer>
   );
 }

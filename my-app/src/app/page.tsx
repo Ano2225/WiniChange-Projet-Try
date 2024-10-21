@@ -23,7 +23,7 @@ export default function Home() {
     <Header/>
     <Hero/>
     <LogoTickerSection/>
-     {/*<NosMoyensDePaiement/>*/}
+     <NosMoyensDePaiement/>
     <NosCrypto />
     <HowItWorks />
     <Features />
@@ -32,7 +32,7 @@ export default function Home() {
     <SupportSection/>
     {/*<Faq/>*/}
     <BlogSection/>
-    <Footer />
+    <Footer color='bg-white'/>
     <Toaster position="bottom-center" />
     <Cookies/>
    </>

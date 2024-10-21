@@ -3,13 +3,13 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 const CallToAction = () => {
   return (
-    <div className="bg-black py-16">
+    <div className="bg-black py-8">
       <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
         <div className="max-w-xl">
-          <h1 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
-            Rejoignez-nous dès aujourd'hui !
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-6">
+            <span className='text-[#126e51]'>Rejoignez-nous </span> dès aujourd'hui !
           </h1>
-          <p className="text-base lg:text-lg text-gray-200 mb-8">
+          <p className="text-base lg:text-lg text-white/80 mb-8">
             Profitez des meilleurs taux et d'une rapidité inégalée pour vos transactions. Rejoignez la communauté qui fait confiance à Winichange pour tous ses échanges financiers.
           </p>
         <div className='flex items-center justify-center'>
