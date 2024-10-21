@@ -39,13 +39,13 @@ const Cookies = () => {
               </p>
             </div>
             <button
-              className='ml-4 text-gray-300 hover:text-white'
               onClick={() => {
                 toast.dismiss(t.id);
                 setShowNotification(false);
               }}
+              className="ml-4 text-gray-400 hover:text-gray-200"
             >
-              <HiXCircle size={20} />
+              <HiXCircle className="w-6 h-6" />
             </button>
           </div>
           <div className='flex justify-end mt-4 space-x-2'>
@@ -61,6 +61,7 @@ const Cookies = () => {
             </button>
             <button
               onClick={() => {
+                handleReject();
                 toast.dismiss(t.id);
                 setShowNotification(false);
               }}
@@ -78,6 +79,11 @@ const Cookies = () => {
 
   const handleAccept = () => {
     localStorage.setItem('cookiesAccepted', 'true');
+    setShowCookie(false);
+  };
+
+  const handleReject = () => {
+    localStorage.setItem('cookiesAccepted', 'false');
     setShowCookie(false);
   };
 
