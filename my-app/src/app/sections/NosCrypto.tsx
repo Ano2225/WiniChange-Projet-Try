@@ -1,22 +1,22 @@
 'use client';
 
 const supportedCoins = [
-  { name: "Bitcoin", symbol: "BTC", logo: "/images/bitcoin.png" },
-  { name: "Bitcoin Cash", symbol: "BCH", logo: "/images/Crypto/BTC-CASH-BCH.png" },
-  { name: "Binance USD", symbol: "BUSD", logo: "/images/Crypto/BUSD.png" },
-  { name: "Ethereum", symbol: "ETH", logo: "/images/Crypto/ETH.png" },
-  { name: "Tron", symbol: "TRX", logo: "/images/Crypto/TRON.png" },
-  { name: "Litecoin", symbol: "LTC", logo: "/images/Crypto/LTC.png" },
-  { name: "Ripple", symbol: "XRP", logo: "/images/Crypto/ripple-XRP.png" },
-  { name: "Stellar", symbol: "XLM", logo: "/images/Crypto/STELLAR-XLM.png" },
-  { name: "Cardano", symbol: "ADA", logo: "/images/Crypto/CARDANO-ADA.png" },
+  { name: "Bitcoin", symbol: "BTC", logo: "/images/Cryptos/bitcoin-cryptocurrency.svg" },
+  { name: "Bitcoin Cash", symbol: "BCH", logo: "/images/Cryptos/bitcoin-cash-cryptocurrency.svg" },
+  { name: "Binance USD", symbol: "BUSD", logo: "/images/Cryptos/binance-usd-busd-logo.png" },
+  { name: "Ethereum", symbol: "ETH", logo: "/images/Cryptos/ethereum.png" },
+  { name: "Tron", symbol: "TRX", logo: "/images/Cryptos/tron-trx-logo.png" },
+  { name: "Litecoin", symbol: "LTC", logo: "/images/Cryptos/litecoin-ltc-logo.png" },
+  { name: "Ripple", symbol: "XRP", logo: "/images/Cryptos/rippleXRP.png" },
+  { name: "Stellar", symbol: "XLM", logo: "/images/Cryptos/stellar-xlm.svg" },
+  { name: "Cardano", symbol: "ADA", logo: "/images/Cryptos/cardano-ada-logo.png" },
   { name: "Polkadot", symbol: "DOT", logo: "/images/polkadot_.webp" },
-  { name: "Dogecoin", symbol: "DOGE", logo: "/images/Crypto/DOGE.png" },
-  { name: "ShibaInu", symbol: "SHIB", logo: "/images/Crypto/SHIBA-BEP20.png"},
-  { name: "Binance Coin", symbol: "BNB", logo: "/images/Crypto/BNB.png" },
-  { name: "Monero", symbol: "XMR", logo: "/images/Crypto/Monero.png" },
-  { name: "Tether", symbol: "USDT", logo: "/images/Crypto/USDTBSC.png" },
-  { name: "Solana", symbol: "SOL", logo: "/images/Crypto/SOLANA.png" },
+  { name: "Dogecoin", symbol: "DOGE", logo: "/images/Cryptos/dogecoin-1.svg" },
+  { name: "ShibaInu", symbol: "SHIB", logo: "/images/Cryptos/shiba-inu-shib-logo.png"},
+  { name: "Binance Coin", symbol: "BNB", logo: "/images/Cryptos/binanceCoin.png" },
+  { name: "Monero", symbol: "XMR", logo: "/images/Cryptos/monero-xmr-logo.png" },
+  { name: "Tether", symbol: "USDT", logo: "/images/Cryptos/tether-cryptocurrency.svg" },
+  { name: "Solana", symbol: "SOL", logo: "/images/Cryptos/solana-sol-logo.png" },
   { name: "VISA-MASTERCARD", symbol: "MSTCRD", logo: "/images/Crypto/VISAcMASTERCARD.png"},
   { name: "TTogo", symbol: "Ttogo", logo: "/images/Crypto/TTOGO.png"},
   { name: "FreeMoney", symbol: "Free", logo: "/images/Crypto/FREEMONEY.png"},
@@ -32,7 +32,7 @@ const NosCrypto = () => {
         <div className="relative flex flex-col h-full min-h-fit">
           <div className="hidden lg:flex lg:flex-col lg:space-y-10 justify-center container">
             <div className="lg:flex lg:space-x-24 justify-center container">
-              {supportedCoins.slice(1,6).map((coin) => (
+              {supportedCoins.slice(0,6).map((coin) => (
                 <div key={coin.symbol} className="flex items-center space-x-2">
                   <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                   <div>
