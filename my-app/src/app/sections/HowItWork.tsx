@@ -95,7 +95,7 @@ export default function HowItWorks() {
             {steps.map((step) => (
               <motion.div
                 key={step.id}
-                className={`p-6 bg-[#126e51] shadow-md rounded-lg cursor-pointer transition-all duration-300 ${
+                className={`p-6 bg-yellow-500 shadow-md rounded-lg cursor-pointer transition-all duration-300 ${
                   selectedStep === step.id ? 'border-l-4 border-red-700' : ''
                 }`}
                 onClick={() => setSelectedStep(step.id)}

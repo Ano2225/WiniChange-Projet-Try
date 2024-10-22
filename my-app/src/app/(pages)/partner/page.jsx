@@ -35,7 +35,7 @@ const Partner = () => {
   return (
     <>
       <Header />
-        <section className="md:px-16 flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full">
+        <section className="md:px-16 flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full bg-[#126e51]">
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
               src={partner2}

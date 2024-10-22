@@ -92,7 +92,7 @@ const SupportSection = () => {
             <a
               key={option.title}
               href={option.link}
-              className="flex items-center p-4 bg-[#126e51] text-white rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
+              className="flex items-center p-4 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
             >
               <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-white rounded-full">
                 <option.icon className="h-6 w-6 text-[#126e51]" aria-hidden="true" />
