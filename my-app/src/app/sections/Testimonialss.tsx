@@ -21,7 +21,7 @@ const Testimonials = () => {
             className={`relative p-5 md:p-6 rounded-3xl shadow-lg border-2 bg-gray-200 mb-14 ${index % 2 ===0 ? 'md:mt-10': 'md:mb-16'}`}
 
             style={{
-              borderColor: testimonial.color,
+              borderColor: "black",
             }}
           >
             <div className="flex items-center mb-4">
@@ -38,17 +38,17 @@ const Testimonials = () => {
             <div className="mb-4">
               <h6
                 className="text-sm md:text-lg font-medium"
-                style={{ color: testimonial.color }}
+                style={{ color: "black" , opacity: "0.8"}}
               >
                 {testimonial.testimonial}
               </h6>
             </div>
             <div className="text-[12px] md:text-sm flex">
-              <p className="font-bold" style={{ color: testimonial.color }}>
+              <p className="font-bold" style={{ color: '#126e51' }}>
                 {testimonial.name}
               </p>
               <span className="mx-1 text-black">•</span>
-              <p className="font-bold" style={{ color: testimonial.color }}>
+              <p className="font-bold" style={{ color: "black" }}>
                 {testimonial.location}
               </p>
             </div>
