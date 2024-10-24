@@ -76,7 +76,7 @@ const OurService = () => {
           <Header />    
           <div className=' min-h-48 py-28 text-white'>
            <div className='container lg:flex items-center justify-center'>
-             <div>
+             <div className='max-w-xl'>
               <h1 className='text-[#126e51] bg-white p-2 w-fit font-bold mb-5 text-4xl'>Nos services</h1>
                <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
                     Découvrez Tous Nos Services Exclusifs
@@ -84,30 +84,29 @@ const OurService = () => {
                <p>Chaque jour, nous mettons tout en œuvre pour vous offrir une expérience unique et répondre précisément à vos besoins. Profitez de nos services adaptés à vos attentes !</p>
              </div>
              <div className='mr-5'>
-                <CircleTrans />
+             <Image
+                  src="/images/shot.jpg"
+                    width={400}
+                    height={400}
+                    alt="PartnerSmile"
+                    className='max-w-[400px] rounded-2xl shadow-xl mt-5 items-center'
+                       /> 
              </div>
            </div>
        </div>
-       <div className='pt-10 md:py-24 h-full w-full'>
-         <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col items-center gap-20'>
+       <div className='md:py-4 h-full w-full'>
+         <div className='container mx-auto px-5 lg:px-20 pb-16 flex flex-col items-center gap-20'>
              <div className='flex flex-col items-center align-center'>
-                 <h1 className='font-bold text-xl md:text-3xl text-white'>Tous nos services</h1>              
-                 <div className='mt-10'>
+                 <div className='mt-4'>
                  <div className='flex flex-col gap-10 lg:flex-row items-center'>
                      <motion.div
                        initial="hidden"
                        whileInView="visible"
                        viewport={{ once: true, amount: 0.2 }}
                        variants={imageVariants}
-                       className="md:order-first"  // Classe pour changer l'ordre
+                       className="md:order-first" 
                      >
-                       {/* <Image
-                         src={crypPart}
-                         width={400}
-                         height={400}
-                         alt="PartnerSmile"
-                         className='max-w-[400px] rounded-2xl shadow-xl mt-5 items-center'
-                       /> */}
+                      
                      </motion.div>
                      <motion.div
                        initial="hidden"
@@ -127,7 +126,7 @@ const OurService = () => {
                                  indigo: 'bg-indigo-300',
                                  green: 'bg-green-300',
                                }[items.color] || 'bg-gray-300',
-                               'p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-yellow-500 duration-300 cursor-pointer'
+                               'p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer'
                              )}
                            >
                                <Image
@@ -162,7 +161,7 @@ const OurService = () => {
                                  indigo: 'bg-indigo-300',
                                  green: 'bg-green-300',
                                }[items.color] || 'bg-gray-300',
-                               'p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-yellow-500 duration-300 cursor-pointer'
+                               'p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer'
                              )}
                            >
                                <Image
