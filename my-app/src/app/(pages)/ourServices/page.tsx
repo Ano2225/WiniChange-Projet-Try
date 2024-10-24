@@ -76,22 +76,24 @@ const OurService = () => {
           <Header />    
           <div className=' min-h-48 py-28 text-white'>
            <div className='container lg:flex items-center justify-center'>
-             <div className='max-w-xl'>
-              <h1 className='text-[#126e51] bg-white p-2 w-fit font-bold mb-5 text-4xl'>Nos services</h1>
-               <h1 className='text-3xl lg:text-4xl font-semibold mb-4'>
-                    Découvrez Tous Nos Services Exclusifs
-                </h1>
-               <p>Chaque jour, nous mettons tout en œuvre pour vous offrir une expérience unique et répondre précisément à vos besoins. Profitez de nos services adaptés à vos attentes !</p>
-             </div>
-             <div className='mr-5'>
-             <Image
-                  src="/images/shot.jpg"
-                    width={400}
-                    height={400}
-                    alt="PartnerSmile"
-                    className='max-w-[400px] rounded-2xl shadow-xl mt-5 items-center'
-                       /> 
-             </div>
+           <div className="max-w-xl mb-8 lg:mb-0 lg:mr-8">
+      <h1 className="text-[#126e51] bg-white p-2 w-fit font-bold mb-5 text-4xl">Nos services</h1>
+      <h1 className="text-3xl lg:text-4xl font-semibold mb-4">
+        Découvrez Tous Nos Services Exclusifs
+      </h1>
+      <p className="text-base lg:text-lg">
+        Chaque jour, nous mettons tout en œuvre pour vous offrir une expérience unique et répondre précisément à vos besoins. Profitez de nos services adaptés à vos attentes !
+      </p>
+    </div>
+    <div className="w-full lg:w-auto flex justify-center lg:justify-end">
+      <Image
+        src="/images/shot.jpg"
+        width={400}
+        height={400}
+        alt="PartnerSmile"
+        className="max-w-full lg:max-w-[400px] rounded-2xl shadow-xl mt-5 lg:mt-0"
+      />
+    </div>
            </div>
        </div>
        <div className='md:py-4 h-full w-full'>
