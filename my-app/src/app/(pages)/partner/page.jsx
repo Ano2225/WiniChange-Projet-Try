@@ -68,12 +68,12 @@ const Partner = () => {
         <div className="py-16">
       <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
         <div className="max-w-xl">
-        <h1 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-8">
+        <h1 className="text-3xl lg:text-4xl font-extrabold text-[#126e51] leading-tight mb-8">
           Devenez notre partenaire dès aujourd'hui !
         </h1>
-          <p className='text-white/80 mb-4'>Gagnez de l'argent en promouvant nos services tout en profitant des meilleurs taux et d'une rapidité inégalée. Rejoignez dès maintenant notre réseau de confiance.</p>
+          <p className='text-black mb-4'>Gagnez de l'argent en promouvant nos services tout en profitant des meilleurs taux et d'une rapidité inégalée. Rejoignez dès maintenant notre réseau de confiance.</p>
         <div className='flex items-center justify-center'>
-            <button className="flex gap-3 rounded-full bg-white text-[#126e51] font-bold px-8 py-3 text-sm lg:text-base shadow-lg hover:bg-white/80 transition duration-300 ease-in-out transform hover:scale-105">
+            <button className="flex items-center gap-3 rounded-full bg-[#126e51] text-white font-bold px-8 py-3 text-sm lg:text-base shadow-lg hover:bg-green-800 transition duration-300 ease-in-out transform hover:scale-105">
                 <span>Go </span>
                 <FaArrowRightLong />
             </button>

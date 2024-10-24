@@ -16,8 +16,8 @@ const MoyensDePaiement = () => {
               <h3 className="text-2xl md:text-3xl text-white font-bold mb-4 md:mb-8 bg-clip-text text-transparent">
                 Plus de <span className="font-bold text-[#126e51]">40 Moyens de paiement</span>
               </h3>
-              <p className="text-base md:text-lg text-center md:text-start font-medium mb-4 text-white/80 leading-relaxed">
-              Transférez de l'argent et échangez des cryptomonnaies à des taux avantageux avec plus de 40 moyens de paiement :
+              <p className="text-base md:text-lg md:text-start font-medium mb-4 text-white/80 leading-relaxed">
+              Transférez de l'argent et échangez des cryptomonnaies à des taux avantageux avec plus de 40 moyens de paiement:
                 <span className="ml-2 font-bold">MTN, MOOV, Orange, Airtel, Tmoney, Wave, Safaricom, et plus.</span>
               </p>
             </div>
