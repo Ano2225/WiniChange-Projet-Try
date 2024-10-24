@@ -15,7 +15,7 @@ import gabonLogo from '@/app/assets/svgFlag/Flag_of_Gabon.svg';
 import maliLogo from '@/app/assets/svgFlag/Flag_of_Mali.svg';
 import kenyaLogo from '@/app/assets/svgFlag/Flag_of_Kenya.svg';
 import guineeLogo from '@/app/assets/svgFlag/Flag_of_Guinea.svg';
-import rdcLogo from '@/app/assets/svgFlag/Flag_of_the_Democratic_Republic_of_the_Congo.svg';
+import nigeriaLogo from '@/app/assets/svgFlag/Flag_of_Nigeria.svg';
 
 export const LogoTickerSection = () => {
 
@@ -31,7 +31,7 @@ export const LogoTickerSection = () => {
     { src: maliLogo, alt: 'Mali', description: 'Mali' },
     { src: kenyaLogo, alt: 'Kenya', description: 'Kenya' }, 
     { src: guineeLogo, alt: 'Guinee', description: 'Guinee' }, 
-    { src: rdcLogo, alt: 'RDC', description: 'RDC' }, 
+    { src: nigeriaLogo, alt: 'Nigeria', description: 'Nigeria' }, 
   ];
 
   const [paused, setPaused] = useState(false);

@@ -17,9 +17,6 @@ const supportedCoins = [
   { name: "Monero", symbol: "XMR", logo: "/images/Cryptos/monero-xmr-logo.png" },
   { name: "Tether", symbol: "USDT", logo: "/images/Cryptos/tether-cryptocurrency.svg" },
   { name: "Solana", symbol: "SOL", logo: "/images/Cryptos/solana-sol-logo.png" },
-  { name: "VISA-MASTERCARD", symbol: "MSTCRD", logo: "/images/Crypto/VISAcMASTERCARD.png"},
-  { name: "TTogo", symbol: "Ttogo", logo: "/images/Crypto/TTOGO.png"},
-  { name: "FreeMoney", symbol: "Free", logo: "/images/Crypto/FREEMONEY.png"},
 ];
 
 const NosCrypto = () => {
@@ -32,7 +29,7 @@ const NosCrypto = () => {
         <div className="relative flex flex-col h-full min-h-fit">
           <div className="hidden lg:flex lg:flex-col lg:space-y-10 justify-center container">
             <div className="lg:flex lg:space-x-24 justify-center container">
-              {supportedCoins.slice(0,6).map((coin) => (
+              {supportedCoins.slice(0,5).map((coin) => (
                 <div key={coin.symbol} className="flex items-center space-x-2">
                   <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                   <div>
@@ -43,7 +40,7 @@ const NosCrypto = () => {
               ))}
             </div>
             <div className="lg:flex lg:space-x-24 justify-center container">
-              {supportedCoins.slice(6,13).map((coin) => (
+              {supportedCoins.slice(5,10).map((coin) => (
                 <div key={coin.symbol} className="flex items-center space-x-2">
                   <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                   <div>
@@ -54,7 +51,7 @@ const NosCrypto = () => {
               ))}
             </div>
             <div className="lg:flex lg:space-x-24 justify-center container">
-              {supportedCoins.slice(13,19).map((coin) => (
+              {supportedCoins.slice(10,16).map((coin) => (
                 <div key={coin.symbol} className="flex items-center space-x-2">
                   <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                   <div>
@@ -66,7 +63,7 @@ const NosCrypto = () => {
             </div>
           </div>
           <div className="flex space-x-16 animate-scroll-left lg:hidden">
-            {supportedCoins.slice(0,6).map((coin) => (
+            {supportedCoins.slice(0,5).map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                 <div>
@@ -77,7 +74,7 @@ const NosCrypto = () => {
             ))}
           </div>
           <div className="flex space-x-16 animate-scroll-right lg:hidden absolute top-24 left-0">
-            {supportedCoins.slice(6,12).map((coin) => (
+            {supportedCoins.slice(5,10).map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                 <div>
@@ -88,7 +85,7 @@ const NosCrypto = () => {
             ))}
           </div>
           <div className="flex space-x-16 animate-scroll-left lg:hidden absolute top-40 left-0">
-            {supportedCoins.slice(12,19).map((coin) => (
+            {supportedCoins.slice(10,16).map((coin) => (
               <div key={coin.symbol} className="flex items-center space-x-2">
                 <img src={coin.logo} alt={`${coin.name} logo`} className="w-12 h-12 rounded-full" />
                 <div>

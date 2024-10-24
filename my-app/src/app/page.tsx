@@ -31,7 +31,6 @@ export default function Home() {
     <CallToAction />
     <SupportSection/>
     {/*<Faq/>*/}
-    <BlogSection/>
     <Footer color='bg-white'/>
     <Toaster position="bottom-center" />
     <Cookies/>

@@ -66,7 +66,7 @@ export default function HowItWorks() {
             )}
           </div>
           <motion.div
-            className="p-4 bg-[#126e51] w-full max-w-md rounded-lg shadow-md cursor-pointer"
+            className="p-4 bg-yellow-500 w-full max-w-md rounded-lg shadow-md cursor-pointer"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={(e, { offset }) => {
@@ -95,7 +95,7 @@ export default function HowItWorks() {
             {steps.map((step) => (
               <motion.div
                 key={step.id}
-                className={`p-6 bg-yellow-500 text-black shadow-md rounded-lg cursor-pointer transition-all duration-300 ${
+                className={`p-6 bg-yellow-500 text-white shadow-md rounded-lg cursor-pointer transition-all duration-300 ${
                   selectedStep === step.id ? 'border-l-4 border-red-700' : ''
                 }`}
                 onClick={() => setSelectedStep(step.id)}
@@ -123,7 +123,7 @@ export default function HowItWorks() {
                 alt={selectedContent.title}
                 width={200}
                 height={100}
-                className="mb-4 ralative z-20"
+                className="mb-4 relative z-20"
               />
             )}
           </motion.div>
