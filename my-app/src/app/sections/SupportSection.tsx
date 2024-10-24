@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { FaRegQuestionCircle, FaComments, FaCircle } from 'react-icons/fa';
 import support from '@/app/assets/support/SVG/support.svg';
+import { twMerge } from 'tailwind-merge';
 import { useEffect, useState } from 'react';
 
 const SupportSection = () => {
@@ -39,12 +40,18 @@ const SupportSection = () => {
       description: 'Trouvez des réponses rapides à vos questions les plus courantes.',
       icon: FaRegQuestionCircle,
       link: '/faq',
+      color:"yellow",
+      iconColor:"white",
+      circleColor:"green",
     },
     {
       title: 'Contactez le Support',
       description: 'Notre équipe est prête à vous aider pour toute question spécifique.',
       icon: FaComments,
       link: '/contact',
+      color:"green",
+      iconColor:"green",
+      circleColor:"yellow,"
     },
   ];
 
@@ -92,10 +99,30 @@ const SupportSection = () => {
             <a
               key={option.title}
               href={option.link}
-              className="flex items-center p-4 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
+              className={twMerge(
+                {
+                  yellow: 'bg-yellow-500',
+                  green: 'bg-[#106047]',
+                }[option.color] || 'bg-[#106047]',
+                'flex items-center p-4 text-white rounded-lg shadow-md transition-colors duration-300 cursor-pointer'
+              )}
+              // className="flex items-center p-4 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
             >
-              <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-white rounded-full">
-                <option.icon className="h-6 w-6 text-[#126e51]" aria-hidden="true" />
+              {/* <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-[#106047] rounded-full"> */}
+              <div className={twMerge(
+                {
+                  yellow: 'bg-yellow-500',
+                  green: 'bg-[#106047]',
+                }[option.circleColor] || 'bg-yellow-500',
+                'flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full'
+              )}>
+                <option.icon className=
+                {twMerge(
+                  {
+                    white: 'text-white',
+                    green: 'text-[#106047]',
+                  }[option.iconColor] || 'text-white',
+                  'h-6 w-6')}aria-hidden="true" />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-semibold">{option.title}</h3>
