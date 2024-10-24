@@ -13,7 +13,7 @@ const MoyensDePaiement = () => {
         <div className="flex flex-col md:flex-row items-center justify-center md:p-8">
           <div className="w-full md:w-1/2 flex items-center justify-center md:mb-0">
             <div className="text-start">
-              <h3 className="text-3xl md:text-3xl text-white font-bold mb-4 md:mb-8 bg-clip-text text-transparent">
+              <h3 className="text-2xl md:text-3xl text-white font-bold mb-4 md:mb-8 bg-clip-text text-transparent">
                 Plus de <span className="font-bold text-[#126e51]">40 Moyens de paiement</span>
               </h3>
               <p className="text-base md:text-lg text-center md:text-start font-medium mb-4 text-white/80 leading-relaxed">

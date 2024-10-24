@@ -43,7 +43,7 @@ const MobileTestimonialsComponent = () => {
             className={`relative p-5 md:p-6 rounded-3xl shadow-lg border-2 bg-gray-200 my-12`}
 
             style={{
-              borderColor: testimonial.color,
+              borderColor: 'black',
             }}
           >
             <div className="flex items-center mb-4">
@@ -60,17 +60,17 @@ const MobileTestimonialsComponent = () => {
             <div className="mb-4">
               <h6
                 className="text-sm font-medium"
-                style={{ color: testimonial.color }}
+                style={{ color: "black" }}
               >
                 {testimonial.testimonial}
               </h6>
             </div>
             <div className="text-[12px] flex">
-              <p className="font-bold" style={{ color: testimonial.color }}>
+              <p className="font-bold" style={{ color: '#126e51' }}>
                 {testimonial.name}
               </p>
               <span className="mx-1 text-black">•</span>
-              <p className="font-bold" style={{ color: testimonial.color }}>
+              <p className="font-bold" style={{ color: 'black' }}>
                 {testimonial.location}
               </p>
             </div>
