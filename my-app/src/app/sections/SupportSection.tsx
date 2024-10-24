@@ -99,33 +99,13 @@ const SupportSection = () => {
             <a
               key={option.title}
               href={option.link}
-              className={twMerge(
-                {
-                  yellow: 'bg-yellow-500',
-                  green: 'bg-[#106047]',
-                }[option.color] || 'bg-[#106047]',
-                'flex items-center p-4 text-white rounded-lg shadow-md transition-colors duration-300 cursor-pointer'
-              )}
-              // className="flex items-center p-4 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-[#106047] transition-colors duration-300"
+              className="flex items-center p-6 bg-yellow-500 text-white rounded-lg shadow-md"
             >
-              {/* <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-[#106047] rounded-full"> */}
-              <div className={twMerge(
-                {
-                  yellow: 'bg-yellow-500',
-                  green: 'bg-[#106047]',
-                }[option.circleColor] || 'bg-yellow-500',
-                'flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full'
-              )}>
-                <option.icon className=
-                {twMerge(
-                  {
-                    white: 'text-white',
-                    green: 'text-[#106047]',
-                  }[option.iconColor] || 'text-white',
-                  'h-6 w-6')}aria-hidden="true" />
+              <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-black rounded-full">
+                <option.icon className="h-6 w-6 " aria-hidden="true" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-semibold">{option.title}</h3>
+                <h3 className="text-lg  text-black font-semibold">{option.title}</h3>
                 <p className="mt-1 text-sm text-black/80">{option.description}</p>
               </div>
             </a>
