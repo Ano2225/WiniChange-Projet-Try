@@ -36,13 +36,14 @@ const SupportSection = () => {
 
   const supportOptions = [
     {
-      title: 'FAQ',
+      title: 'Questions Fréquentes',
       description: 'Trouvez des réponses rapides à vos questions les plus courantes.',
       icon: FaRegQuestionCircle,
       link: '/faq',
       color:"yellow",
       iconColor:"white",
       circleColor:"green",
+      textColor:"green"
     },
     {
       title: 'Contactez le Support',
@@ -50,8 +51,9 @@ const SupportSection = () => {
       icon: FaComments,
       link: '/contact',
       color:"green",
-      iconColor:"green",
-      circleColor:"yellow,"
+      iconColor:"white",
+      circleColor:"yellow",
+      textColor:"yellow"
     },
   ];
 
@@ -99,13 +101,34 @@ const SupportSection = () => {
             <a
               key={option.title}
               href={option.link}
-              className="flex items-center p-6 bg-yellow-500 text-white rounded-lg shadow-md"
+              className={twMerge(
+                {
+                  yellow: 'bg-yellow-500',
+                  green: 'bg-green-700',
+                }[option.color] || 'text-gray-300',
+                'flex items-center p-6 text-white rounded-lg shadow-md'
+              )}
             >
-              <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 bg-black rounded-full">
+              <div className={twMerge(
+                    {
+                      yellow: 'bg-yellow-500',
+                      green: 'bg-green-700',
+                    }[option.circleColor] || 'bg-gray-300',
+                    'flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full'
+                  )}
+              >
                 <option.icon className="h-6 w-6 " aria-hidden="true" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg  text-black font-semibold">{option.title}</h3>
+                {/* <h3 className="text-lg text-[#126e51]  font-semibold">{option.title}</h3> */}
+                <h3 className={twMerge(
+                    {
+                      yellow: 'text-yellow-500',
+                      green: 'text-green-700',
+                    }[option.textColor] || 'text-gray-300',
+                    'text-lg font-semibold'
+                  )} 
+                >{option.title}</h3>
                 <p className="mt-1 text-sm text-black/80">{option.description}</p>
               </div>
             </a>

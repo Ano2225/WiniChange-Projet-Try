@@ -82,8 +82,8 @@ export default function HowItWorks() {
                 key={step.id}
                 className={`transition-opacity duration-300 ${selectedStep === step.id ? 'block' : 'hidden'}`}
               >
-                <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-white/70 text-sm">{step.description}</p>
+                <h3 className="text-2xl text-[#126e51] font-semibold mb-2">{step.title}</h3>
+                <p className="text-black text-sm">{step.description}</p>
               </div>
             ))}
           </motion.div>
@@ -100,8 +100,8 @@ export default function HowItWorks() {
                 }`}
                 onClick={() => setSelectedStep(step.id)}
               >
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-black/70 text-sm">{step.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-[#126e51] ">{step.title}</h3>
+                <p className="text-black text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
