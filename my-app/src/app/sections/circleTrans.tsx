@@ -8,8 +8,8 @@ import { RightCurve } from './Design/Collaboration';
 
 function CircleTrans() {
     return (
-        <div className="lg:ml-auto xl:w-[38rem] mt-20">
-            <div className="relative left-1/2 flex w-[22rem] sm:w-[18rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100 mt-14 md:mt-0">
+        <div className="lg:ml-auto xl:w-[38rem] my-12">
+            <div className="relative left-1/2 flex w-[22rem] sm:w-[18rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100 md:mt-0">
                 <div className="flex w-60 aspect-square m-auto border border-green-700 rounded-full">
                     <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-white rounded-full">
                         <div className="flex items-center justify-center w-full h-full rounded-full">

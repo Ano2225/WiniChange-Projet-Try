@@ -11,7 +11,7 @@ import sendMoney from "@/app/assets/ph2.webp";
 import Send from "@/app/assets/Send.png";
 import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
-import { FaArrowRightLong } from 'react-icons/fa6';
+import { FaArrowRight } from "react-icons/fa6";
 
 const OurService = () => {
   const containerVariants = {
@@ -35,7 +35,7 @@ const OurService = () => {
     visible: { opacity: 1, y: -10, transition: { duration: 0.6 } },
   };
 
-  const becomePartner1 = [
+  const becomePartner = [
     {
       id: "1",
       image: exchange,
@@ -52,9 +52,6 @@ const OurService = () => {
       color: "indigo",
       title:"Binance Direct"
     },
-  ];
-
-  const becomePartner2 = [
     {
       id: "3",
       image: sendMoney,
@@ -98,40 +95,21 @@ const OurService = () => {
        </div>
        <div className='md:py-4 h-full w-full'>
          <div className='container mx-auto px-5 lg:px-20 pb-16 flex flex-col items-center gap-20'>
-             <div className='flex flex-col items-center align-center'>
-                 <div className='mt-4'>
-                 <div className='flex flex-col gap-10 lg:flex-row items-center'>
-                     <motion.div
-                       initial="hidden"
-                       whileInView="visible"
-                       viewport={{ once: true, amount: 0.2 }}
-                       variants={imageVariants}
-                       className="md:order-first" 
-                     >
-                      
-                     </motion.div>
-                     <motion.div
+             <div className='flex flex-row items-center align-center'>
+             <motion.div
                        initial="hidden"
                        whileInView="visible"
                        viewport={{ once: true, amount: 0.2 }}
                        variants={containerVariants}
                      >
-                       <div>
-                         {becomePartner1.map((items, index) => (
+                       <div className='flex gap-5 flex-col md:flex-row'>
+                         {becomePartner.map((items, index) => (
                            <motion.div
                              key={items.id}
                              custom={index}
                              variants={itemVariants}
-                             className={twMerge(
-                               {
-                                 blue: 'bg-blue-300',
-                                 indigo: 'bg-indigo-300',
-                                 green: 'bg-green-300',
-                               }[items.color] || 'bg-gray-300',
-                               'p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer'
-                             )}
-                           >
-                               <div className='flex items-center gap-2'>
+                             className={`p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer ${becomePartner.indexOf(items)%2==0 ? "bg-[#126e51]" : "bg-yellow-500" }`}>
+                               <div className=''>
                                 <Image
                                   src={items.image}
                                   width={400}
@@ -139,55 +117,19 @@ const OurService = () => {
                                   alt="PartnerSmile"
                                   className='max-w-[70px] mb-5 items-center rounded-2xl'
                                 />
-                                <p className='font-semibold text-lg '>{items.title}</p>  
+                                <p className='font-semibold text-lg text-[#126e51] bg-white w-fit p-1 mb-3'>{items.title}</p>  
                               </div>
-                             <p className='ml-5'>
+                             <p className=''>
                                {items.text}
                              </p>
+                             <FaArrowRight 
+                             size={30}
+                             className={`ml-auto ${becomePartner.indexOf(items)%2==0 ? "text-white" : "text-green-700"}`}
+                             />
                            </motion.div>
                          ))}
                        </div>
                      </motion.div>
-                     <motion.div
-                       initial="hidden"
-                       whileInView="visible"
-                       viewport={{ once: true, amount: 0.2 }}
-                       variants={containerVariants}
-                     >
-                       <div>
-                       {becomePartner2.map((items, index) => (
-                           <motion.div
-                             key={items.id}
-                             custom={index}
-                             variants={itemVariants}
-                             className={twMerge(
-                               {
-                                 blue: 'bg-blue-300',
-                                 indigo: 'bg-indigo-300',
-                                 green: 'bg-green-300',
-                               }[items.color] || 'bg-gray-300',
-                               'p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer'
-                             )}
-                           >
-                               <div className='flex items-center gap-2'>
-                                <Image
-                                  src={items.image}
-                                  width={400}
-                                  height={400}
-                                  alt="PartnerSmile"
-                                  className='max-w-[70px] mb-5 items-center rounded-2xl'
-                                />
-                                <p className='font-semibold text-lg '>{items.title}</p>  
-                              </div> 
-                             <p className='ml-5'>
-                               {items.text}
-                             </p>
-                           </motion.div>
-                         ))}
-                       </div>
-                     </motion.div>
-                 </div>
-             </div>
              </div>
          </div>
        </div>
