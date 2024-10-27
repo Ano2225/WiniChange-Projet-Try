@@ -64,7 +64,7 @@ export const LogoTickerSection = () => {
             {images.map(({ src, alt, description }, index) => (
               <div
                 key={`${alt}-${index}`}
-                className="rounded-full shadow-lg flex-none w-28 h-12  px-2 flex items-center justify-center relative"
+                className="rounded-full shadow-lg flex-none h-12  px-2 flex items-center justify-center relative w-fit"
                 style={{ backgroundColor: getRandomColor(index) }} 
               >
                 <Image

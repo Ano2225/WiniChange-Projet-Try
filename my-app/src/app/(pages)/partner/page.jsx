@@ -19,14 +19,14 @@ const affiliateConditions = [
     id: "Inscription rapide",
     text: "Nous avons simplifié au maximum le processus d'inscription et de vérification de votre compte.",
     specialText: "Recevez votre premier lien d'affiliation ou votre code de parrainage en un rien de temps !",
-    color: "blue",
+    color: "green",
     icon: FaUserCheck,
   },
   {
     id: "Paiements faciles et rapides",
     text: "Le temps d'attente est réduit au minimum, et le montant de retrait minimum est de 500 XOF, ",
     specialText: "vous permettant de retirer librement grâce à 40 options de paiement.",
-    color: "indigo",
+    color: "yellow",
     icon: FaRegHandshake
   }
 ];
@@ -35,7 +35,7 @@ const Partner = () => {
   return (
     <>
       <Header />
-        <section className="md:px-16 flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full bg-[#126e51]">
+        <section className="md:px-16 flex flex-col md:flex-row pt-36 items-center justify-center p-5 h-full w-full bg-gradient-to-tr from-[#126e51]  to-black">
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
               src={partner2}

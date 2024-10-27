@@ -16,23 +16,21 @@ const AffiliateCondition = ({ id, text, specialText, color, icon:Icon }) => {
       variants={itemVariants}
       className={twMerge(
         {
-          blue: 'bg-blue-300',
-          indigo: 'bg-indigo-300',
-          green: 'bg-green-300',
+          green: 'bg-[#126e51]',
+          yellow: 'bg-yellow-500',
         }[color] || 'bg-gray-300',
-        'p-2 rounded-lg mt-5 max-w-[450px]'
+        'p-2 rounded-lg mt-5 max-w-[450px] shadow-lg'
       )}
     >
-       <div className='flex'>
-        <Icon className={`text-black h-7 w-7`} /> 
+       <div className='flex flex-col gap-2'>
+        <Icon className={`text-black h-10 w-10 bg-white rounded-full items-center p-2 ml-2`} /> 
         <h1
           className={twMerge(
             {
-              blue: 'text-blue-800',
-              indigo: 'text-indigo-800',
-              green: 'text-green-800',
+              green: 'text-blue-800',
+              white: 'text-indigo-800',
             }[color] || 'text-gray-800',
-            'text-lg font-bold mb-4 bg-white px-4 mx-2'
+            'text-lg font-bold mb-4 bg-white px-4 mx-2 rounded-lg text-[#126e51] w-fit'
           )}
         >
           {id}
