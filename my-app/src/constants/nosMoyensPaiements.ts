@@ -33,7 +33,7 @@ export const  winichangeApps = [
    // { id: "12", title: "Wave Côte d'Ivoire", icon: WaveCI, width:48, height:48 },
    // { id: "13", title: "Wave Senegal", icon: WaveSenegal, width:48, height:48 },
     { id: "14", title: "Tmoney", icon: Tmoney, width: 48, height: 48 },
-    { id: "16", title: "Perfect Money Euro", icon: PerfectMoneyEuro, width: 48, height: 48 },
-    { id: "15", title: "Payeer USD", icon: PayerUSD, width: 48, height: 48 },
+    // { id: "16", title: "Perfect Money Euro", icon: PerfectMoneyEuro, width: 48, height: 48 },
+    // { id: "15", title: "Payeer USD", icon: PayerUSD, width: 48, height: 48 },
     { id: "2", title: "Moov Côte d'Ivoire", icon: MoovCI, width: 48, height:48 },
 ];
