@@ -18,7 +18,7 @@ export const Hero = () => {
                 <div className="flex justify-center">
                     <div className="inline-flex relative">
                     {isMobile ?(<motion.h1
-                            className="text-4xl md:text-6xl font-bold tracking-tighter text-center mt-4 inline-flex"
+                            className="text-3xl md:text-6xl font-bold tracking-tighter text-center mt-4 inline-flex"
                             initial={{ opacity: 0, y: 50 }} 
                             animate={{ opacity: 1, y: 0 }}    
                             transition={{ duration: 1.2, ease: "easeOut" }}  
@@ -27,7 +27,7 @@ export const Hero = () => {
                               sans pareille.
                         </motion.h1>
                     ) : (
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-center mt-4 inline-flex">
+                        <h1 className="text-3xl md:text-6xl font-bold tracking-tighter text-center mt-4 inline-flex">
                               Une expérience d'interopérabilité et d'interconnexion <br />
                                sans pareille.
                         </h1>

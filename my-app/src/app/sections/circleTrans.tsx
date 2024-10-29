@@ -13,15 +13,15 @@ function CircleTrans() {
                 <div className="flex w-60 aspect-square m-auto border border-green-700 rounded-full">
                     <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-white rounded-full">
                         <div className="flex items-center justify-center w-full h-full rounded-full">
-                        <div className="absolute inset-0 flex justify-center items-center">
-                            <div className="bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full w-80 h-80 opacity-30 blur-lg"></div>
-                        </div>
                             <Image
                                 src={logoEnter}
                                 width={38}
                                 height={38}
                                 alt="Winichange Logo"
                             />
+                        </div>
+                        <div className="absolute inset-0 flex justify-center items-center -z-50">
+                            <div className="bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full w-80 h-80 opacity-30 blur-lg"></div>
                         </div>
                     </div>
                 </div>
