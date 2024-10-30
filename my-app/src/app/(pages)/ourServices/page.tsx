@@ -13,6 +13,7 @@ import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
 import { FaArrowRight } from "react-icons/fa6";
 
+
 const OurService = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,7 +68,7 @@ const OurService = () => {
       title: "Achat de crédit d'appel"
     },
   ];
-  
+
   return (  
       <>    
           <Header />    
