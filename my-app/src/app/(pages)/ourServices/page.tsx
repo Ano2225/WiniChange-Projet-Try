@@ -7,8 +7,8 @@ import { twMerge } from 'tailwind-merge';
 import CircleTrans from '@/app/sections/circleTrans'
 import exchange from "@/app/assets/exchangee.webp";
 import binance from "@/app/assets/Binance.png";
-import sendMoney from "../../assets/Binance.png";
-import Send from "../../assets/Binance.png";
+import sendMoney from "../../assets/img1.png";
+import Send from "../../assets/img2.png";
 import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
 import { FaArrowRight } from "react-icons/fa6";
