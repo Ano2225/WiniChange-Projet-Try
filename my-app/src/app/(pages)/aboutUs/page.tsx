@@ -2,11 +2,11 @@
 
 import React from 'react'
 import Image from "next/image"
-import photo1 from "@/app/assets/IMG_0173.png"
-import photo2 from "@/app/assets/winIMG.svg"
-import photo4 from "@/app/assets/photo4.jpg"
-import { Header } from "@/app/sections/Header"
-import Footer from "@/app/sections/Footer"
+import photo1 from "../../assets/img1.png"
+import photo2 from "../../assets/winIMG.svg"
+import photo4 from "../../assets/photo4.jpg"
+import { Header } from "../../sections/Header"
+import Footer from "../../sections/Footer"
 
 const Apropos = () => {
   return (
