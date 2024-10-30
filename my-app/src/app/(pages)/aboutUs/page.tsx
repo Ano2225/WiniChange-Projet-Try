@@ -2,8 +2,8 @@
 
 import React from 'react'
 import Image from "next/image"
-import photo1 from "@/app/assets/ph1.webp"
-import photo2 from "@/app/assets/ph2.webp"
+import photo1 from "@/app/assets/IMG_0173.png"
+import photo2 from "@/app/assets/winIMG.svg"
 import photo4 from "@/app/assets/photo4.jpg"
 import { Header } from "@/app/sections/Header"
 import Footer from "@/app/sections/Footer"
@@ -21,7 +21,6 @@ const Apropos = () => {
               height={500}
               alt="Support"
               objectFit="cover"
-              className="rounded-2xl shadow-xl"
             />
           </div>
           <div className='flex-1 text-center lg:text-left space-y-5'>
@@ -38,7 +37,7 @@ const Apropos = () => {
               height={300}
               alt="Support"
               objectFit="cover"
-              className="rounded-2xl shadow-lg hidden lg:block mt-5"
+              className="hidden lg:block"
             />
           </div>
         </div>
@@ -59,8 +58,7 @@ const Apropos = () => {
             Rejoignez <br /> notre équipe chez WiniChange
           </h1>
           <p className='text-black text-sm md:text-[1rem] md:leading-6'>
-            Vous êtes passionné par la finance ou la technologie numérique ? Vous avez des compétences dans ces domaines ? 
-            WiniChange vous offre l'opportunité de rejoindre une équipe dynamique et de participer à une aventure professionnelle enrichissante.
+            Winichange est une plateforme innovante d'achat et de vente de cryptomonnaies et de transfert d’argent en Afrique. Notre vision est de promouvoir l'inclusion financière des populations africaines.
           </p>
           <p className='text-sm md:text-lg text-black'>
             Envoyez votre candidature à 
