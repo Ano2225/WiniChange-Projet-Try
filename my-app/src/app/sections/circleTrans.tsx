@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import { winichangeApps } from '@/constants/nosMoyensPaiements';
-import logoEnter from '@/app/assets/logo.png'
+import logoEnter from '@/app/assets/winiLogo.png'
 import { LeftCurve } from './Design/Collaboration';
 import { RightCurve } from './Design/Collaboration';
 

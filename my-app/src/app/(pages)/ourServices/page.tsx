@@ -7,8 +7,8 @@ import { twMerge } from 'tailwind-merge';
 import CircleTrans from '@/app/sections/circleTrans'
 import exchange from "@/app/assets/exchangee.webp";
 import binance from "@/app/assets/Binance.png";
-import sendMoney from "@/app/assets/ph2.webp";
-import Send from "@/app/assets/Send.png";
+import sendMoney from "@/app/assets/IMG_0173.png";
+import Send from "@/app/assets/IMG_0179.png";
 import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
 import { FaArrowRight } from "react-icons/fa6";
@@ -88,7 +88,7 @@ const OurService = () => {
         width={400}
         height={400}
         alt="PartnerSmile"
-        className="max-w-full lg:max-w-[280px] rounded-2xl shadow-xl mt-5 lg:mt-0"
+        className="max-w-[250px] lg:max-w-[280px] rounded-2xl shadow-xl mt-5 lg:mt-0"
       />
     </div>
            </div>
@@ -115,7 +115,7 @@ const OurService = () => {
                                   width={400}
                                   height={400}
                                   alt="PartnerSmile"
-                                  className='max-w-[70px] mb-5 items-center rounded-2xl'
+                                  className='max-w-[70px] mb-5 items-center rounded-lg'
                                 />
                                 <p className='font-semibold text-lg text-[#126e51] bg-white w-fit p-1 mb-3 rounded-lg'>{items.title}</p>  
                               </div>
@@ -124,7 +124,7 @@ const OurService = () => {
                              </p>
                              <FaArrowRight 
                              size={30}
-                             className={`ml-auto ${becomePartner.indexOf(items)%2==0 ? "text-white" : "text-green-700"}`}
+                             className={`ml-auto ${becomePartner.indexOf(items)%2==0 ? "text-white" : "text-green-700"} self-end`}
                              />
                            </motion.div>
                          ))}
