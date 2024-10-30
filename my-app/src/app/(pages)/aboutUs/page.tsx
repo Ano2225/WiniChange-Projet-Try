@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from "next/image"
-import photo1 from "../../assets/Binance.png"
+import photo1 from "../../assets/crypPart.webp"
 import photo2 from "../../assets/winIMG.svg"
 import photo4 from "../../assets/photo4.jpg"
 import { Header } from "../../sections/Header"
