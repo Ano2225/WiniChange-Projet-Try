@@ -14,11 +14,11 @@ const Apropos = () => {
       <Header />
       <div className='pt-24 md:py-24 h-full w-full'>
         <div className='container mx-auto px-5 lg:px-20 py-16 flex flex-col lg:flex-row-reverse items-center gap-12'>
-          <div className='flex-1'>
+          <div className='md:flex-1 lg:flex hidden'>
             <Image
               src={photo1}
-              width={500}
-              height={500}
+              width={380}
+              height={200}
               alt="Support"
               objectFit="cover"
             />
