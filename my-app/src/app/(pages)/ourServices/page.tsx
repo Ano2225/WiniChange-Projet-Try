@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from "next/image";
 import { motion } from "framer-motion";
-import exchange from "@/app/assets/IMG_0188.png";
+import exchange from "@/app/assets/transfimg.png";
 import binance from "@/app/assets/bnb.svg";
 import sendMoney from "../../assets/img-1.png";
 import Send from "../../assets/img-2.png";
