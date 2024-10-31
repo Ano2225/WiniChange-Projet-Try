@@ -3,10 +3,8 @@
 import React from 'react';
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { twMerge } from 'tailwind-merge';
-import CircleTrans from '@/app/sections/circleTrans'
-import exchange from "@/app/assets/exchangee.webp";
-import binance from "@/app/assets/Binance.png";
+import exchange from "@/app/assets/IMG_0188.png";
+import binance from "@/app/assets/bnb.svg";
 import sendMoney from "../../assets/img-1.png";
 import Send from "../../assets/img-2.png";
 import { Header } from "@/app/sections/Header";
@@ -30,11 +28,6 @@ const OurService = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
-  
-  const imageVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: -10, transition: { duration: 0.6 } },
-  };
 
   const becomePartner = [
     {
@@ -42,7 +35,6 @@ const OurService = () => {
       image: exchange,
       text: "Nous simplifions vos achats et ventes de cryptomonnaies et de monnaies électroniques avec divers moyens de paiement.",
       specialText: "officiellement enregistrée.",
-      color: "blue",
       title: "Achat et vente",
     },
     {
@@ -50,21 +42,18 @@ const OurService = () => {
       image: binance,
       text: "Ce service vous permet de recharger instantanément votre wallet Binance depuis notre plateforme avec divers moyens de paiement.",
       specialText: "Par exemple : trader ou revendeur de crypto-monnaies.",
-      color: "indigo",
       title:"Binance Direct"
     },
     {
       id: "3",
       image: sendMoney,
       text: "Ce service vous permet de transférer de l'argent entre différents moyens de paiement, y compris à l'international, via notre plateforme et ses multiples options de paiement.",
-      color: "green",
       title: "Transfert d'argent",
     },
     {
       id: "4",
       image: Send,
       text: "Ce service vous permet d'acheter du crédit de communication de la manière la plus simple, via notre plateforme et ses multiples moyens de paiement.",
-      color: "blue",
       title: "Achat de crédit d'appel"
     },
   ];
