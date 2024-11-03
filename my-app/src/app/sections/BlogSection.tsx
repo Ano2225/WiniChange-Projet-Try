@@ -27,7 +27,7 @@ const articles = [
 
 const BlogSection = () => {
   return (
-   <div className='bg-white'>
+   <div >
        <div className="container mx-auto py-12 px-6 lg:px-8">
       <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14">Nos derniers <span className='text-[#126e51]'>articles</span></h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
