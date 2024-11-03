@@ -36,7 +36,7 @@ const MobileTestimonialsComponent = () => {
       };
   return (
     <>
-      <div className="mt-20 grid grid-cols-1 md:hidden gap-6 items-center justify-center">
+      <div className="my-4 grid grid-cols-1 md:hidden gap-6 items-center justify-center">
        <Slider {...settings} >
         {testimonials.map((testimonial, index) => (
           <div

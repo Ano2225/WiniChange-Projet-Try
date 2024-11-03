@@ -23,7 +23,7 @@ export default function Home() {
     <Header/>
     <Hero/>
     <LogoTickerSection/>
-    {/*<NosMoyensDePaiement/>*/}
+    <NosMoyensDePaiement/>
     <NosCrypto />
     <HowItWorks />
     <Features />

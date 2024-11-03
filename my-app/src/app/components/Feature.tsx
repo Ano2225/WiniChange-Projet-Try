@@ -49,7 +49,7 @@ export const Feature = ({ title, description, icon: Icon }: { title: string; des
             >
             </motion.div>
             <div className="bg-[#126e51] flex justify-center items-center py-8 md:py-12 rounded-b-3xl">
-                <div className="relative h-24 w-20 rounded-full">
+                <div className="relative h-20 w-16 rounded-full">
                     <Image 
                         src={Icon.src} 
                         alt={title} 

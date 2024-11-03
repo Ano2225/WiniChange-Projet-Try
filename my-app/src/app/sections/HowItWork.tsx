@@ -21,7 +21,7 @@ const steps = [
     id: 3,
     title: "Étape 3: 1ère Transaction",
     description:"Vous êtes prêt ! Connectez-vous et réalisez votre première transaction.",
-    image: '/images/mockuuup.png',
+    image: '/images/mockup2.png',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-black text-white py-14">
       <div className="container mx-auto px-4">
         <h2 className="font-bold text-center mb-16 text-3xl md:text-4xl">Comment <span className='text-[#126e51]'>ça marche ?</span></h2>
 
@@ -82,7 +82,7 @@ export default function HowItWorks() {
                 key={step.id}
                 className={`transition-opacity duration-300 ${selectedStep === step.id ? 'block' : 'hidden'}`}
               >
-                <h3 className="text-2xl text-[#126e51] font-semibold mb-2">{step.title}</h3>
+                <h3 className="text-xl text-[#126e51] font-semibold mb-2">{step.title}</h3>
                 <p className="text-black text-sm">{step.description}</p>
               </div>
             ))}

@@ -8,7 +8,7 @@ import CircleTrans from './circleTrans';
 
 const MoyensDePaiement = () => {
   return (
-    <div className="bg-gradient-to-b from-black to-black">
+    <div className="bg-gradient-to-b from-black to-black pt-20 md:pt-0">
       <div className="lg:container mx-auto px-4 md:py-24 text-white" id="countrysection">
         <div className="flex flex-col md:flex-row items-center justify-center md:p-8">
           <div className="w-full md:w-1/2 flex items-center justify-center md:mb-0">
