@@ -54,7 +54,7 @@ export default function HowItWorks() {
         {/* Mobile Section */}
         <div className="md:hidden mt-10 md:mt-20 flex flex-col items-center justify-center">
           <div className="relative mb-6 w-full max-w-md flex justify-center items-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full w-80 h-80 opacity-30 blur-lg z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full lg:w-80 lg:h-80 opacity-30 blur-lg z-0"></div>
             {selectedContent && (
               <Image
                 src={selectedContent.image}

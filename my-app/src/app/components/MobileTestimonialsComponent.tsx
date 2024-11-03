@@ -16,6 +16,7 @@ const MobileTestimonialsComponent = () => {
         autoplay: true,
         autoplaySpeed:3000,
         slidesToScroll: 1,
+        arrows: false,
         appendDots: (dots: any) => (
             <div>
               <ul style={{ margin: '0px' }}> {dots} </ul>
@@ -35,13 +36,12 @@ const MobileTestimonialsComponent = () => {
       };
   return (
     <>
-        <div className="mt-20 grid grid-cols-1 md:hidden gap-6 items-center justify-center">
+      <div className="mt-20 grid grid-cols-1 md:hidden gap-6 items-center justify-center">
        <Slider {...settings} >
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
             className={`relative p-5 md:p-6 rounded-3xl shadow-lg border-2 bg-gray-200 my-12`}
-
             style={{
               borderColor: 'black',
             }}
