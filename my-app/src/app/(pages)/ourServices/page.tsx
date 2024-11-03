@@ -60,10 +60,10 @@ const OurService = () => {
 
   return (  
       <>    
-          <Header />    
-          <div className=' min-h-48 py-28 '>
-           <div className='container lg:flex items-center justify-center'>
-           <div className="max-w-xl mb-8 lg:mb-0 lg:mr-8">
+        <Header />    
+      <div className=' min-h-48 py-28 '>
+      <div className='container lg:flex items-center justify-center'>
+      <div className="max-w-xl mb-8 lg:mb-0 lg:mr-8">
       <h1 className="text-white bg-[#126e51] p-2 w-fit font-bold mb-5 text-4xl rounded-lg">Nos services</h1>
       <h1 className="text-3xl lg:text-4xl font-semibold mb-4">
         Découvrez Tous Nos Services Exclusifs
