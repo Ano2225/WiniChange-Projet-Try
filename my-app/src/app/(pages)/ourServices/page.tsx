@@ -98,7 +98,7 @@ const OurService = () => {
                              key={items.id}
                              custom={index}
                              variants={itemVariants}
-                             className={`p-2 rounded-lg mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer ${becomePartner.indexOf(items)%2==0 ? "bg-[#126e51]" : "bg-yellow-500" }`}>
+                             className={`p-2 rounded-2xl mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer ${becomePartner.indexOf(items)%2==0 ? "bg-[#126e51]" : "bg-yellow-500" }`}>
                                <div className=''>
                                 <Image
                                   src={items.image}

@@ -49,7 +49,7 @@ const Partner = () => {
           <div className="flex-1 w-full md:ml-5 py-8 md:px-20">
            <div className='text-center'>
            <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Programme d'Affiliation</h2>
-           <p className='text-white/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
+           <p className='text-white/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
            </div>
             <div className="flex flex-col space-y-4">
               {affiliateConditions.map((item) => (
@@ -90,7 +90,7 @@ const Partner = () => {
           <span className="font-semibold">Exemples :</span> Trader, Revendeur de crypto…
         </p>
         <p className="text-black/80 mb-6">
-          Votre activité implique l’usage des transferts d’argent.
+          Votre activité implique l'usage des transferts d'argent.
         </p>
         <p className="text-black/80 mb-6">
           Vous êtes investisseur.

@@ -19,7 +19,7 @@ const AffiliateCondition = ({ id, text, specialText, color, icon:Icon }) => {
           green: 'bg-[#126e51]',
           yellow: 'bg-yellow-500',
         }[color] || 'bg-gray-300',
-        'p-2 rounded-lg mt-5 max-w-[450px] shadow-lg'
+        'p-2 rounded-2xl mt-5 max-w-[450px] shadow-lg'
       )}
     >
        <div className='flex flex-col gap-2'>

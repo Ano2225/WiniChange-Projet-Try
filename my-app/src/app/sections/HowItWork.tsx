@@ -115,7 +115,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.5 }}
         >
           <div className="absolute inset-0 flex justify-center items-center">
-            <div className="bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full w-80 h-80 opacity-30 blur-lg"></div>
+            <div className="bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full lg:w-80 lg:h-80 opacity-30 blur-lg"></div>
           </div>
             {selectedContent && (
               <Image
