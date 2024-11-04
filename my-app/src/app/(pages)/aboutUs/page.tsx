@@ -12,24 +12,12 @@ const Apropos = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+  
       <main className="flex-1 w-full pt-16 md:pt-24">
         <section className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <div className="order-1 lg:order-2">
-              <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
-                <Image
-                  src={photo1}
-                  fill
-                  alt="Support"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-            
-            <div className="order-2 lg:order-1 space-y-6 text-center lg:text-left">
-              <h1 className="text-[#126e51] text-4xl md:text-5xl font-extrabold leading-tight">
+            <div className="order-1 lg:order-1 space-y-6 mt-4 md:mt-0 text-center lg:text-left">
+              <h1 className="text-[#126e51] text-3xl md:text-4xl font-extrabold leading-tight">
                 À Propos de <br className="hidden md:block" /> WiniChange
               </h1>
               <p className="text-gray-700 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -42,6 +30,18 @@ const Apropos = () => {
                   height={300}
                   alt="Winichange illustration"
                   className="w-full max-w-md mx-auto lg:mx-0"
+                />
+              </div>
+            </div>
+            
+            <div className="order-2 lg:order-2">
+              <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
+                <Image
+                  src={photo1}
+                  fill
+                  alt="Support"
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ const Apropos = () => {
             </div>
             
             <div className="space-y-6 text-center lg:text-left">
-              <h2 className="text-[#126e51] text-4xl md:text-5xl font-extrabold leading-tight">
+              <h2 className="text-[#126e51] text-3xl md:text-4xl font-extrabold leading-tight">
                 Rejoignez <br className="hidden md:block" /> notre équipe
               </h2>
               <p className="text-gray-700 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -102,4 +102,4 @@ const Apropos = () => {
   )
 }
 
-export default Apropos
+export default Apropos;
