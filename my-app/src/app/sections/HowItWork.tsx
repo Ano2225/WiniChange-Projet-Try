@@ -90,45 +90,45 @@ export default function HowItWorks() {
         </div>
 
        {/* Desktop Section */}
-        <div className="hidden md:grid grid-cols-2 gap-8 items-center mt-20">
-          <div className="flex flex-col space-y-6">
-            {steps.map((step) => (
-              <motion.div
-                key={step.id}
-                className={`p-6 bg-yellow-500 text-white shadow-md rounded-lg cursor-pointer transition-all duration-300 ${
-                  selectedStep === step.id ? 'border-l-4 border-red-700' : ''
-                }`}
-                onClick={() => setSelectedStep(step.id)}
-              >
-                <h3 className="text-xl font-semibold mb-2 text-[#126e51]">{step.title}</h3>
-                <p className="text-black text-sm">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-          <div className="flex justify-center items-center p-4 relative w-full h-full min-h-[400px]">
-            <div className="absolute inset-0 flex justify-center items-center">
-              <div className="absolute w-80 h-80 bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full opacity-30 blur-lg"></div>
-            </div>
+      <div className="hidden md:grid grid-cols-2 gap-8 items-center mt-20">
+        <div className="flex flex-col space-y-6">
+          {steps.map((step) => (
             <motion.div
-              key={selectedContent?.id}
-              className="relative z-10 flex flex-col items-center justify-center w-full h-full"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 30 }}
-              transition={{ duration: 0.5 }}
+              key={step.id}
+              className={`p-6 bg-yellow-500 text-white shadow-md rounded-lg cursor-pointer transition-all duration-300 ${
+                selectedStep === step.id ? 'border-l-4 border-red-700' : ''
+              }`}
+              onClick={() => setSelectedStep(step.id)}
             >
-              {selectedContent && (
-                <Image
-                  src={selectedContent.image}
-                  alt={selectedContent.title}
-                  width={200}
-                  height={100}
-                  className="relative z-20"
-                />
-              )}
+              <h3 className="text-xl font-semibold mb-2 text-[#126e51]">{step.title}</h3>
+              <p className="text-black text-sm">{step.description}</p>
             </motion.div>
-          </div>
+          ))}
         </div>
+        <div className="flex justify-center items-center p-4 relative w-full h-full min-h-[400px]">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <div className="absolute w-80 h-80 bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full opacity-30 blur-lg"></div>
+          </div>
+          <motion.div
+            key={selectedContent?.id}
+            className="relative z-10 flex flex-col items-center justify-center w-full h-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.5 }}
+          >
+            {selectedContent && (
+              <Image
+                src={selectedContent.image}
+                alt={selectedContent.title}
+                width={200}
+                height={100}
+                className="relative z-20"
+              />
+            )}
+          </motion.div>
+        </div>
+      </div>
       </div>
     </div>
   );
