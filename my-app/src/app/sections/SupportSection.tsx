@@ -11,10 +11,10 @@ const SupportSection = () => {
   const [isTyping, setIsTyping] = useState(false);
 
   const messages = [
-    { text: "Bonjour, comment puis-je vous aider ?", type: 'received' },
-    { text: "Quels sont les horaires de votre support ?", type: 'sent' },
-    { text: "Notre support est disponible 24h/24 et 7j/7 !", type: 'received' },
-    { text: "Avez vous d'autres questions ?", type: 'received' },
+    { text: "👋 Bienvenue ! Comment puis-je vous accompagner aujourd'hui ?", type: 'received' },
+    { text: "J'aimerais en savoir plus sur vos services", type: 'sent' },
+    { text: "Bien sûr ! Notre équipe est là pour vous guider 24h/24.", type: 'received' },
+    { text: "N'hésitez pas si vous avez d'autres questions ! 😊", type: 'received' },
   ];
 
   useEffect(() => {
@@ -36,24 +36,24 @@ const SupportSection = () => {
 
   const supportOptions = [
     {
-      title: 'Questions Fréquentes',
-      description: 'Trouvez des réponses rapides à vos questions les plus courantes.',
+      title: 'Centre d\'aide',
+      description: 'Accédez à notre base de connaissances complète avec guides détaillés.',
       icon: FaRegQuestionCircle,
       link: '/faq',
-      color:"yellow",
-      iconColor:"white",
-      circleColor:"green",
-      textColor:"green"
+      color: "yellow",
+      iconColor: "white",
+      circleColor: "green",
+      textColor: "green"
     },
     {
-      title: 'Contactez le Support',
-      description: 'Notre équipe est prête à vous aider pour toute question spécifique.',
+      title: 'Contacter le Support',
+      description: 'Assistance personnalisée. Réponse garantie en moins de 5 minutes.',
       icon: FaComments,
       link: '/contact',
-      color:"green",
-      iconColor:"white",
-      circleColor:"yellow",
-      textColor:"yellow"
+      color: "green",
+      iconColor: "white",
+      circleColor: "yellow",
+      textColor: "yellow"
     },
   ];
 
@@ -61,78 +61,82 @@ const SupportSection = () => {
     <section className="pb-20 md:py-20 bg-black">
       <div className="container md:max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 w-full mb-8 lg:mb-0">
-          <div className="relative h-64 lg:h-80 w-full overflow-hidden mt-14">
+          <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full overflow-hidden mt-8 lg:mt-14 rounded-2xl shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-green-500/10 z-10"></div>
             <Image
               src={support}
               alt="Support"
               layout="fill"
               objectFit="cover"
-              className="rounded-lg"
+              className="rounded-2xl transform hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute top-4 right-4 flex items-center space-x-2 bg-white p-2 rounded-full shadow-lg">
-              <FaCircle className="text-green-500 h-4 w-4" />
-              <span className="text-sm text-black">En ligne</span>
+            <div className="absolute top-4 right-4 flex items-center space-x-2 bg-white/90 p-2 rounded-full shadow-lg backdrop-blur-sm">
+              <FaCircle className="text-green-500 h-3 w-3 md:h-4 md:w-4 animate-pulse" />
+              <span className="text-xs md:text-sm font-medium text-black">Support en ligne</span>
             </div>
-            <div className="absolute bottom-4 left-4 space-y-2">
+            <div className="absolute bottom-4 left-4 space-y-2 md:space-y-3 w-4/5">
               {messages.slice(0, currentMessageIndex + 1).map((message, index) => (
                 <div
                   key={index}
-                  className={`px-4 py-2 rounded-lg text-sm shadow-md max-w-xs ${
-                    message.type === 'sent' ? 'bg-green-600 text-white ml-8' : 'bg-white text-black'
+                  className={`px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm shadow-xl max-w-xs backdrop-blur-sm transition-all duration-300 ${
+                    message.type === 'sent' 
+                      ? 'bg-[#126e51] text-white ml-6 md:ml-8 hover:bg-green-700' 
+                      : 'bg-white/90 text-black hover:bg-white'
                   }`}
-                  style={{ animation: `fadeIn 0.5s ease-in-out` }}
                 >
                   {message.text}
                 </div>
               ))}
               {isTyping && (
-                <div className="px-4 py-2 rounded-lg text-sm shadow-md max-w-xs bg-white text-black">
-                  <span className="animate-pulse">Est entrain d'écrire...</span>
+                <div className="px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm shadow-xl max-w-xs bg-white/90 text-black backdrop-blur-sm">
+                  <span className="animate-pulse">En cours de rédaction...</span>
                 </div>
               )}
             </div>
           </div>
         </div>
-        <div className="lg:w-1/2 max-w-xl w-full flex flex-col space-y-8 lg:pl-12 text-white">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-10 md:mb-4">
-          <span className='text-[#126e51]'>Notre équipe dévouée</span> du service client est à votre disposition 24h/7 
+        <div className="lg:w-1/2 max-w-xl w-full flex flex-col space-y-4 md:space-y-8 lg:pl-12 text-white">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 lg:mb-10 leading-tight">
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-[#126e51]'>Une assistance premium</span>
+            {' '}disponible à chaque instant
           </h2>
-          {supportOptions.map((option) => (
-            <a
-              key={option.title}
-              href={option.link}
-              className={twMerge(
-                {
-                  yellow: 'bg-yellow-500',
-                  green: 'bg-green-700',
-                }[option.color] || 'text-gray-300',
-                'flex items-center p-6 text-white rounded-lg shadow-md'
-              )}
-            >
-              <div className={twMerge(
-                    {
-                      yellow: 'bg-yellow-500',
-                      green: 'bg-green-700',
-                    }[option.circleColor] || 'bg-gray-300',
-                    'flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full'
-                  )}
+          <div className="space-y-4 md:space-y-6">
+            {supportOptions.map((option) => (
+              <a
+                key={option.title}
+                href={option.link}
+                className={twMerge(
+                  {
+                    yellow: 'bg-yellow-500 hover:bg-yellow-400',
+                    green: 'bg-green-700 hover:bg-green-600',
+                  }[option.color] || 'text-gray-300',
+                  'flex items-center p-4 md:p-6 text-white rounded-xl shadow-xl'
+                )}
               >
-                <option.icon className="h-6 w-6 " aria-hidden="true" />
-              </div>
-              <div className="ml-4">
-                {/* <h3 className="text-lg text-[#126e51]  font-semibold">{option.title}</h3> */}
-                <h3 className={twMerge(
+                <div className={twMerge(
+                  {
+                    yellow: 'bg-yellow-500',
+                    green: 'bg-green-700',
+                  }[option.circleColor] || 'bg-gray-300',
+                  'flex-shrink-0 flex items-center justify-center h-10 w-10 md:h-14 md:w-14 rounded-full shadow-lg'
+                )}>
+                  <option.icon className="h-5 w-5 md:h-7 md:w-7" aria-hidden="true" />
+                </div>
+                <div className="ml-4 md:ml-5">
+                  <h3 className={twMerge(
                     {
                       yellow: 'text-yellow-500',
                       green: 'text-green-700',
                     }[option.textColor] || 'text-gray-300',
-                    'text-lg font-semibold'
-                  )} 
-                >{option.title}</h3>
-                <p className="mt-1 text-sm text-black/80">{option.description}</p>
-              </div>
-            </a>
-          ))}
+                    'text-lg md:text-xl font-bold mb-0.5 md:mb-1'
+                  )}>
+                    {option.title}
+                  </h3>
+                  <p className="text-xs md:text-sm text-gray-100 leading-relaxed">{option.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

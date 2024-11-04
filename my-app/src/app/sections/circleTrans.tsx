@@ -13,7 +13,6 @@ function CircleTrans() {
                     <div className="absolute inset-0 border border-yellow-500 rounded-full">
                         {/* Cercle du milieu */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square border border-yellow-500 rounded-full">
-                            {/* Cercle central avec logo */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 aspect-square bg-white rounded-full p-1 sm:p-2">
                                 <div className="relative w-full h-full flex items-center justify-center rounded-full">
                                     <Image
@@ -29,8 +28,8 @@ function CircleTrans() {
                     </div>
 
                     {/* Effet de gradient */}
-                    <div className="absolute inset-0 -z-10 flex justify-center items-center">
-                        <div className="absolute w-full h-full bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full opacity-30 blur-lg"></div>
+                    <div className="absolute inset-0 flex justify-center items-center">
+                     <div className="absolute w-80 h-80 bg-gradient-to-r from-green-500 via-teal-500 to-green-400 rounded-full opacity-30 blur-lg"></div>
                     </div>
 
                     {/* Apps en rotation - avec calcul relatif */}
