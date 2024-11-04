@@ -57,14 +57,6 @@ const Apropos = () => {
 
         <section className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
-              <Image
-                src={photo4}
-                fill
-                alt="Rejoignez notre équipe"
-                className="object-cover"
-              />
-            </div>
             
             <div className="space-y-6 text-center lg:text-left">
               <h2 className="text-[#126e51] text-3xl md:text-4xl font-extrabold leading-tight">
@@ -92,6 +84,14 @@ const Apropos = () => {
                   </a>
                 </p>
               </div>
+            </div>
+            <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
+              <Image
+                src={photo4}
+                fill
+                alt="Rejoignez notre équipe"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
