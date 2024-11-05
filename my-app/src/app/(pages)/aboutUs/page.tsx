@@ -48,7 +48,7 @@ const Apropos = () => {
           >
             <motion.div {...fadeInUp} className="order-1 lg:order-1 space-y-8 text-center lg:text-left">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                <h1 className="text-3xl md:text-4xl font-bold leading-tight">
                   À Propos de <br className="hidden md:block" />
                   <span className="text-[#126e51]">WiniChange</span>
                 </h1>
@@ -121,7 +121,7 @@ const Apropos = () => {
           >
             <div className="space-y-8 text-center lg:text-left">
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   Rejoignez <br className="hidden md:block" />
                   <span className="text-[#126e51]">notre équipe</span>
                 </h2>

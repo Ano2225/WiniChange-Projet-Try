@@ -39,8 +39,8 @@ const Partner = () => {
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
               src={partner2}
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               alt="PartnerSmile"
               objectFit="cover"
               className="rounded-2xl shadow-xl mt-5 w-full md:w-auto"

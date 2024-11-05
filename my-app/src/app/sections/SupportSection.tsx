@@ -108,7 +108,7 @@ const SupportSection = () => {
                 className={twMerge(
                   {
                     yellow: 'bg-yellow-500 hover:bg-yellow-400',
-                    green: 'bg-green-700 hover:bg-green-600',
+                    green: 'bg-[#126e51] hover:bg-[#12825e]',
                   }[option.color] || 'text-gray-300',
                   'flex items-center p-4 md:p-6 text-white rounded-xl shadow-xl'
                 )}
@@ -116,7 +116,7 @@ const SupportSection = () => {
                 <div className={twMerge(
                   {
                     yellow: 'bg-yellow-500',
-                    green: 'bg-green-700',
+                    green: 'bg-[#126e51]',
                   }[option.circleColor] || 'bg-gray-300',
                   'flex-shrink-0 flex items-center justify-center h-10 w-10 md:h-14 md:w-14 rounded-full shadow-lg'
                 )}>
@@ -126,7 +126,7 @@ const SupportSection = () => {
                   <h3 className={twMerge(
                     {
                       yellow: 'text-yellow-500',
-                      green: 'text-green-700',
+                      green: 'text-[#126e51]',
                     }[option.textColor] || 'text-gray-300',
                     'text-lg md:text-xl font-bold mb-0.5 md:mb-1'
                   )}>

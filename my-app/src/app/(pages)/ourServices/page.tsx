@@ -71,8 +71,8 @@ const OurService = () => {
                   NOS SERVICES
                 </motion.span>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                Découvrez Nos Services <span className="text-[#126e51]">Exclusifs</span>
+              <h1 className="text-3xl lg:text-4xl font-bold leading-tight">
+                Découvrez  <span className="text-[#126e51]">Nos Services</span>
               </h1>
               <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Chaque jour, nous mettons tout en œuvre pour vous offrir une expérience unique et répondre précisément à vos besoins. Profitez de nos services adaptés à vos attentes !
@@ -101,7 +101,7 @@ const OurService = () => {
       </section>
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -158,7 +158,7 @@ const OurService = () => {
           </p>
           <motion.button 
             whileHover={{ scale: 1.05 }}
-            className="bg-white text-[#126e51] font-bold px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-2"
+            className="bg-white text-[#126e51] font-bold px-4 lg:px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-2"
           >
             Commencer maintenant
             <FaArrowRight />

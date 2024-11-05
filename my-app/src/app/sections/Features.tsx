@@ -6,7 +6,6 @@ import { Feature } from '../components/Feature'
 
 export const Features = () => {
   
-
     return (
         <div className="bg-black text-white py-[20px] sm:py-16">
             <div className="container mx-auto px-4">
