@@ -9,123 +9,166 @@ import sendMoney from "../../assets/img-1.png";
 import Send from "../../assets/img-2.png";
 import { Header } from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaExchangeAlt, FaBitcoin, FaMoneyBillWave, FaPhoneAlt } from "react-icons/fa";
 
+const services = [
+  {
+    id: "1",
+    image: exchange,
+    text: "Nous simplifions vos achats et ventes de cryptomonnaies et de monnaies électroniques avec divers moyens de paiement.",
+    title: "Achat et vente",
+    icon: FaExchangeAlt,
+    bgColor: "from-[#126e51] to-[#1a8a66]",
+    stats: "1M+ Transactions"
+  },
+  {
+    id: "2",
+    image: binance,
+    text: "Ce service vous permet de recharger instantanément votre wallet Binance depuis notre plateforme avec divers moyens de paiement.",
+    title: "Binance Direct",
+    icon: FaBitcoin,
+    bgColor: "from-yellow-500 to-yellow-400",
+    stats: "500K+ Recharges"
+  },
+  {
+    id: "3",
+    image: sendMoney,
+    text: "Ce service vous permet de transférer de l'argent entre différents moyens de paiement, y compris à l'international, via notre plateforme et ses multiples options de paiement.",
+    title: "Transfert d'argent",
+    icon: FaMoneyBillWave,
+    bgColor: "from-[#126e51] to-[#1a8a66]",
+    stats: "50K+ Transferts/jour"
+  },
+  {
+    id: "4",
+    image: Send,
+    text: "Ce service vous permet d'acheter du crédit de communication de la manière la plus simple, via notre plateforme et ses multiples moyens de paiement.",
+    title: "Achat de crédit d'appel",
+    icon: FaPhoneAlt,
+    bgColor: "from-yellow-500 to-yellow-400",
+    stats: "100K+ Recharges"
+  },
+];
 
 const OurService = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.5 * i,
-      },
-    }),
-  };
-  
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const becomePartner = [
-    {
-      id: "1",
-      image: exchange,
-      text: "Nous simplifions vos achats et ventes de cryptomonnaies et de monnaies électroniques avec divers moyens de paiement.",
-      specialText: "officiellement enregistrée.",
-      title: "Achat et vente",
-    },
-    {
-      id: "2",
-      image: binance,
-      text: "Ce service vous permet de recharger instantanément votre wallet Binance depuis notre plateforme avec divers moyens de paiement.",
-      specialText: "Par exemple : trader ou revendeur de crypto-monnaies.",
-      title:"Binance Direct"
-    },
-    {
-      id: "3",
-      image: sendMoney,
-      text: "Ce service vous permet de transférer de l'argent entre différents moyens de paiement, y compris à l'international, via notre plateforme et ses multiples options de paiement.",
-      title: "Transfert d'argent",
-    },
-    {
-      id: "4",
-      image: Send,
-      text: "Ce service vous permet d'acheter du crédit de communication de la manière la plus simple, via notre plateforme et ses multiples moyens de paiement.",
-      title: "Achat de crédit d'appel"
-    },
-  ];
-
   return (  
-      <>    
-        <Header />    
-      <div className=' min-h-48 py-28 '>
-      <div className='container lg:flex items-center justify-center'>
-      <div className="max-w-xl mb-8 lg:mb-0 lg:mr-8">
-      <h1 className="text-white bg-[#126e51] p-2 w-fit font-bold mb-5 text-4xl rounded-lg">Nos services</h1>
-      <h1 className="text-3xl lg:text-4xl font-semibold mb-4">
-        Découvrez Tous Nos Services Exclusifs
-      </h1>
-      <p className="text-base lg:text-lg">
-        Chaque jour, nous mettons tout en œuvre pour vous offrir une expérience unique et répondre précisément à vos besoins. Profitez de nos services adaptés à vos attentes !
-      </p>
-    </div>
-    <div className="w-full lg:w-auto flex justify-center lg:justify-end">
-      <Image
-        src="/images/shot.jpg"
-        width={400}
-        height={400}
-        alt="PartnerSmile"
-        className="max-w-[250px] lg:max-w-[280px] rounded-2xl shadow-xl mt-5 lg:mt-0"
-      />
-    </div>
-           </div>
-       </div>
-       <div className='md:py-4 h-full w-full'>
-         <div className='container mx-auto px-5 lg:px-20 pb-16 flex flex-col items-center gap-20'>
-             <div className='flex flex-row items-center align-center'>
-             <motion.div
-                       initial="hidden"
-                       whileInView="visible"
-                       viewport={{ once: true, amount: 0.2 }}
-                       variants={containerVariants}
-                     >
-                       <div className='flex gap-5 flex-col md:flex-row'>
-                         {becomePartner.map((items, index) => (
-                           <motion.div
-                             key={items.id}
-                             custom={index}
-                             variants={itemVariants}
-                             className={`p-2 rounded-2xl mt-5 max-w-[350px] hover:shadow-2xl cursor-pointer ${becomePartner.indexOf(items)%2==0 ? "bg-[#126e51]" : "bg-yellow-500" }`}>
-                               <div className=''>
-                                <Image
-                                  src={items.image}
-                                  width={400}
-                                  height={400}
-                                  alt="PartnerSmile"
-                                  className='max-w-[70px] mb-5 items-center rounded-lg'
-                                />
-                                <p className='font-semibold text-lg text-[#126e51] bg-white w-fit p-1 mb-3 rounded-lg'>{items.title}</p>  
-                              </div>
-                             <p className=''>
-                               {items.text}
-                             </p>
-                             <FaArrowRight 
-                             size={30}
-                             className={`ml-auto ${becomePartner.indexOf(items)%2==0 ? "text-white" : "text-green-700"} self-end`}
-                             />
-                           </motion.div>
-                         ))}
-                       </div>
-                     </motion.div>
-             </div>
-         </div>
-       </div>
-      <Footer />
+    <>    
+      <Header />    
+            <section className="pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12"
+          >
+            <div className="flex-1 space-y-6 text-center lg:text-left">
+              <div className="inline-block">
+                <motion.span 
+                  className="inline-block bg-[#126e51] text-white px-4 py-2 rounded-lg font-bold text-sm mb-4"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  NOS SERVICES
+                </motion.span>
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                Découvrez Nos Services <span className="text-[#126e51]">Exclusifs</span>
+              </h1>
+              <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Chaque jour, nous mettons tout en œuvre pour vous offrir une expérience unique et répondre précisément à vos besoins. Profitez de nos services adaptés à vos attentes !
+              </p>
+            </div>
+
+            <motion.div 
+              className="relative lg:w-1/2"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#126e51]/20 to-green-400/20 rounded-3xl transform rotate-3 blur-xl"></div>
+              <div className='flex items-center justify-center'>
+              <Image
+                src="/images/shot.jpg"
+                width={300}
+                height={300}
+                alt="Services Overview"
+                className="relative rounded-3xl shadow-2xl"
+              />
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className={`relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-r ${service.bgColor}`}
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 transform translate-x-16 -translate-y-16">
+                  <div className="absolute inset-0 bg-white opacity-10 rounded-full"></div>
+                </div>
+
+                <div className="p-4 text-white">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <service.icon className="w-8 h-8" />
+                      <h3 className="text-xl font-bold">{service.title}</h3>
+                    </div>
+                    <motion.div 
+                      whileHover={{ x: 5 }}
+                      className="bg-white/10 p-2 rounded-full"
+                    >
+                      <FaArrowRight size={20} />
+                    </motion.div>
+                  </div>
+
+                  <p className="text-white/90 mb-6 leading-relaxed">
+                    {service.text}
+                  </p>
+
+                  <div className="flex items-center gap-2 text-sm bg-black/10 w-fit px-3 py-1.5 rounded-full">
+                    <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                    {service.stats}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-[#126e51] py-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Prêt à commencer ?
+          </h2>
+          <p className="text-white/80 max-w-2xl mx-auto mb-8">
+            Rejoignez des milliers d'utilisateurs satisfaits et découvrez la simplicité de nos services.
+          </p>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            className="bg-white text-[#126e51] font-bold px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-2"
+          >
+            Commencer maintenant
+            <FaArrowRight />
+          </motion.button>
+        </motion.div>
+      </section>
+
+      <Footer color="bg-[#126e51]"/>
     </>
   );
 };
 
- export default OurService;
+export default OurService;

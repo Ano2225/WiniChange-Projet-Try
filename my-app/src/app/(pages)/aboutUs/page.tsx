@@ -17,7 +17,7 @@ const stats = [
     icon: FaUsers 
   },
   { 
-    value: '30+', 
+    value: '10+', 
     label: 'Pays desservis', 
     icon: FaGlobe 
   },
@@ -63,7 +63,7 @@ const Apropos = () => {
               >
                 <Image
                   src={photo2}
-                  width={500}
+                  width={300}
                   height={300}
                   alt="Winichange illustration"
                   className="w-full max-w-md mx-auto lg:mx-0"
