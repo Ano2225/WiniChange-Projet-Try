@@ -21,7 +21,7 @@ export const LogoTickerSection = () => {
 
   const images = [
     { src: beninLogo, alt: 'Benin', description: 'Benin' },
-    { src: civLogo, alt: "Côte d'Ivoire", description: 'Côte d\'Ivoire' },
+    { src: civLogo, alt: "CIV", description: 'Côte d\'Ivoire' },
     { src: togologo, alt: 'Togo', description: 'Togo' },
     { src: nigerLogo, alt: 'Niger', description: 'Niger' },
     { src: senegalLogo, alt: 'Sénégal', description: 'Sénégal' },
