@@ -10,9 +10,9 @@ function CircleTrans() {
                 {/* Cercle principal avec position relative pour servir de référence */}
                 <div className="relative w-full max-w-[14rem] sm:max-w-[16rem] md:max-w-[18rem] aspect-square">
                     {/* Cercle externe */}
-                    <div className="absolute inset-0 border-2 border-yellow-500 rounded-full">
+                    <div className="absolute inset-0 border-4 border-yellow-500 rounded-full">
                         {/* Cercle du milieu */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square border-2 border-yellow-500 rounded-full">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square border-4 border-yellow-500 rounded-full">
                             {/* Cercle central avec le logo */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 aspect-square bg-white rounded-full p-1.5 sm:p-2">
                                 <div className="relative w-full h-full flex items-center justify-center rounded-full">
