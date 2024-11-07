@@ -3,7 +3,8 @@
 import Logo from '@/app/assets/logo.png'
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer({color}: any) {
   return (
@@ -62,19 +63,13 @@ export default function Footer({color}: any) {
               </div>
             </div>
             <div className="flex flex-col items-start mb-8">
-              <h5 className="text-xl text-white font-bold  mb-4">Liens Utiles</h5>
+              <h5 className="text-xl text-white font-bold  mb-4">A propos</h5>
               <ul className="list-none space-y-2 text-white/60">
                 <li>
-                  <a href="/ourServices" >Nos services</a>
-                </li>
-                <li>
-                  <a href="/aboutUs" >À propos de Nous</a>
+                  <a href="/aboutUs" >À propos </a>
                 </li>
                 <li>
                   <a href="/faq" >FAQ</a>
-                </li>
-                <li>
-                  <a href="#" >Blog</a>
                 </li>
               </ul>
             </div>
@@ -82,16 +77,16 @@ export default function Footer({color}: any) {
               <h5 className="text-xl text-white font-bold  mb-4">Services</h5>
               <ul className="list-none space-y-2 text-white/60">
                 <li>
-                  <a href="#" >Achat de Crédit <br /> de Communication</a>
+                  <a href="#" >Achat et Vente</a>
                 </li>
                 <li>
                   <a href="#" >Binance Direct</a>
                 </li>
                 <li>
-                  <a href="#" >Transferts d'Argent</a>
+                  <a href="#" >Transfert d'Argent</a>
                 </li>
                 <li>
-                  <a href="#" >Achat et Vente</a>
+                  <a href="#" >Achat de Crédit <br /> d'appel</a>
                 </li>
               </ul>
             </div>
@@ -99,10 +94,10 @@ export default function Footer({color}: any) {
               <h5 className="text-xl text-white font-bold  mb-4">Légal</h5>
               <ul className="list-none none space-y-2 text-white/60">
                 <li>
-                  <a href="/general-conditions" >Conditions générales</a>
+                  <a href="/general-conditions" >Condition d'utilisation</a>
                 </li>
                 <li>
-                  <a href="#" >Mentions légales</a>
+                  <a href="#" >Politique de conformité AML</a>
                 </li>
                 <li>
                   <a href="/general-conditions" >Politique <br /> de confidentialité</a>
@@ -122,12 +117,17 @@ export default function Footer({color}: any) {
                 </li>
                 <li>
                   <a href="#">
-                    <FaWhatsapp/>
+                    <FaXTwitter />
                   </a>
                 </li>
                 <li>
                   <a href="#" >
                     <FaInstagram/>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" >
+                    <FaYoutube />
                   </a>
                 </li>
               </ul>
