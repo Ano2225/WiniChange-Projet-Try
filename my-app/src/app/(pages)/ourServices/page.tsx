@@ -143,22 +143,22 @@ const OurService = () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#126e51] py-20">
+      <section className="bg-white py-20 rounded-t-[5rem]">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="container mx-auto px-4 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#126e51] mb-6">
             Prêt à commencer ?
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
+          <p className="text-black max-w-2xl mx-auto mb-8">
             Rejoignez des milliers d'utilisateurs satisfaits et découvrez la simplicité de nos services.
           </p>
           <motion.button 
             whileHover={{ scale: 1.05 }}
-            className="bg-white text-[#126e51] font-bold px-4 lg:px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-2"
+            className="bg-[#126e51] text-white font-bold px-4 lg:px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-2"
           >
             Commencer maintenant
             <FaArrowRight />
@@ -166,7 +166,7 @@ const OurService = () => {
         </motion.div>
       </section>
 
-      <Footer color="bg-[#126e51]"/>
+      <Footer color="bg-white"/>
     </>
   );
 };
