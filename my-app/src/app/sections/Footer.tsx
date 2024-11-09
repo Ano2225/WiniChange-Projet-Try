@@ -97,10 +97,10 @@ export default function Footer({color}: any) {
                   <a href="/general-conditions" >Condition d'utilisation</a>
                 </li>
                 <li>
-                  <a href="#" >Politique de conformité AML</a>
+                  <a href="/policy-aml" >Politique de conformité AML</a>
                 </li>
                 <li>
-                  <a href="/general-conditions" >Politique <br /> de confidentialité</a>
+                  <a href="/confidential-policy" >Politique <br /> de confidentialité</a>
                 </li>
                 <li>
                   <a href="/cookies" >Cookie</a>
