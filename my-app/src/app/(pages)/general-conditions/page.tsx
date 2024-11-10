@@ -67,9 +67,9 @@ const GeneralConditions = () => {
   return (
     <>
       <Header />
-      <div className='bg-gradient-to-bl from-[#126e51]  to-black pb-5'>
+      <div className='pb-5'>
           <h1 className=' pt-56 text-black text-3xl text-center '>
-            <span className='font-semibold text-white py-0.5 px-2 bg-[#126e51]'>NOS CONDITIONS D'UTILSATION</span>
+            <span className='font-semibold text-white py-0.5 px-2 bg-[#126e51]'>NOS CONDITIONS D'UTILSATIONS</span>
           </h1>
       </div>
       <div className='pt-10 md:py-20 h-full w-full'>

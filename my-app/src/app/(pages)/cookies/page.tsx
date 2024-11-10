@@ -42,40 +42,40 @@ const GeneralConditions = () => {
     <>
       <Header />
       <div>
-          <h1 className=' min-h-56 py-56 text-white text-[70px] text-center overflow-hidden'>
-              <span className='font-semibold text-[#126e51] bg-white py-0.5 px-2'>COOKIES</span>
+          <h1 className=' min-h-56 py-56 text-black text-3xl md:text-4xl text-center overflow-hidden'>
+              <span className='font-semibold text-white bg-[#126e51] py-0.5 px-2'>COOKIES</span>
           </h1>
       </div>
       <div className='h-full w-full'>
           <div className='pb-10 flex gap-10 px-5 lg:px-20'>
               <div>
-                <h1 className='font-bold text-white py-2 px-0.5 text-3xl md:text-4xl'>Winichange Cookies</h1>
+                <h1 className='font-bold text-black py-2 px-0.5 text-3xl md:text-4xl'>Winichange Cookies</h1>
                 {
                     cookies.map(items=>(
                         <div className='mt-10' key={cookies.indexOf(items)} id={items.id}>
                             <div className='flex '>
-                                <h1 className='font-semibold text-white text-xl'>
+                                <h1 className='font-semibold text-black text-xl'>
                                     <span className='mr-2'>{cookies.indexOf(items)+1}.</span>
                                     {items.title}
                                 </h1>
                             </div>
-                            <p className='mt-2 text-white/80'>
+                            <p className='mt-2 text-black/80'>
                                 {items.text}
                             </p>
                         </div>
                     ))
                 }
-                <a href='mailto:recrutement@winichange.com' className='text-black/80 underline'>recrutement@winichange.com</a>
+                <a href='mailto:recrutement@winichange.com' className='text-[#126e51] underline'>recrutement@winichange.com</a>
               </div>
               <div className='hidden md:order-first md:min-w-[200px] md:flex gap-0.5'>
-                  <div className='h-full w-1 bg-white/60 mt-1'></div>
+                  <div className='h-full w-1 bg-[#126e51]/60 mt-1'></div>
                   <div>
-                    <h1 className='mb-2 text-xl text-white'>Dans cette article</h1>
-                    <div className='flex flex-col gap-5 text-white'>
+                    <h1 className='mb-2 text-xl text-black'>Dans cette article</h1>
+                    <div className='flex flex-col gap-5 text-black'>
                       {
                         cookies.map(items=>(
                           <div>
-                            <a href={`#${items.id}`} className='font-normal text-[#126e51] bg-white py-0.5 px-0.5 hover:font-semibold hover:shadow-lg'> {items.title}</a>
+                            <a href={`#${items.id}`} className='font-normal text-white bg-[#126e51] py-0.5 px-0.5 hover:font-semibold hover:shadow-lg'> {items.title}</a>
                           </div>
                         ))
                       }
