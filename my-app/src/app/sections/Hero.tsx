@@ -7,10 +7,10 @@ export const Hero = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
   return (
-    <div className="bg-black text-white relative overflow-hidden py-28">
+    <div className="bg-white text-black relative overflow-hidden py-28">
       <motion.div 
         className="absolute h-[375px] w-[750px] md:w-[1536px] md:h-[768px] rounded-[100%] 
-                   bg-black left-1/2 -translate-x-1/2 border border-[#126e51] 
+                   bg-white left-1/2 -translate-x-1/2 border border-[#126e51] 
                    bg-[radial-gradient(closest-side,#000_82%,#126e51)] 
                    top-[calc(100%-96px)] sm:top-[calc(100%-120px)]"
         initial={{ opacity: 0 }}
