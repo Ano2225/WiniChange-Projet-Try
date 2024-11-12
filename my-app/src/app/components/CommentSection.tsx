@@ -26,6 +26,7 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
     comment: ''
   })
 
+  /*
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -49,6 +50,7 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
       setIsLoading(false)
     }
   }
+*/
 
   return (
     <div className="mt-16 max-w-3xl mx-auto">
@@ -58,7 +60,6 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
       </div>
       
       <motion.form 
-        onSubmit={handleSubmit} 
         className="mb-12 bg-white rounded-2xl shadow-lg p-6 border border-gray-100"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
