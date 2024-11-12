@@ -7,7 +7,6 @@ import { Features } from "./sections/Features";
 import HowItWorks from "./sections/HowItWork";
 import Footer from "./sections/Footer";
 import FloatingButtons from "./components/FloatingCompoAndGoUp";
-import SolutionsProposees from "./sections/NosSolutionsProposees";
 import Cookies  from "./components/cookies"
 import TestimonialsSection from "./sections/Testimonialss";
 import SupportSection from "./sections/SupportSection";
