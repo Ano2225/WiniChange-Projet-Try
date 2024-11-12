@@ -1,20 +1,21 @@
-'use client'
-
 import React from 'react'
-import Image from "next/image"
-import BlogSection from '@/app/sections/BlogSection'
 import { Header } from "@/app/sections/Header"
 import Footer from "@/app/sections/Footer"
+import { getAllPosts, getAllCategories } from '@/sanity/lib/queries'
+import BlogSection from '@/app/sections/BlogSection'
+import CategoryFilter from '@/app/components/CategoryFilterBlog'
 
+export default async function Blog() {
+  const [posts] = await Promise.all([
+    getAllPosts(),
+  ])
 
-const Partner = () => {
   return (
     <>
       <Header />
-      <BlogSection/>
+      <BlogSection posts={posts} />
       <Footer color="bg-white"/>
     </>
   )
 }
 
-export default Partner;

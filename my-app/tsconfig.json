@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/assets/svg/sectionSvg.jsx", "src/app/assets/svg/ButtonSvg.jsx", "src/app/components/Section.jsx", "src/app/components/Btn.jsx", "src/app/sections/NosSolutionsProposees.tsx", "src/app/sections/Testimonialss.tsx", "src/app/(pages)/partner/page.jsx", "src/app/(pages)/partner/AffiliateSection.jsx"],
   "exclude": ["node_modules"]
