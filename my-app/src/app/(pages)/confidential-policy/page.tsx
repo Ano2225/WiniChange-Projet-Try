@@ -1,79 +1,158 @@
 'use client'
 
 import React from 'react'
-import Image from "next/image"
-import { useState } from 'react';
-import { FaPlus, FaMinus } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from "@/app/sections/Header"
 import Footer from "@/app/sections/Footer"
 
-const ConfidentialPolicy = () => {
-  
+interface PolicySectionProps {
+  title: string
+  children: React.ReactNode
+}
+
+interface Section {
+  title: string
+  content: string
+  list?: string[]
+  isImportant?: boolean
+}
+
+const PolicySection: React.FC<PolicySectionProps> = ({ title, children }) => (
+  <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 mb-8">
+    <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+      {title}
+    </h2>
+    <div className="text-gray-600 leading-relaxed space-y-4">
+      {children}
+    </div>
+  </div>
+)
+
+const ConfidentialPolicy: React.FC = () => {
+  const sections: Section[] = [
+    {
+      title: "Introduction",
+      content: `Winichange, détenue par la société Godwin Corp., accorde une grande importance à la protection de votre vie privée. Godwin Corp. (GCORP) est une SARLU (société à responsabilité limitée unipersonnelle) basée en Côte d'Ivoire, constituée en vertu des lois ivoiriennes.`,
+      isImportant: true
+    },
+    {
+      title: "Quels types d'informations recueillons-nous ?",
+      content: `Nous collectons et utilisons vos données personnelles, c'est-à-dire toute information permettant de vous identifier directement ou indirectement, dans la mesure nécessaire à l'exercice de nos activités et afin de vous offrir des produits et des services personnalisés de qualité.`,
+      list: [
+        "Données d'identification (nom, prénom, date de naissance, etc.)",
+        "Données de contact personnelles ou professionnelles",
+        "Données économiques financières et fiscales",
+        "Données transactionnelles et bancaires",
+        "Données liées à vos activités numériques",
+        "Données sur l'emploi",
+        "Données de géolocalisation"
+      ]
+    },
+    {
+      title: "Pourquoi et comment utilisons-nous ces informations ?",
+      content: `Nous utilisons vos données à caractère personnel pour plusieurs raisons :`,
+      list: [
+        "Nous conformer à nos obligations légales et réglementaires",
+        "Exécuter un contrat conclu avec vous",
+        "La lutte contre le blanchiment de capitaux",
+        "La conformité à la législation applicable",
+        "La lutte contre la fraude fiscale",
+        "Personnaliser et améliorer la qualité de nos services"
+      ]
+    },
+    {
+      title: "À qui ces informations peuvent être partagées ?",
+      content: `Vos informations peuvent être partagées avec :`,
+      list: [
+        "Godwin Corp.",
+        "Les prestataires de services et sous-traitants",
+        "Les autorités financières et judiciaires",
+        "Certaines professions réglementées",
+        "Nos partenaires de confiance"
+      ]
+    },
+    {
+      title: "Durée de conservation",
+      content: `Le Client reconnaît que les informations, y compris les informations personnelles, et les Transactions, les documents ou leurs reproductions seront enregistrées et stockées pendant une période de dix (10) ans par Winichange.`
+    },
+    {
+      title: "Vos droits",
+      content: `Conformément à la réglementation applicable, vous disposez de différents droits :`,
+      list: [
+        "Droit d'accès à vos données",
+        "Droit de rectification",
+        "Droit à l'effacement",
+        "Droit à la limitation du traitement",
+        "Droit d'opposition",
+        "Droit à la portabilité de vos données",
+        "Droit de retirer votre consentement"
+      ]
+    }
+  ]
+
   return (
-    <>
+    <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className='pb-5'>
-          <h1 className=' pt-56 text-black text-3xl text-center '>
-            <span className='font-semibold text-white py-0.5 px-2 bg-[#126e51]'>Politiques de confidentialité</span>
+      <div className="relative bg-gradient-to-r from-emerald-800 to-emerald-600 py-32">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <h1 className="md:mt-8 mt-0 text-4xl md:text-5xl font-bold text-white mb-6">
+            Politique de confidentialité
           </h1>
-      </div>
-      <div className='pt-10 md:py-20 h-full w-full'>
-        <div className='container mx-auto px-5 lg:px-20 py-10 '>
-        <div>
-    <p className='mt-2 text-black/80'>
-        Winichange, détenue par la société Godwin Corp., accorde une grande importance à la protection de votre vie privée. Godwin Corp. (GCORP) est une SARLU (société à responsabilité limitée unipersonnelle) basée en Côte d'Ivoire, constituée en vertu des lois ivoiriennes. Godwin Corp. (« nous ») est responsable du traitement de vos données personnelles. La présente politique constitue un document d’information qui décrit le type de données que nous recueillons, comment nous les utilisons et comment nous les partageons.
-        Ce document s’applique à la fois à tous les produits et services de Winichange et a l’ensemble des activités de Godwin Corp., Cela inclut toutes les interactions que vous pourriez avoir avec nos produits, services et sites web, qu’ils soient spécifiquement liés à Winichange ou à d’autres divisions de Godwin Corp.
-    </p>
-      </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>Quels types d'informations receuillons nous ?</h1>
-            <p className='mt-2 text-black/80'>
-            Nous collectons et utilisons vos données personnelles, c’est-à-dire toute information permettant de vous identifier directement ou indirectement, dans la mesure nécessaire à l’exercice de nos activités et afin de vous offrir des produits et des services personnalisés de qualité.
-            En fonction, entre autres, du type du produit ou des services que nous vous fournissons, nous recueillons différents types de données à caractère personnel vous concernant, notamment, les informations de collecte directe dans le cadre du contrat dont vous êtes partie. Différents types de données personnelles vous concernant peuvent ainsi être collectés, notamment : Données d'identification (ex. nom, prénom, lieu et date de naissance, photo, numéros de carte d’identité, de passeport ou de titre de séjour, sexe, âge, etc.) Données de contact personnelles ou professionnelles (ex. adresse électronique, numéro de téléphone mobile, etc.) Données économiques financières et fiscales (pays de résidence, etc.) Données transactionnelles et bancaires (ex. rechargements bancaires, numéro de la carte de paiement, code barre de la carte de paiement, transferts vers ou des portefeuilles de monnaie électronique, données des bénéficiaires ou de donneurs d’ordre, incidents de paiement etc.) Données liées à vos activités numériques (ex. adresse IP, activité de navigation, géolocalisation, etc.) Données sur l’emploi (ex. profession, etc.) Données issues de vos interactions avec nous, notre service Client et commercial, notre site internet, notre application web et mobile, nos pages sur les réseaux sociaux (ex. messages, emails, appels, etc.) Données de géolocalisation (ex. localisations de paiements et retraits pour des raisons de sécurité et de lutte contre la fraude) Données de connexion utilisées pour accéder à votre compte Winichange. Données nécessaires à l’inclusion bancaire et la lutte contre le surendettement. Nous ne traitons jamais de données relatives à vos origines raciales ou ethniques, vos opinions politiques, votre religion, vos convictions philosophiques ou l’appartenance syndicale, au traitement des données génétiques. Les informations de collecte indirecte Winichange peut collecter des informations vous concernant bien que vous ne soyez pas Client de Winichange, telles que : Données d'identification, de contact et des activités numériques des prospects ; Données d’identification et de contact des représentants légaux, membres d’une même famille, héritiers, débiteurs (par exemple en cas de procédures collectives), actionnaires personnes physiques et personnes habilitées d’une personne morale Client de Winichange; Les informations provenant de partenaires tiers Winichange peut également collecter des données personnelles auprès de partenaires et d’organismes tiers dans le but de vérifier ou d’enrichir ses bases de données : publications et bases de données rendues accessibles par les autorités officielles (journal officiel), nos partenaires, prestataires et fournisseurs de services, des initiateurs de paiement, les organismes de renseignements commerciaux, organismes institutionnels et publics de lutte contre la fraude, en conformité avec la réglementation en matière de protection des données, sites internet ou pages de réseaux sociaux contenant des informations que vous avez rendues publiques, médias et bases de données rendu publiques par des tiers.
-            </p>
-        </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>Pourquoi et comment utilisons nous ces informations ?</h1>
-            <p className='mt-2 text-black/80'>
-              Nous vous décrivons, ci-dessous, les différentes bases légales sur lesquelles Winichange s’appuie pour les traitements de vos données personnelles et les finalités correspondantes. Nous conformer à nos obligations légales et réglementaires Nous utilisons vos données à caractère personnel pour nous acquitter de différentes obligations légales et réglementaires, parmi lesquelles : La lutte contre le blanchiment de capitaux et le financement du terrorisme, La conformité à la législation applicable en matière de sanctions internationales et d’embargos, La lutte contre la fraude fiscale, le respect des obligations en matière de contrôle fiscal et de déclaration, Le respect des réglementations bancaires et financières en vertu desquelles nous devons par exemple: identifier et connaître la Clientèle (KYC) contrôler et déclarer les risques auxquels l’établissement pourrait être exposé, les réponses aux demandes officielles d’autorités publiques ou judiciaires dûment autorisées. Exécuter un contrat conclu avec vous Nous utilisons vos données à caractère personnel pour l’exécution de ce contrat ainsi que pour mieux gérer nos relations avec vous, notamment pour : souscrire (notamment par signature électronique) aux produits et services distribués par Winichange, communiquer avec vous: nous nous servons de vos informations pour vous répondre lorsque vous nous contactez, pour vous faire part de nos conditions générales et de nos règlements, pour vous envoyer des communications commerciales et vous parler de nos services, gérer et exécuter les produits et services de Winichange pour vous permettre de payer et d’être payé, assurer la sécurité des services de paiement que vous utilisez. Pour la poursuite de nos intérêts légitimes Nous pouvons être amenés à utiliser vos données personnelles dans le but de: personnaliser et d’améliorer la qualité de nos offres et services qui vous sont destinés ainsi que les services et les offres d’autres entités de Godwin Corporation ; cette personnalisation et améliorations peuvent être réalisées grâce : à la segmentation de nos prospects et de nos Clients, à l’analyse de vos habitudes d’utilisation de nos différents produits et services à travers différents canaux de communication (site internet, application web et mobile etc…), à des modèles de profilage déterminant votre appétence à un nouveau produit ou service, ou mesurant votre degré de fidélisation au partage de vos données avec d’autres entités de Godwin Corporation, notamment si vous êtes ou allez devenir Client de cette autre entité afin d’accélérer les procédures d’identification et vérification de la Clientèle, à l’identification de caractéristiques, usages et habitudes communes chez nos Clients actuels permettant de mieux cibler de nouveaux Clients à l’optimisation de nos campagnes publicitaires en ligne, développer des nouvelles offres de produits et de services, vous proposer des produits ou services qui correspondent à votre situation et à votre profil optimiser et améliorer notre gestion du risque et de la lutte contre la fraude: collecter des preuves transactionnelles incluant les traces électroniques détecter et prévenir la fraude identifier et contrôler les transactions atypiques établir des modèles statistiques anonymes assurer la défense de nos droits notamment de recouvrement constituer des preuves en cas de procédure judiciaire ; assurer des fonctions de recherches et développement : optimiser et automatiser nos processus opérationnels créer de nouvelles offres et services adapter les contenus et les prix de nos produits et services renforcer nos processus de conformité, de gestion des risques et de lutte contre la fraude améliorer la lutte contre le blanchiment d’argent et le financement du terrorisme renforcer la sécurité et la performance de nos systèmes informatiques: Gérer les technologies de l’information, incluant la gestion des infrastructures (par exemple des plateformes partagées), la continuité des services et la sécurité informatique ; améliorer l’efficacité des procédés (former notre personnel en enregistrant les échanges et en améliorant nos scénarios de gestion des cas) Pour nos campagnes publicitaires. Lorsque vous naviguez sur notre application ou sites internet, nous pouvons récolter des informations sur votre historique de navigation à l’aide de cookies et de tags. Nous utilisons ces données afin de suivre le trafic de nos différents sites et applications, pour mieux cibler nos campagnes publicitaires et pour mesurer l’audience et la portée de ces campagnes. Dans tous les cas, nous vérifions par la mise en place d’une balance d’intérêts que vos intérêts et droits fondamentaux sont préservés. Si vous souhaitez obtenir plus d’information sur ce processus, vous pouvez nous contacter à l’adresse info@winichange.com Pour respecter votre choix lorsque nous vous avons demandé votre consentement explicite pour un traitement spécifique : Dans certains cas, votre consentement nous est nécessaire pour pouvoir traiter vos données, notamment : Pour recueillir votre avis. Nous utilisons vos données à caractère personnel pour vous interroger sur votre perception de notre marque ou sur vos attentes en termes d'offres et de services. Pour vous parler d’opportunités. Nous pouvons utiliser, si vous en avez manifesté l’intérêt, vos données à caractère personnel pour vous parler d’opportunités ou vous mettre en relation avec des partenaires et vous proposer des services que nous ne pouvons pas offrir actuellement. Veuillez noter que lorsque nous traitons vos données personnelles sur la base de votre consentement, vous pouvez révoquer votre consentement à tout moment.
-            </p>
-        </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>A qui ces informations peuvent être partagées ?</h1>
-            <p className='mt-2 text-black/80'>
-                A Godwin Corp., Winichange est exploité par Godwin Corp Ainsi, ces données sont partagées notamment pour nous acquitter des différentes obligations légales et réglementaires, respecter la politique en terme de lutte contre le blanchiment d’argent, de fraude et de financement du terrorisme et pour la poursuite de nos intérêts légitimes tels prévenir détecter et lutter contre la fraude, les activités de recherche et développement (notamment concernant les sujets de conformité, de risques et de communications et publicités) , le partage d’une vue d’ensemble de la Clientèle , personnalisation du contenu et des tarifs des produits et services proposés au Client. Aux prestataires de services et sous-traitants réalisant des prestations pour notre compte. Nous partageons des informations avec les fournisseurs et prestataires de service qui collaborent avec nous, notamment pour l’exécution des divers processus de paiement, pour la vérification d’identité et de conformité du dossier Client à l’ouverture du compte, pour nous mettre à disposition diverses infrastructures techniques et héberger nos systèmes, pour la gestion de la relation Client et vous offrir un service d’assistance, et pour mener diverses enquêtes et études. Ces partenaires doivent adhérer aux obligations de confidentialité en accord avec la présente Politique d’utilisation des données et les contrats que nous avons signés avec eux. Aux autoritésfinancières, judiciaires ou agences d’Etat, organismes publics. Ces partages de données sont réalisés à leur demande et dans la limite de ce qui est permis par la réglementation. A certaines professions réglementées telles qu’avocats, notaires, commissaires aux comptes. Ces partages de données sont réalisés lorsqu’ils s’avèrent nécessaires dans certaines circonstances (contentieux, audit…) et dans la limite de ce qui est permis par la réglementation. A certains partenaires : Ces partages de données sont réalisés avec des partenaires avec lesquelles vous êtes entré ou êtes sur le point d’entrer en relation contractuelle, suite à une information détaillée et éclairée de notre part et sur la base de votre consentement explicite. Ces partenaires doivent se conformer aux obligations de protection des données personnelles en accord avec la réglementation en vigueur et conformément aux contrats que nous avons signés avec eux.
-            </p>
-        </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>Pendant combien de temps conservons nous vos informations ?</h1>
-            <p className='mt-2 text-black/80'>
-                Le Client reconnaît que les informations, y compris les informations personnelles, et les Transactions, les documents ou leurs reproductions seront enregistrées et stockées pendant une période de dix (10) ans par Winichange. Winichange conserve vos données personnelles pendant 10 ans conformément aux législations et réglementations applicables, à ses exigences et contraintes opérationnelles, telles que la tenue de notre comptabilité, une gestion efficace de la relation Client, ainsi que pour faire valoir des droits en justice ou répondre à des demandes des organismes de régulation
-            </p>
-        </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>Quels sont vos droits et comment pouvez-vous les exercer ?</h1>
-            <p className='mt-2 text-black/80'>
-                Conformément à la réglementation applicable, vous disposez de différents droits, à savoir : Droit d’accès Vous pouvez obtenir des informations concernant le traitement de vos données personnelles ainsi qu’une copie de ces données personnelles. Droit de rectification Si vous estimez que vos données personnelles sont inexactes ou incomplètes, vous pouvez exiger que ces données personnelles soient modifiées en conséquence. Droit à l’effacement Vous pouvez exiger l’effacement de vos données personnelles dans la limite de ce qui est permis par la réglementation. Droit à la limitation du traitement Vous pouvez demander la limitation de traitement de vos données personnelles. Pour les Clients, sont concernés les traitements qui ne sont pas essentiels à l’exécution du contrat prévu par les conditions générales d’utilisation. Droit d’opposition Vous pouvez vous opposer au traitement de vos données personnelles, pour des motifs liés à votre situation particulière. Vous disposez du droit absolu de vous opposer au traitement de vos données personnelles à des fins de prospection commerciale, y compris le profilage lié à cette prospection. Droit à la portabilité de vos données Quand ce droit est applicable, vous avez le droit que les données personnelles que vous nous avez fournies vous soient rendues Droit de retirer votre consentement Si vous avez donné votre consentement au traitement de vos données personnelles, vous avez le droit de retirer votre consentement à tout moment. Vous ne pourrez plus utiliser le site web, l’application web ou mobile de Winichange après avoir retiré votre consentement. Si vous souhaitez exercer l’un des droits listés ci-dessus, veuillez nous contacter à l'adresse info@winichange.com en incluant à votre demande un scan ou une copie de votre justificatif d’identité. Conformément à la réglementation applicable, vous êtes également en droit d’introduire une réclamation auprès de l’ARTCI.
-            </p>
-        </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>Comment serez-vous informé des modifications apportées à ce document d’information sur les données à caractère personnel ?</h1>
-            <p className='mt-2 text-black/80'>
-                Dans un monde en constante évolution technologique, nous actualisons régulièrement ce document d’information sur notre application et site internet. Nous vous aviserons de toute modification importante de cette politique par le biais de nos modes de communication habituels
-            </p>
-        </div>
-        <div className='mt-10'>
-            <h1 className='font-bold text-2xl text-black'>Comment nous constater ?</h1>
-            <p className='mt-2 text-black/80'>
-                Vous êtes Client Winichange Vous pouvez exercer de façon autonome vos droits d’accès, de rectification, suppression, portabilité des données, de limitation des traitements et contrôle de vos consentements sur votre compte. Si vous avez d’autres questions concernant l’utilisation de vos données personnelles visées par le présent document, vous pouvez nous contacter par email à l’adresse suivante : <a className='text-[#126e51]' href='mailto:info@winichange.com'>info@winichange.com</a> Vous êtes un collaborateur parmi nos entreprises partenaires ou fournisseurs Pour exercer vos droits d’accès, de rectification, de suppression, de portabilité, de limitation des traitements et de retrait de vos consentements ou si vous avez d’autres questions concernant l’utilisation de vos données personnelles visées par le présent document, vous pouvez nous contacter par email à l’adresse suivante : info@winichange.com Vous n’appartenez à aucune des catégories ci-dessous Vous êtes un éventuel futur Client, futur partenaire, vous pouvez par email à l’adresse suivante : 
-                <a className='text-[#126e51]' href='mailto:info@winichange.com'>info@winichange.com</a> Cette politique de confidentialité a été mis à jour le 19 février 2024
-            </p>
-        </div>
+          <p className="text-emerald-50 text-lg max-w-2xl mx-auto">
+            Comment nous protégeons vos données personnelles
+          </p>
+          <p className="text-emerald-50 text-sm mt-4">
+            Dernière mise à jour : 19 février 2024
+          </p>
         </div>
       </div>
+      <div className="max-w-4xl mx-auto px-4 py-16 -mt-10">
+        {sections.find(s => s.isImportant) && (
+          <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8 border-l-4 border-emerald-500">
+            <p className="text-gray-600 leading-relaxed">
+              {sections.find(s => s.isImportant)?.content}
+            </p>
+          </div>
+        )}
+        {sections.filter(s => !s.isImportant).map((section, index) => (
+          <PolicySection key={index} title={section.title}>
+            <p className="text-gray-600">{section.content}</p>
+            {section.list && (
+              <ul className="space-y-2 mt-4">
+                {section.list.map((item, i) => (
+                  <li key={i} className="flex items-start space-x-3 bg-emerald-50 p-3 rounded-lg">
+                    <span className=" w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm flex-shrink-0 mt-0.5">
+                      ✓
+                    </span>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </PolicySection>
+        ))}
+        <div className="bg-gradient-to-br from-emerald-50 to-white rounded-lg p-8 text-center shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Des questions sur vos données ?
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Notre équipe est là pour répondre à toutes vos questions concernant la protection de vos données.
+          </p>
+          <a 
+            href="mailto:info@winichange.com"
+            className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+          >
+            Contactez-nous
+          </a>
+        </div>
+
+        <div className="mt-8 text-center text-sm text-gray-500">
+          Cette politique de confidentialité a été mise à jour le 19 février 2024
+        </div>
+      </div>
+
       <Footer />
-    </>
+    </div>
   )
 }
 
