@@ -9,7 +9,7 @@ import { FaClock, FaTag } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import CommentSection from '@/app/components/CommentSection'
 
-
+//RECUPERER LES POSTS
 async function getPost(slug: string) {
   return client.fetch(`
     *[_type == "post" && slug.current == $slug][0] {
