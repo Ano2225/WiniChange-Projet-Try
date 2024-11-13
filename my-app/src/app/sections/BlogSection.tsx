@@ -76,56 +76,52 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {posts.map((post) => (
-            <motion.article
+            <motion.div
               key={post._id}
               variants={itemVariants}
               className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300"
             >
-              <div className="relative h-56 overflow-hidden">
-                <Image
-                  src={urlFor(post.mainImage).url()}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-300 hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 bg-[#126e51] text-white px-3 py-1 rounded-full text-sm font-medium">
-                  {post.category.title}
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <FaClock className="mr-2" />
-                    <span>{post.readTime}</span>
-                  </div>
-                  <div className="flex items-center ml-4">
-                    <FaTag className="mr-2" />
-                    <span>{post.category.title}</span>
+              <Link href={`/blog/${post.slug.current}`} className="block">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={urlFor(post.mainImage).url()}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 bg-[#126e51] text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {post.category.title}
                   </div>
                 </div>
 
-                <Link href={`/blog/${post.slug.current}`}>
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <div className="flex items-center">
+                      <FaClock className="mr-2" />
+                      <span>{post.readTime}</span>
+                    </div>
+                    <div className="flex items-center ml-4">
+                      <FaTag className="mr-2" />
+                      <span>{post.category.title}</span>
+                    </div>
+                  </div>
+
                   <h3 className="text-xl font-bold mb-3 line-clamp-2 hover:text-[#126e51] transition-colors">
                     {post.title}
                   </h3>
-                </Link>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.description}
-                </p>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.description}
+                  </p>
 
-                <Link 
-                  href={`/blog/${post.slug.current}`}
-                  className="inline-flex items-center text-[#126e51] font-semibold group hover:text-[#126e51]/80 transition-colors"
-                >
-                  Lire la suite
-                  <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.article>
+                  <div className="inline-flex items-center text-[#126e51] font-semibold group hover:text-[#126e51]/80 transition-colors">
+                    Lire la suite
+                    <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
