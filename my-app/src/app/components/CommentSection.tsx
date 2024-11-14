@@ -3,12 +3,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2, MessageSquare, Send, User, Mail } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 interface Comment {
   _id: string
   name: string
   email: string
-  comment: string
+  message: string 
   publishedAt: string
 }
 
@@ -23,47 +24,108 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    comment: ''
+    message: '' 
   })
 
-  /*
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    
     try {
-      const response = await fetch('/api/comments/route', {
+      const response = await fetch('/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, postId }),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,  
+          postId: postId
+        }),
       })
       
-      if (response.ok) {
-        const newComment = await response.json()
-        setComments([newComment, ...comments])
-        setFormData({ name: '', email: '', comment: '' })
+      console.log('Request body:', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        postId: postId
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.message || 'Erreur lors de l\'envoi du commentaire')
       }
+
+      const data = await response.json()
+      console.log('Response data:', data);
+      
+      toast.success('Commentaire ajouté avec succès!')
+
     } catch (error) {
-      console.error('Error posting comment:', error)
+      console.error('Detailed error:', error)
+      toast.error('Une erreur est survenue')
     } finally {
       setIsLoading(false)
     }
   }
-*/
+
+  const refreshComments = async () => {
+    try {
+      const response = await fetch(`/api/comments?postId=${postId}`)
+      if (response.ok) {
+        const freshComments = await response.json()
+        setComments(freshComments)
+      }
+    } catch (error) {
+      console.error('Error refreshing comments:', error)
+      toast.error('Erreur lors du rafraîchissement des commentaires')
+    }
+  }
 
   return (
-    <div className="mt-16 max-w-3xl mx-auto">
-      <div className="flex items-center gap-3 mb-8">
-        <MessageSquare className="w-6 h-6 text-[#126e51]" />
-        <h3 className="text-2xl font-bold">Commentaires</h3>
-      </div>
-      
+    <div className="mt-16 max-w-3xl mx-auto mb-10">
+      <AnimatePresence>
+        <div className="space-y-6">
+          {comments.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center text-gray-500 py-8"
+            >
+              Aucun commentaire pour le moment. Soyez le premier à commenter !
+            </motion.div>
+          ) : (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Tous les commentaires</h2>
+              <ul>
+                {comments.map((comment) => (
+                  <div key={comment._id} className="border-b border-[#696969]/50 py-2">
+                    <p>
+                      <strong>{comment.name}</strong>{" "}
+                      <span className="text-[#696969] text-sm sm:w-1/2">
+                        {new Date(comment.publishedAt).toLocaleString()}
+                      </span>
+                    </p>
+                    <p>{comment.message}</p> 
+                  </div>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </AnimatePresence>
+     
       <motion.form 
-        className="mb-12 bg-white rounded-2xl shadow-lg p-6 border border-gray-100"
+        onSubmit={handleSubmit}
+        className="mb-12 mt-10  bg-white rounded-2xl shadow-lg p-6 border border-gray-100"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
+         <div className="flex items-center gap-3 mb-8">
+        <MessageSquare className="w-6 h-6 text-[#126e51]" />
+        <h3 className="text-2xl font-bold">Laissez un commentaire</h3>
+      </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="relative">
             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -91,8 +153,8 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
         <div className="mb-6">
           <textarea
             placeholder="Votre commentaire"
-            value={formData.comment}
-            onChange={(e) => setFormData({...formData, comment: e.target.value})}
+            value={formData.message}
+            onChange={(e) => setFormData({...formData, message: e.target.value})}
             className="w-full p-4 rounded-lg border border-gray-200 focus:border-[#126e51] focus:ring-1 focus:ring-[#126e51] outline-none transition-colors resize-none"
             rows={4}
             required
@@ -117,52 +179,7 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
         </button>
       </motion.form>
 
-      <AnimatePresence>
-        <div className="space-y-6">
-          {comments.length === 0 ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center text-gray-500 py-8"
-            >
-              Aucun commentaire pour le moment. Soyez le premier à commenter !
-            </motion.div>
-          ) : (
-            comments.map((comment) => (
-              <motion.div
-                key={comment._id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#126e51]/10 flex items-center justify-center">
-                      <User className="w-5 h-5 text-[#126e51]" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{comment.name}</h4>
-                      <time className="text-sm text-gray-500">
-                        {new Date(comment.publishedAt).toLocaleDateString('fr-FR', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                          hour: '2-digit',
-                          minute: '2-digit'
-                        })}
-                      </time>
-                    </div>
-                  </div>
-                </div>
-                <div className="ml-13">
-                  <p className="text-gray-600 leading-relaxed">{comment.comment}</p>
-                </div>
-              </motion.div>
-            ))
-          )}
-        </div>
-      </AnimatePresence>
+    
     </div>
   )
 }

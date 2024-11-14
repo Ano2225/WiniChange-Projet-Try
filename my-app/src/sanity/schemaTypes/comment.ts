@@ -1,60 +1,35 @@
-import { defineField, defineType } from 'sanity'
-
-export default defineType({
+// schemas/comment.ts
+export default {
   name: 'comment',
-  title: 'Commentaires',
+  title: 'Comment',
   type: 'document',
   fields: [
-    defineField({
+    {
       name: 'name',
-      title: 'Nom',
+      title: 'Name',
       type: 'string',
-      validation: Rule => Rule.required()
-    }),
-    defineField({
+    },
+    {
       name: 'email',
       title: 'Email',
       type: 'string',
-      validation: Rule => Rule.required().email()
-    }),
-    defineField({
-      name: 'content',
-      title: 'Commentaire',
+    },
+    {
+      name: 'message',
+      title: 'Message',
       type: 'text',
-      validation: Rule => Rule.required().min(10)
-    }),
-    defineField({
+    },
+    {
       name: 'post',
-      title: 'Article',
+      title: 'Post',
       type: 'reference',
       to: [{ type: 'post' }],
-      validation: Rule => Rule.required()
-    }),
-    defineField({
-      name: 'createdAt',
-      title: 'Date de création',
-      type: 'datetime',
-      initialValue: () => new Date().toISOString()
-    }),
-    defineField({
-      name: 'isApproved',
-      title: 'Approuvé',
-      type: 'boolean',
-      initialValue: false
-    })
-  ],
-  preview: {
-    select: {
-      title: 'name',
-      post: 'post.title',
-      approved: 'isApproved',
-      email: 'email'
     },
-    prepare({ title, post, approved, email }) {
-      return {
-        title: `${title} (${email})`,
-        subtitle: `${approved ? '✅' : '⏳'} ${post || 'Article non spécifié'}`
-      }
-    }
-  }
-})
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+      initialValue: () => new Date().toISOString(),
+    },
+  ],
+}
