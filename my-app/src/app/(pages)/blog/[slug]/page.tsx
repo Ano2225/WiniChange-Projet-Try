@@ -48,7 +48,7 @@ async function getPost(slug: string) {
   `, { slug });
 }
 
-// fonction pour récupérer les articles récents
+// Récupérer les articles récents
 async function getRecentPosts(currentPostId: string) {
   return client.fetch(`
     *[_type == "post" && _id != $currentPostId] | order(publishedAt desc)[0...5] {

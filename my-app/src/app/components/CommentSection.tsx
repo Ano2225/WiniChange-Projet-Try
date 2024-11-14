@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Loader2, MessageSquare, Send, User, Mail } from 'lucide-react'
 import toast from 'react-hot-toast'
 
@@ -9,7 +9,7 @@ interface Comment {
   _id: string
   name: string
   email: string
-  message: string 
+  message: string
   publishedAt: string
 }
 
@@ -24,108 +24,74 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: '' 
+    message: ''
   })
+
+  const loadComments = async () => {
+    try {
+      const response = await fetch(`/api/comments?postId=${postId}`)
+      if (response.ok) {
+        const data = await response.json()
+        setComments(data)
+      }
+    } catch (error) {
+      console.error('Error loading comments:', error)
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
-    
+
     try {
       const response = await fetch('/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,  
-          postId: postId
-        }),
+        body: JSON.stringify({ ...formData, postId }),
       })
       
-      console.log('Request body:', {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        postId: postId
-      });
-      
+      const data = await response.json()
+
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Erreur lors de l\'envoi du commentaire')
+        throw new Error(data.message || 'Erreur lors de l\'envoi du commentaire')
       }
 
-      const data = await response.json()
-      console.log('Response data:', data);
+      setFormData({ name: '', email: '', message: '' })
+      toast.success('Commentaire ajouté avec succès')
       
-      toast.success('Commentaire ajouté avec succès!')
-
+      await loadComments()
+      
     } catch (error) {
-      console.error('Detailed error:', error)
-      toast.error('Une erreur est survenue')
+      console.error('Error submitting comment:', error)
+      toast.error(error instanceof Error ? error.message : 'Une erreur est survenue')
     } finally {
       setIsLoading(false)
     }
   }
 
-  const refreshComments = async () => {
-    try {
-      const response = await fetch(`/api/comments?postId=${postId}`)
-      if (response.ok) {
-        const freshComments = await response.json()
-        setComments(freshComments)
-      }
-    } catch (error) {
-      console.error('Error refreshing comments:', error)
-      toast.error('Erreur lors du rafraîchissement des commentaires')
-    }
-  }
+  useEffect(() => {
+    loadComments()
+    
+    const interval = setInterval(loadComments, 10000) 
+
+    return () => clearInterval(interval)
+  }, [postId])
 
   return (
-    <div className="mt-16 max-w-3xl mx-auto mb-10">
-      <AnimatePresence>
-        <div className="space-y-6">
-          {comments.length === 0 ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center text-gray-500 py-8"
-            >
-              Aucun commentaire pour le moment. Soyez le premier à commenter !
-            </motion.div>
-          ) : (
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Tous les commentaires</h2>
-              <ul>
-                {comments.map((comment) => (
-                  <div key={comment._id} className="border-b border-[#696969]/50 py-2">
-                    <p>
-                      <strong>{comment.name}</strong>{" "}
-                      <span className="text-[#696969] text-sm sm:w-1/2">
-                        {new Date(comment.publishedAt).toLocaleString()}
-                      </span>
-                    </p>
-                    <p>{comment.message}</p> 
-                  </div>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </AnimatePresence>
-     
+    <div className="mt-16 max-w-3xl mx-auto">
+      <div className="flex items-center gap-3 mb-8">
+        <MessageSquare className="w-6 h-6 text-[#126e51]" />
+        <h3 className="text-2xl font-bold">Commentaires {comments.length > 0 && `(${comments.length})`}</h3>
+      </div>
+      
       <motion.form 
         onSubmit={handleSubmit}
-        className="mb-12 mt-10  bg-white rounded-2xl shadow-lg p-6 border border-gray-100"
+        className="mb-12 bg-white rounded-2xl p-6 border border-gray-100"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-         <div className="flex items-center gap-3 mb-8">
-        <MessageSquare className="w-6 h-6 text-[#126e51]" />
-        <h3 className="text-2xl font-bold">Laissez un commentaire</h3>
-      </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="relative">
             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -163,7 +129,7 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
         <button
           type="submit"
           disabled={isLoading}
-          className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-full bg-[#126e51] text-white font-semibold hover:bg-[#126e51]/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
+          className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 rounded-full bg-[#126e51] text-white font-semibold hover:bg-[#126e51]/90 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isLoading ? (
             <>
@@ -179,7 +145,38 @@ export default function CommentSection({ postId, initialComments }: CommentSecti
         </button>
       </motion.form>
 
-    
+      <AnimatePresence>
+        <div className="space-y-6">
+          {comments.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center text-gray-500 py-8"
+            >
+              Aucun commentaire pour le moment. Soyez le premier à commenter !
+            </motion.div>
+          ) : (
+            <div className="space-y-4">
+              {comments.map((comment) => (
+                <motion.div
+                  key={comment._id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white rounded-lg p-4 border border-gray-100"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="font-semibold text-gray-900">{comment.name}</span>
+                    <span className="text-sm text-gray-500">
+                      {new Date(comment.publishedAt).toLocaleDateString()}
+                    </span>
+                  </div>
+                  <p className="text-gray-700">{comment.message}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </div>
+      </AnimatePresence>
     </div>
   )
 }
