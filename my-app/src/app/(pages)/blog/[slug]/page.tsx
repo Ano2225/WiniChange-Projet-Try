@@ -48,7 +48,7 @@ async function getPost(slug: string) {
   `, { slug });
 }
 
-// Ajout d'une fonction pour récupérer les articles récents
+// fonction pour récupérer les articles récents
 async function getRecentPosts(currentPostId: string) {
   return client.fetch(`
     *[_type == "post" && _id != $currentPostId] | order(publishedAt desc)[0...5] {
@@ -138,7 +138,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     <div className="pt-32 lg:pt-36 pb-16 bg-[#f8f9fa]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 relative">
-          {/* Article principal */}
           <article className="lg:w-2/3">
             <motion.header 
               initial={{ opacity: 0, y: 20 }}
