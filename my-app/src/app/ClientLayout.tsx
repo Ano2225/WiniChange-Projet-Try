@@ -32,6 +32,16 @@ export default function ClientLayout({
   const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    
+    // Bloquer le scroll quand le composant est monté
+    document.body.style.overflow = 'hidden';
+    
+    // Function pour réactiver le scroll
+    const enableScroll = () => {
+      document.body.style.overflow = originalStyle;
+    };
+
     Promise.all([
       new Promise((resolve) => {
         const images = document.querySelectorAll('img');
@@ -64,13 +74,20 @@ export default function ClientLayout({
       setContentReady(true);
       setTimeout(() => {
         setIsLoading(false);
+        enableScroll(); 
       }, 500);
     })
     .catch(error => {
       console.error('Erreur lors du chargement:', error);
       setContentReady(true);
       setIsLoading(false);
+      enableScroll(); 
     });
+
+    // Cleanup : réactiver le scroll si le composant est démonté
+    return () => {
+      enableScroll();
+    };
   }, []);
 
   return (

@@ -102,6 +102,15 @@ footer a {
 
 /*ClientLayout */
 
+/* globals.css */
+body.scroll-locked {
+  overflow: hidden !important;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+/* Vos autres animations */
 @keyframes loading-bar {
   0% {
     transform: translateX(-100%);
@@ -115,7 +124,6 @@ footer a {
   animation: loading-bar 1.5s infinite;
 }
 
-/* Optionnel : styles supplémentaires pour le loader */
 @keyframes custom-pulse {
   0%, 100% {
     opacity: 1;
