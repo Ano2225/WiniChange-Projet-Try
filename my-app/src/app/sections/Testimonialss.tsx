@@ -7,7 +7,7 @@ import MobileTestimonialsComponent from '../components/MobileTestimonialsCompone
 const Testimonials = () => {
 
   return (
-    <div className='w-full'>
+    <div className='w-full mt-4'>
         <div className="container mx-auto py-10">
         <div className="text-center  md:mb-24">
           <h2 className="text-3xl md:text-4xl font-bold text-black">
