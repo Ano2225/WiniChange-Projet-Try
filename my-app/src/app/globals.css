@@ -48,21 +48,7 @@ footer a {
 .logo-ticker-image {
    @apply h-40 w-auto;
 }
-.mask-gradient {
-  mask-image: linear-gradient(to right, transparent, black, transparent);
-}
 
-.bg-hero-gradient {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.9),  
-    rgba(0, 0, 0, 0.6), 
-    #126e51, 
-    rgba(76, 175, 80, 0.2), 
-    rgba(0, 0, 0, 0.6), 
-    rgba(0, 0, 0, 0.9) 
-  );
-}
 
  }
 
@@ -74,7 +60,7 @@ footer a {
   width: calc(100% - 10rem);
 }
 
-/*Testimonials */
+/*Nos Crypto Sectio */
 
 .animate-scroll-left {
     animation: scroll-left 40s linear infinite;
@@ -98,3 +84,18 @@ footer a {
       transform: translateX(120%);
     }
   }
+
+  /*Testimonials section*/
+
+  .slick-dots li {
+    margin: 0 4px;
+}
+.slick-dots li button:before {
+    display: none;
+}
+.slick-dots li div {
+    opacity: 0.3;
+}
+.slick-dots li.slick-active div {
+    opacity: 1;
+}

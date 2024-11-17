@@ -56,7 +56,7 @@ const FloatingButtons: React.FC = () => {
       </div>
 
       {isChatOpen && (
-        <div className="fixed bottom-32 right-5 bg-white border rounded-lg shadow-lg p-4 w-72 z-50">
+        <div className="fixed bottom-32 right-5 bg-[#126e51] text-white border rounded-lg shadow-lg p-4 w-72 z-50">
           <h2 className="text-lg font-bold mb-2">Alors , nous pouvons discuter 😊</h2>
           <textarea
             className="w-full h-24 p-2 border rounded-lg mb-2"
@@ -82,10 +82,10 @@ const FloatingButtons: React.FC = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 bg-white text-black/30 p-3 rounded-full shadow-lg hover:bg-white transition-colors z-50"
+          className="fixed bottom-5 right-5 bg-black/80 text-white/30 p-3 rounded-full shadow-lg hover:bg-black transition-colors z-50"
         >
           <svg
-            className="w-8 h-8 transform rotate-180 text-black py-2"
+            className="w-8 h-8 transform rotate-180 text-white py-2"
             fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"

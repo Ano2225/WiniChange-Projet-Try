@@ -11,6 +11,10 @@ export const Features = () => {
             <div className="container mx-auto px-4">
                 <h2 className="text-center font-bold text-3xl md:text-4xl tracking-tighter">
                     <span className='text-[#126e51]'>Pourquoi Winichange </span>est le choix idéal
+                    <div className="mt-4 flex justify-center gap-2">
+                    <div className="h-1 w-16 bg-[#126e51] rounded-full"></div>
+                    <div className="h-1 w-4 bg-[#126e51]/60 rounded-full"></div>
+                </div>
                 </h2>
                 <div className='items-center flex justify-center'>
                 <p className="text-center mt-5 text-[1rem] text-white/70 max-w-96 ">

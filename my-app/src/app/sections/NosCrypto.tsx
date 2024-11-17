@@ -25,7 +25,12 @@ const NosCrypto = () => {
       <div className="lg:container mx-auto px-4 my-14 mb-20 lg:my-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
           <span className="text-[#126e51]">Coins et Blockchains</span> pris en charge
+          <div className="mt-4 flex justify-center gap-2">
+                    <div className="h-1 w-16 bg-[#126e51] rounded-full"></div>
+                    <div className="h-1 w-4 bg-[#126e51]/60 rounded-full"></div>
+                </div>
         </h2>
+        
         <div className="relative flex flex-col h-full min-h-fit">
           {/* Version Desktop */}
           <div className="hidden lg:flex lg:flex-col lg:space-y-10 justify-center container">

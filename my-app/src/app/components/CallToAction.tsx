@@ -29,7 +29,7 @@ const CallToAction = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <button className="group flex items-center gap-3 rounded-full bg-emerald-600 text-white font-bold px-8 py-4 text-base 
+              <button className="group flex items-center gap-3 rounded-full bg-[#126e51] text-white font-bold px-8 py-4 text-base 
                                shadow-lg hover:bg-emerald-700 transition-all duration-300 ease-in-out 
                                hover:shadow-emerald-500/20 hover:shadow-xl relative overflow-hidden">
                 <span className="relative z-10">Nous rejoindre</span>

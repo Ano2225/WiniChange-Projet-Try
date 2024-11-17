@@ -2,8 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
 import Logo from '@/app/assets/logo.png';
-import GlobeImage from '../components/GlobeImage';
-import MoyensDePaiementGlobe from '../components/MoyenDePaimentGlobe';
 import CircleTrans from './circleTrans';
 
 const MoyensDePaiement = () => {
@@ -15,6 +13,10 @@ const MoyensDePaiement = () => {
             <div className="text-center md:text-start">
               <h3 className="text-2xl md:text-3xl text-gray-900 font-bold mb-4 md:mb-8">
                 Plus de <span className="font-bold text-[#126e51]">40 Moyens de paiement</span>
+                <div className="mt-4 flex justify-center gap-2">
+                    <div className="h-1 w-16 bg-[#126e51] rounded-full"></div>
+                    <div className="h-1 w-4 bg-[#126e51]/60 rounded-full"></div>
+                </div>
               </h3>
               <p className="text-base md:text-lg md:text-start font-medium mb-4 text-gray-600 leading-relaxed">
                 Transférez de l'argent et échangez des cryptomonnaies à des taux avantageux avec plus de 40 moyens de paiement:
