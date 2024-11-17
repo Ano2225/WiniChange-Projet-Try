@@ -52,7 +52,7 @@ export const Header = () => {
                 </a>
             </div>
 
-            <div className={ `md:container w-full  py-2 md:px-4  mt-2 font-semibold transition-colors duration-300 ${isScrolled ? 'bg-gradient-to-l from bg-green-400 to bg-white bg-opacity-10 backdrop-blur-lg' : 'bg-gradient-to-l from-white to-green-200 bg-opacity-30 backdrop-blur-lg border-b border-white '} rounded-[1.8rem]`}>
+            <div className={ `md:container w-full  py-2 md:px-4  mt-2 font-semibold transition-colors duration-300 ${isScrolled ? 'bg-white shadow-lg backdrop-blur-lg' : 'bg-gradient-to-l from-white to-green-200 bg-opacity-30 backdrop-blur-lg border-b border-white '} rounded-[1.8rem]`}>
                 <div className="mx-auto flex items-center justify-between px-4">
                     <div className="flex items-center cursor-pointer">
                         <a href="/">
