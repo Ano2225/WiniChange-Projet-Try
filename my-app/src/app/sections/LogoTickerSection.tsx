@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import beninLogo from '@/app/assets/svgFlag/Flag_of_Benin.svg';
 import civLogo from "@/app/assets/svgFlag/Flag_of_Côte_d'Ivoire.svg";
@@ -18,7 +18,6 @@ import guineeLogo from '@/app/assets/svgFlag/Flag_of_Guinea.svg';
 import nigeriaLogo from '@/app/assets/svgFlag/Flag_of_Nigeria.svg';
 
 export const LogoTickerSection = () => {
-
   const images = [
     { src: beninLogo, alt: 'Benin', description: 'Benin' },
     { src: civLogo, alt: "CIV", description: 'Côte d\'Ivoire' },
@@ -36,15 +35,24 @@ export const LogoTickerSection = () => {
 
   const [paused, setPaused] = useState(false);
 
-  const colors = ['#F0F0F0', '#E5E5E5', '#D9D9D9', '#CCCCCC', '#FFFFFF', '#F7F7F7', '#EFEFEF'];
-
+  const colors = [
+    'rgb(240, 253, 244)', // vert très clair
+    'rgb(220, 252, 231)', // vert pâle
+    'rgb(209, 250, 229)', // menthe claire
+    'rgb(236, 253, 245)', // vert pastel
+    'rgb(243, 244, 246)', // gris très clair
+    'rgb(249, 250, 251)', // gris pâle
+    'rgb(255, 255, 255)', // blanc
+  ];
 
   const getRandomColor = (index: number) => colors[index % colors.length];
 
   return (
-    <div className="bg-black text-white py-[20px] sm:py-24">
+    <div className=" text-gray-900 py-[20px] sm:py-24">
       <div className="container">
-        <h2 className="text-xl text-center text-white/70 mb-6 font-bold">Découvrez les pays que nous couvrons</h2>
+        <h2 className="text-xl md:text-2xl text-center text-emerald-800 mb-6 font-bold">
+          Découvrez les pays que nous couvrons
+        </h2>
         <div 
           className="flex overflow-hidden relative" 
           onMouseEnter={() => setPaused(true)} 
@@ -61,10 +69,10 @@ export const LogoTickerSection = () => {
             animate={{ translateX: paused ? 0 : "-50%" }}
             className="flex gap-8 flex-none pr-16 mt-10"
           >
-            {images.map(({ src, alt, description }, index) => (
+            {[...images, ...images].map(({ src, alt, description }, index) => (
               <div
                 key={`${alt}-${index}`}
-                className="rounded-full shadow-lg flex-none h-12  px-2 flex items-center justify-center relative w-fit"
+                className="rounded-full shadow-md flex-none h-12 px-2 flex items-center justify-center relative w-fit hover:shadow-lg transition-shadow duration-300"
                 style={{ backgroundColor: getRandomColor(index) }} 
               >
                 <Image
@@ -74,28 +82,10 @@ export const LogoTickerSection = () => {
                   height={10}
                   priority
                 />
-                <div className="text-xs px-2 text-[#126e51] text-center mt-1">{alt}</div>
-                <div className="absolute bottom-0 left-0 right-0 text-center text-xs text-black bg-white/80 p-1 rounded-b-md opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  {description}
+                <div className="text-xs px-2 text-emerald-700 text-center mt-1 font-medium">
+                  {alt}
                 </div>
-              </div>
-            ))}
-            {images.map(({ src, alt, description }, index) => (
-              <div
-                key={`${alt}-${index}`}
-                className="rounded-full shadow-lg flex-none w-28 h-12  px-2 flex items-center justify-center relative"
-                style={{ backgroundColor: getRandomColor(index) }} 
-              >
-                <Image
-
-                  src={src}
-                  alt={alt}
-                  width={30}
-                  height={10}
-                  priority
-                />
-                <div className="text-xs px-2 text-[#126e51] text-center mt-1">{alt}</div>
-                <div className="absolute bottom-0 left-0 right-0 text-center text-xs text-black bg-white/80 p-1 rounded-b-md opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 text-center text-xs text-emerald-800 bg-white/95 p-1 rounded-b-md opacity-0 hover:opacity-100 transition-opacity duration-300 shadow-sm">
                   {description}
                 </div>
               </div>
