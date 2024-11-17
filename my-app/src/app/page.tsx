@@ -30,7 +30,7 @@ export default function Home() {
     <CallToAction />
     <SupportSection/>
     {/*<Faq/>*/}
-    <Footer color='bg-black'/>
+    <Footer />
     <Toaster position="bottom-center" />
     <Cookies/>
    </>

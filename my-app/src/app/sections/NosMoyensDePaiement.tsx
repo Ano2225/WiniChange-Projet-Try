@@ -14,7 +14,7 @@ const MoyensDePaiement = () => {
           <div className="w-full md:w-1/2 flex items-center justify-center md:mb-0">
             <div className="text-center md:text-start">
               <h3 className="text-2xl md:text-3xl text-gray-900 font-bold mb-4 md:mb-8">
-                Plus de <span className="font-bold text-emerald-600">40 Moyens de paiement</span>
+                Plus de <span className="font-bold text-[#126e51]">40 Moyens de paiement</span>
               </h3>
               <p className="text-base md:text-lg md:text-start font-medium mb-4 text-gray-600 leading-relaxed">
                 Transférez de l'argent et échangez des cryptomonnaies à des taux avantageux avec plus de 40 moyens de paiement:

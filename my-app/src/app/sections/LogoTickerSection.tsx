@@ -50,7 +50,7 @@ export const LogoTickerSection = () => {
   return (
     <div className=" text-gray-900 py-[20px] sm:py-24">
       <div className="container">
-        <h2 className="text-xl md:text-2xl text-center text-emerald-800 mb-6 font-bold">
+        <h2 className="text-xl md:text-2xl text-center text-[#126e51] mb-6 font-bold">
           Découvrez les pays que nous couvrons
         </h2>
         <div 

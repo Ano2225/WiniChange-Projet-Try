@@ -24,7 +24,7 @@ const NosCrypto = () => {
     <section className="py-8 overflow-hidden md:min-h-auto min-h-[450px] h-auto">
       <div className="lg:container mx-auto px-4 my-14 mb-20 lg:my-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
-          <span className="text-emerald-600">Coins et Blockchains</span> pris en charge
+          <span className="text-[#126e51]">Coins et Blockchains</span> pris en charge
         </h2>
         <div className="relative flex flex-col h-full min-h-fit">
           {/* Version Desktop */}
@@ -55,7 +55,7 @@ const NosCrypto = () => {
             ))}
           </div>
 
-          {/* Version Mobile Optimisée */}
+          {/* Version Mobile  */}
           {[0, 5, 10].map((startIndex, index) => (
             <div 
               key={startIndex}
@@ -83,30 +83,6 @@ const NosCrypto = () => {
           ))}
         </div>
       </div>
-      <style jsx>{`
-        .animate-scroll-left {
-          animation: scroll-left 40s linear infinite;
-        }
-        .animate-scroll-right {
-          animation: scroll-right 40s linear infinite;
-        }
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(-120%);
-          }
-        }
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(120%);
-          }
-        }
-      `}</style>
     </section>
   );
 };

@@ -7,10 +7,10 @@ import MobileTestimonialsComponent from '../components/MobileTestimonialsCompone
 const Testimonials = () => {
 
   return (
-    <div className='bg-black w-full'>
+    <div className='w-full'>
         <div className="container mx-auto py-10">
         <div className="text-center  md:mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-black">
             Nos clients <span className='text-[#126e51]'>satisfaits</span>
           </h2>
         </div>
@@ -18,7 +18,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className={`relative p-5 md:p-6 rounded-3xl shadow-lg border-2 bg-gray-200 mb-14 ${index % 2 ===0 ? 'md:mt-10': 'md:mb-16'}`}
+              className={`relative p-5 md:p-6 rounded-3xl shadow-lg border-2 bg-green-200 mb-14 ${index % 2 ===0 ? 'md:mt-10': 'md:mb-16'}`}
 
               style={{
                 borderColor: "black",
@@ -38,7 +38,7 @@ const Testimonials = () => {
               <div className="mb-4">
                 <h6
                   className="text-sm md:text-lg font-medium"
-                  style={{ color: "black" , opacity: "0.8"}}
+                  style={{ color: "black" , opacity: "0.9"}}
                 >
                   {testimonial.testimonial}
                 </h6>
