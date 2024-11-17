@@ -27,6 +27,7 @@ const NosCrypto = () => {
           <span className="text-emerald-600">Coins et Blockchains</span> pris en charge
         </h2>
         <div className="relative flex flex-col h-full min-h-fit">
+          {/* Version Desktop */}
           <div className="hidden lg:flex lg:flex-col lg:space-y-10 justify-center container">
             {[0, 5, 10].map((startIndex) => (
               <div key={startIndex} className="lg:flex lg:space-x-24 justify-center container">
@@ -54,28 +55,27 @@ const NosCrypto = () => {
             ))}
           </div>
 
-          {/* Version mobile avec animations améliorées */}
+          {/* Version Mobile Optimisée */}
           {[0, 5, 10].map((startIndex, index) => (
             <div 
               key={startIndex}
-              className={`flex space-x-16 lg:hidden ${index === 1 ? 'animate-scroll-right' : 'animate-scroll-left'} 
+              className={`flex space-x-8 lg:hidden ${index === 1 ? 'animate-scroll-right' : 'animate-scroll-left'} 
                          ${index > 0 ? 'absolute left-0' : ''}`}
-              style={{ top: index > 0 ? `${index * 96}px` : '0' }}
+              style={{ top: index > 0 ? `${index * 72}px` : '0' }}
             >
               {supportedCoins.slice(startIndex, startIndex + 5).map((coin) => (
                 <div 
                   key={coin.symbol} 
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-white/80 shadow-md hover:shadow-lg
-                           transition-all duration-300 border border-gray-100"
+                  className="flex items-center space-x-2 min-w-max"
                 >
                   <img 
                     src={coin.logo} 
                     alt={`${coin.name} logo`} 
-                    className="w-12 h-12 rounded-full" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" 
                   />
-                  <div>
-                    <h3 className="font-semibold text-gray-900">{coin.name}</h3>
-                    <p className="text-emerald-600">{coin.symbol}</p>
+                  <div className="flex flex-col">
+                    <h3 className="font-medium text-sm sm:text-base text-gray-900">{coin.name}</h3>
+                    <p className="text-xs sm:text-sm text-emerald-600">{coin.symbol}</p>
                   </div>
                 </div>
               ))}
@@ -92,18 +92,18 @@ const NosCrypto = () => {
         }
         @keyframes scroll-left {
           0% {
-            transform: translateX(120%);
+            transform: translateX(100%);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-120%);
           }
         }
         @keyframes scroll-right {
           0% {
-            transform: translateX(-120%);
+            transform: translateX(-100%);
           }
           100% {
-            transform: translateX(100%);
+            transform: translateX(120%);
           }
         }
       `}</style>
