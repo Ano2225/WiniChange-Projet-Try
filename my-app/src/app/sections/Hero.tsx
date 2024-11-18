@@ -7,20 +7,24 @@ export const Hero = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
   return (
-    <div className=" text-gray-900 relative overflow-hidden py-28 mt-10">
+    <div className="text-gray-900 relative overflow-hidden py-28 md:mt-10 mt-2">
       <motion.div 
-        className="absolute h-[375px] w-[750px] md:w-[1536px] md:h-[768px] rounded-[100%] 
+        className="absolute w-[150vw] aspect-[2/1] md:w-[1536px] md:h-[768px] rounded-[50%] 
                    bg-white left-1/2 -translate-x-1/2 border border-emerald-600
                    bg-[radial-gradient(closest-side,#fff_82%,#dcfce7)] 
-                   top-[calc(100%-96px)] sm:top-[calc(100%-120px)]"
+                   top-[calc(100%-120px)] sm:top-[calc(100%-120px)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
+        style={{
+          minWidth: '375px',
+          minHeight: '187.5px'
+        }}
       />
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="flex justify-center mb-8"
+          className="flex justify-center md:mb-8 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
