@@ -68,7 +68,6 @@ export const Feature = ({ title, description, icon: Icon }: { title: string; des
                         sizes="(max-width: 96px) 100vw, 96px"
                         priority
                     />
-                    {/* Ajout d'un effet de brillance */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
             </div>
@@ -82,7 +81,6 @@ export const Feature = ({ title, description, icon: Icon }: { title: string; des
                 </p>
             </div>
 
-            {/* Effet de brillance au hover */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/5 to-transparent blur-sm"></div>
             </div>
