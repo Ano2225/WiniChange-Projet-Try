@@ -61,10 +61,10 @@ export const Header = () => {
                         </a>
                     </div>
                     <nav className="hidden lg:flex space-x-8">
-                        <a href="/aboutUs" className="text-gray-800 hover:text-black transition duration-300">A propos</a>
-                        <a href="/ourServices" className="text-gray-800 hover:text-black transition duration-300">Services</a>
-                        <a href="/blog" className="text-gray-800 hover:text-black transition duration-300">Blog</a>
-                        <a href="/partner" className="text-gray-800 hover:text-black transition duration-300">Devenir partenaire</a>
+                        <a href="/aboutUs" className="text-gray-800 hover:text-emerald-600 transition duration-300">A propos</a>
+                        <a href="/ourServices" className="text-gray-800 hover:text-emerald-600 transition duration-300">Services</a>
+                        <a href="/blog" className="text-gray-800 hover:text-emerald-600 transition duration-300">Blog</a>
+                        <a href="/partner" className="text-gray-800 hover:text-emerald-600 transition duration-300">Devenir partenaire</a>
                     </nav>
                     <div className="flex items-center space-x-4">
                        <div className='hidden md:flex'>
