@@ -81,6 +81,8 @@ export const LogoTickerSection = () => {
                   width={30}
                   height={10}
                   priority
+                  data-critical="true" 
+
                 />
                 <div className="text-xs px-2 text-emerald-700 text-center mt-1 font-medium">
                   {alt}

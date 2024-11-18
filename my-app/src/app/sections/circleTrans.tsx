@@ -22,6 +22,7 @@ function CircleTrans() {
                                         height={85}
                                         alt="Winichange Logo"
                                         className="w-4/5 h-4/5 object-contain"
+                                        data-critical="true" 
                                     />
                                 </div>
                             </div>
@@ -65,6 +66,8 @@ function CircleTrans() {
                                                 height={app.height}
                                                 alt={app.title}
                                                 src={app.icon}
+                                                data-critical="true" 
+
                                             />
                                         </div>
                                     </li>

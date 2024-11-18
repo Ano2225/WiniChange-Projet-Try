@@ -47,6 +47,7 @@ const NosCrypto = () => {
                       <img 
                         src={coin.logo} 
                         alt={`${coin.name} logo`} 
+                        data-critical="true" 
                         className="w-12 h-12 rounded-full relative z-10 group-hover:scale-110 transition-transform duration-300" 
                       />
                     </div>

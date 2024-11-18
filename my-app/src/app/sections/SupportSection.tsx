@@ -62,6 +62,7 @@ const SupportSection = () => {
               alt="Support"
               layout="fill"
               objectFit="cover"
+              data-critical="true" 
               className="rounded-2xl transform hover:scale-105 transition-transform duration-500 opacity-90"
             />
             <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black p-2 rounded-full shadow-lg backdrop-blur-sm">

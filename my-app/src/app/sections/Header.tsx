@@ -56,7 +56,8 @@ export const Header = () => {
                 <div className="mx-auto flex items-center justify-between px-4">
                     <div className="flex items-center cursor-pointer">
                         <a href="/">
-                        <Image src={LogoDesktop} alt="mon_logo_desktop"  className="flex" height={190} width={190}  />
+                        <Image src={LogoDesktop} alt="mon_logo_desktop"   data-critical="true" 
+                         className="flex" height={190} width={190}  />
                         </a>
                     </div>
                     <nav className="hidden lg:flex space-x-8">

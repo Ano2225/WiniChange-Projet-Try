@@ -102,29 +102,20 @@ footer a {
 
 /*ClientLayout */
 
-/* globals.css */
-body.scroll-locked {
-  overflow: hidden !important;
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-}
-
-/* Vos autres animations */
-@keyframes loading-bar {
-  0% {
-    transform: translateX(-100%);
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
-  100% {
-    transform: translateX(100%);
+  to {
+    opacity: 1;
   }
 }
 
-.animate-loading-bar {
-  animation: loading-bar 1.5s infinite;
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
 }
 
-@keyframes custom-pulse {
+@keyframes pulse {
   0%, 100% {
     opacity: 1;
   }
@@ -134,5 +125,15 @@ body.scroll-locked {
 }
 
 .animate-pulse {
-  animation: custom-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pour éviter le flash pendant le chargement */
+.loading-init {
+  opacity: 0;
+}
+
+/* Pour le smooth scroll après chargement */
+html {
+  scroll-behavior: smooth;
 }
