@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import ClientLayout from './ClientLayout';
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '600', '800', '900'] });
@@ -19,6 +20,10 @@ export default function RootLayout({
     <html lang="fr" className="relative">
       <body className={poppins.className}>
         <ClientLayout>{children}</ClientLayout>
+        <Script 
+          src="//code.jivosite.com/widget/x4enTeldRF"
+          strategy="lazyOnload" 
+        />
       </body>
     </html>
   );

@@ -56,8 +56,8 @@ const FloatingButtons: React.FC = () => {
       </div>
 
       {isChatOpen && (
-        <div className="fixed bottom-32 right-5 bg-[#126e51] text-white border rounded-lg shadow-lg p-4 w-72 z-50">
-          <h2 className="text-lg font-bold mb-2">Alors , nous pouvons discuter 😊</h2>
+        <div className="fixed bottom-32 right-5 bg-[#126e51]  border rounded-lg shadow-lg p-4 w-72 z-50">
+          <h2 className="text-lg font-bold mb-2 text-white">Alors , nous pouvons discuter 😊</h2>
           <textarea
             className="w-full h-24 p-2 border rounded-lg mb-2"
             placeholder="Écrivez votre message..."
@@ -72,7 +72,7 @@ const FloatingButtons: React.FC = () => {
           </button>
           <button
             onClick={closeChat}
-            className="bg-gray-300 text-gray-700 p-2 rounded-lg hover:bg-gray-400 transition-colors w-full"
+            className="bg-gray-300 text-gray-700 p-2 rounded-lg  w-full"
           >
             Annuler
           </button>
