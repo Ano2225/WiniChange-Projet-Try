@@ -57,8 +57,8 @@ export default function ClientLayout({
       if ((headerLogo as HTMLImageElement).complete) {
         finishLoading();
       } else {
-        headerLogo.onload = finishLoading;
-        headerLogo.onerror = finishLoading;
+        (headerLogo as HTMLImageElement).onload = finishLoading;
+        (headerLogo as HTMLImageElement).onerror = finishLoading;
       }
     } else {
       finishLoading();
