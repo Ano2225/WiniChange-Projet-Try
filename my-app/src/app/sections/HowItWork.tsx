@@ -89,9 +89,9 @@ export default function HowItWorks() {
                   <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-xs font-bold text-white">
                     {step.id}
                   </div>
-                  <h3 className="text-lg text-emerald-600 font-semibold">{step.title}</h3>
+                  <h3 className="text-sm md:text-lg text-emerald-600 font-semibold">{step.title}</h3>
                 </div>
-                <p className="text-black/80 text-sm mt-2 ml-9">{step.description}</p>
+                <p className="text-black/80 text-xs md:text-sm mt-2 ml-9">{step.description}</p>
               </div>
             ))}
             <div className="flex justify-center mt-3 space-x-1.5">
