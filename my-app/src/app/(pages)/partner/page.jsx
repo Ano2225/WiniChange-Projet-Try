@@ -65,15 +65,15 @@ const Partner = () => {
             </div>
           </div>
         </section>
-        <div className="py-16">
-      <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
+        <div className="py-16 bg-[#126e51]">
+      <div className=" text-white container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
         <div className="max-w-xl">
-        <h1 className="text-3xl lg:text-4xl font-extrabold text-[#126e51] leading-tight mb-8">
+        <h1 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-8">
           Devenez notre partenaire dès aujourd'hui !
         </h1>
-          <p className='text-black mb-4'>Gagnez de l'argent en promouvant nos services tout en profitant des meilleurs taux et d'une rapidité inégalée. Rejoignez dès maintenant notre réseau de confiance.</p>
+          <p className='text-white mb-4'>Gagnez de l'argent en promouvant nos services tout en profitant des meilleurs taux et d'une rapidité inégalée. Rejoignez dès maintenant notre réseau de confiance.</p>
         <div className='flex items-center justify-center'>
-            <button className="flex items-center gap-3 rounded-full bg-[#126e51] text-white font-bold px-8 py-3 text-sm lg:text-base shadow-lg hover:bg-green-800 transition duration-300 ease-in-out transform hover:scale-105">
+            <button className="flex items-center gap-3 rounded-full bg-white text-[#126e51] font-bold px-8 py-3 text-sm lg:text-base shadow-lg hover:bg-white/80 transition duration-300 ease-in-out transform hover:scale-105">
                 <span>Go </span>
                 <FaArrowRightLong />
             </button>
@@ -81,28 +81,71 @@ const Partner = () => {
         </div>
       </div>
     </div>
-    <section className="bg-white rounded-t-[5rem] py-12 px-6 md:px-12">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-[#126e51] text-3xl md:text-4xl font-bold mb-8">Deviens Partenaire Maintenant</h2>
-        <p className="text-black/80 mb-6">
-          Vous êtes une Entreprise officiellement enregistrée, et votre activité fait appel à l’usage de la cryptomonnaie :
-          <br />
-          <span className="font-semibold">Exemples :</span> Trader, Revendeur de crypto…
-        </p>
-        <p className="text-black/80 mb-6">
-          Votre activité implique l’usage des transferts d’argent.
-        </p>
-        <p className="text-black/80 mb-6">
-          Vous êtes investisseur.
-        </p>
-        <p className="text-black/80 mb-6">
-          Saisissez cette opportunité en nous envoyant soigneusement votre demande de partenariat à travers ce formulaire.
-        </p>
-        <Link href="#" className="inline-block bg-[#126e51] hover:bg-[#126e51f2] text-white py-3 px-6 rounded-lg shadow-lg  transition">
-            Deviens Partenaire
-        </Link>
-      </div>
-     </section>
+    <section className="bg-gradient-to-b from-white to-gray-50 rounded-t-[5rem] py-16 px-6 md:px-12 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+      
+      <motion.div 
+        className="max-w-4xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="bg-clip-text text-transparent bg-[#126e51]">
+              Deviens Partenaire Maintenant
+            </span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#126e51] to-green-700 mx-auto"></div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <motion.div 
+            className="p-6 bg-white border-2 border-[#126e51] rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            whileHover={{ y: -5 }}
+          >
+            <h3 className="text-xl font-semibold uppercase text-[#126e51] mb-4">Entreprise Crypto</h3>
+            <p className="text-gray-700">
+              Vous êtes une Entreprise officiellement enregistrée, et votre activité fait appel à l'usage de la cryptomonnaie.
+              <br /><br />
+              <span className="font-semibold">Exemples :</span> Trader, Revendeur de crypto…
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="p-6 bg-white border-2 border-[#126e51]  rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            whileHover={{ y: -5 }}
+          >
+            <h3 className="text-xl font-semibold text-[#126e51] mb-4 uppercase">Services Financiers</h3>
+            <p className="text-gray-700">
+              Votre activité implique l'usage des transferts d'argent.
+              <br /><br />
+              Vous êtes investisseur professionnel.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          className="text-center p-8 max-w-2xl mx-auto"
+          whileInView={{ opacity: [0, 1], y: [20, 0] }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <p className="text-lg text-gray-700 mb-8">
+            Saisissez cette opportunité en nous envoyant soigneusement votre demande de partenariat à travers ce formulaire.
+          </p>
+          
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link 
+              href="#" 
+              className="inline-flex items-center gap-2  bg-[#126e51] text-white py-4 px-8 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Deviens Partenaire
+              <FaArrowRightLong />
+            </Link>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </section>
       <Footer color="bg-white"/>
       <Cookies />
     </>
