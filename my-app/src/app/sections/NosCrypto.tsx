@@ -53,7 +53,7 @@ const NosCrypto = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">{coin.name}</h3>
-                      <p className="text-gray-500 group-hover:text-emerald-500">{coin.symbol}</p>
+                      <p className="text-emerald-600">{coin.symbol}</p>
                     </div>
                   </div>
                 ))}
