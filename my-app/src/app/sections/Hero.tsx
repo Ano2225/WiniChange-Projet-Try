@@ -29,20 +29,21 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl md:text-6xl font-bold tracking-tighter text-center text-black">
-            {isMobile ? (
-              <>
-                Une expérience<br />
-                d'interopérabilité et<br />
-                d'interconnexion<br />
-              </>
-            ) : (
-              <>
-                Une expérience d'interopérabilité<br />
-                et d'interconnexion.
-              </>
-            )}
-          </h1>
+        <h1 className="text-3xl md:text-6xl font-bold tracking-tighter text-center text-black">
+          {isMobile ? (
+            <div className="flex flex-col gap-1">
+              <span>Une expérience</span>
+              <span className="text-[#126e51]">unique</span>
+              <span className="text-2xl md:text-5xl">d'interopérabilité</span>
+              <span className="text-2xl md:text-5xl">et d'interconnexion</span>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2">
+              <span>Une expérience <span className="text-[#126e51]">unique</span></span>
+              <span>d'interopérabilité et d'interconnexion.</span>
+            </div>
+          )}
+        </h1>
         </motion.div>
         <motion.div 
           className="flex justify-center mb-8"
