@@ -2,8 +2,8 @@
 
 const supportedCoins = [
   { name: "Bitcoin", symbol: "BTC", logo: "/images/Cryptos/bitcoin-cryptocurrency.svg" },
-  { name: "Bitcoin Cash", symbol: "BCH", logo: "/images/Cryptos/bitcoin-cash-cryptocurrency.svg" },
-  { name: "Binance USD", symbol: "BUSD", logo: "/images/Cryptos/binance-usd-busd-logo.png" },
+  { name: "Bitcoin Cash", symbol: "BCH", logo: "/images/Cryptos/bitcoin-cash-bch-logo.svg" },
+  { name: "Binance USD", symbol: "BUSD", logo: "/images/Cryptos/binance-usd-busd-logo.svg" },
   { name: "Ethereum", symbol: "ETH", logo: "/images/Cryptos/ethereum.png" },
   { name: "Tron", symbol: "TRX", logo: "/images/Cryptos/tron-trx-logo.png" },
   { name: "Litecoin", symbol: "LTC", logo: "/images/Cryptos/litecoin-ltc-logo.png" },
@@ -13,7 +13,7 @@ const supportedCoins = [
   { name: "Polkadot", symbol: "DOT", logo: "/images/polkadot_.webp" },
   { name: "Dogecoin", symbol: "DOGE", logo: "/images/Cryptos/dogecoin-1.svg" },
   { name: "ShibaInu", symbol: "SHIB", logo: "/images/Cryptos/shiba-inu-shib-logo.png"},
-  { name: "Binance Coin", symbol: "BNB", logo: "/images/Cryptos/binanceCoin.png" },
+  { name: "Binance Coin", symbol: "BNB", logo: "/images/Cryptos/binance_coin.svg" },
   { name: "Monero", symbol: "XMR", logo: "/images/Cryptos/monero-xmr-logo.png" },
   { name: "Tether", symbol: "USDT", logo: "/images/Cryptos/tether-cryptocurrency.svg" },
   { name: "Solana", symbol: "SOL", logo: "/images/Cryptos/solana-sol-logo.png" },

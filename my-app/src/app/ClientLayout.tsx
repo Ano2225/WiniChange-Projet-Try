@@ -25,70 +25,72 @@ const LoadingScreen = () => {
 
 export default function ClientLayout({
   children,
+  skipLoadingScreen = false, // Nouvelle option pour ignorer l'écran
 }: {
   children: React.ReactNode;
+  skipLoadingScreen?: boolean;
 }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!skipLoadingScreen);
   const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    
-    // Bloquer le scroll quand le composant est monté
-    document.body.style.overflow = 'hidden';
-    
-    // Function pour réactiver le scroll
-    const enableScroll = () => {
-      document.body.style.overflow = originalStyle;
+
+    if (skipLoadingScreen) return; // Pas de chargement si l'option est activée
+
+    document.body.style.overflow = 'hidden'; // Désactiver le scroll
+
+    const handleLoad = () => {
+      setContentReady(true); // Contenu prêt
+      setTimeout(() => {
+        setIsLoading(false); // Retirer l'écran de chargement
+        document.body.style.overflow = ''; // Réactiver le scroll
+      }, 500); // Laisser une petite transition
     };
 
-    Promise.all([
-      new Promise((resolve) => {
-        const images = document.querySelectorAll('img');
-        let loadedImages = 0;
-        
-        if (images.length === 0) {
-          resolve(true);
-          return;
-        }
-
-        images.forEach(img => {
-          if (img.complete) {
-            loadedImages++;
-            if (loadedImages === images.length) resolve(true);
-          } else {
-            img.onload = () => {
-              loadedImages++;
-              if (loadedImages === images.length) resolve(true);
-            };
-            img.onerror = () => {
-              loadedImages++;
-              if (loadedImages === images.length) resolve(true);
-            };
-          }
-        });
-      }),
-      new Promise(resolve => setTimeout(resolve, 2000))
-    ])
-    .then(() => {
-      setContentReady(true);
-      setTimeout(() => {
-        setIsLoading(false);
-        enableScroll(); 
-      }, 500);
-    })
-    .catch(error => {
-      console.error('Erreur lors du chargement:', error);
-      setContentReady(true);
-      setIsLoading(false);
-      enableScroll(); 
+    // Utiliser DOMContentLoaded pour un chargement plus rapide
+    const domContentLoaded = new Promise<void>((resolve) => {
+      if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        resolve();
+      } else {
+        document.addEventListener('DOMContentLoaded', () => resolve(), { once: true });
+      }
     });
 
-    // Cleanup : réactiver le scroll si le composant est démonté
+    // Vérifier les images uniquement si elles existent
+    const imagesLoading = new Promise<void>((resolve) => {
+      const images = document.querySelectorAll('img');
+      if (images.length === 0) {
+        resolve(); // Pas d'images, terminé
+        return;
+      }
+
+      let loadedImages = 0;
+      images.forEach((img) => {
+        if (img.complete) {
+          loadedImages++;
+          if (loadedImages === images.length) resolve();
+        } else {
+          img.onload = img.onerror = () => {
+            loadedImages++;
+            if (loadedImages === images.length) resolve();
+          };
+        }
+      });
+    });
+
+    // Timeout global pour éviter les blocages
+    const timeout = new Promise<void>((resolve) =>
+      setTimeout(resolve, 10000) // 10 secondes maximum
+    );
+
+    Promise.race([Promise.all([domContentLoaded, imagesLoading]), timeout])
+      .then(handleLoad)
+      .catch(() => handleLoad()); // Toujours retirer l'écran, même en cas d'erreur
+
     return () => {
-      enableScroll();
+      document.body.style.overflow = ''; // Cleanup : Réactiver le scroll
     };
-  }, []);
+  }, [skipLoadingScreen]);
 
   return (
     <>
@@ -104,3 +106,4 @@ export default function ClientLayout({
     </>
   );
 }
+

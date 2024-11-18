@@ -54,7 +54,7 @@ export const LogoTickerSection = () => {
           Découvrez les pays que nous couvrons
         </h2>
         <div 
-          className="flex overflow-hidden relative" 
+          className="flex overflow-hidden relative pb-2 " 
           onMouseEnter={() => setPaused(true)} 
           onMouseLeave={() => setPaused(false)}
         >

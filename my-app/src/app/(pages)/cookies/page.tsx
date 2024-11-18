@@ -33,7 +33,7 @@ const TableOfContents = ({ items }:any) => (
 const CookieSection = ({ title, text, index }:any) => (
   <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100">
     <div className="flex items-start gap-4">
-      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#126e51]/10 text-[#126e51] font-semibold">
+      <div className="flex items-center justify-center w-[40px] p-2 rounded-full bg-[#126e51]/10 text-[#126e51] font-semibold">
         {index + 1}
       </div>
       <div>

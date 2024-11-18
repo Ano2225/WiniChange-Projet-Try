@@ -15,7 +15,7 @@ interface PolicySectionProps {
 const PolicySection: React.FC<PolicySectionProps> = ({ title, children, highlighted = false }) => (
   <section 
     className={`
-      py-8 md:py-12 first:pt-0
+      py-8 md:py-12 first:pt-2 mt-5
       ${highlighted ? 'bg-[#126e51]/5 -mx-4 md:-mx-8 px-4 md:px-8 rounded-xl' : ''}
     `}
   >

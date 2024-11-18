@@ -3,6 +3,7 @@
 import React from 'react'
 import { Header } from "@/app/sections/Header"
 import Footer from "@/app/sections/Footer"
+import { IoIosAlert } from "react-icons/io";
 
 interface TermsSectionProps {
   title: string
@@ -110,8 +111,8 @@ const GeneralConditions: React.FC = () => {
         </div>
       </div>
       <div className="max-w-4xl mx-auto px-4 py-16 -mt-10">
-        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-          <p className="text-gray-600 leading-relaxed">
+        <div className="bg-red-400 rounded-xl shadow-lg p-6 md:p-8 mb-8">
+          <p className="text-white leading-relaxed">
             Veuillez lire attentivement ces conditions avant d'utiliser notre plateforme. 
             En accédant à nos services, vous acceptez d'être lié par ces termes.
           </p>
