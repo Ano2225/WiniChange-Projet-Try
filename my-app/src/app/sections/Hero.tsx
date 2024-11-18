@@ -34,8 +34,8 @@ export const Hero = () => {
             <div className="flex flex-col gap-1">
               <span>Une expérience</span>
               <span className="text-[#126e51]">unique</span>
-              <span className="text-2xl md:text-5xl">d'interopérabilité</span>
-              <span className="text-2xl md:text-5xl">et d'interconnexion</span>
+              <span className="text-3xl md:text-5xl">d'interopérabilité</span>
+              <span className="text-3xl md:text-5xl">et d'interconnexion.</span>
             </div>
           ) : (
             <div className="flex flex-col gap-2">
