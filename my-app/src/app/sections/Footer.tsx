@@ -2,6 +2,7 @@
 
 import Logo from '@/app/assets/logo.png'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
@@ -22,7 +23,7 @@ export default function Footer({color}: any) {
               <div className="mb-4 mt-8">
                 <h5 className="text-xl text-white font-bold ">Contactez-Nous</h5>
                 <div className="mt-2 text-white/80">
-                  <a href="tel:+2250749665503" className="text-white flex items-center mb-4">
+                  <a href="tel:+2250749665503" className="text-white flex items-center mb-2">
                     <span className="mr-2">
                       <svg
                         width="17"
@@ -39,6 +40,24 @@ export default function Footer({color}: any) {
                       </svg>
                     </span>
                     +225 0749665503
+                  </a>
+                  <a href="tel:+2250749665503" className="text-white flex items-center mb-4">
+                    <span className="mr-2">
+                      <svg
+                        width="17"
+                        height="17"
+                        viewBox="0 0 17 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.80868 1.72969C2.86519 1.67318 2.89345 1.64492 2.91835 1.62204C3.53047 1.05958 4.47136 1.05958 5.08349 1.62204C5.10838 1.64492 5.13664 1.67318 5.19316 1.72969L6.35971 2.89625C7.00135 3.53789 7.18486 4.50688 6.82227 5.33871C6.45968 6.17054 6.64319 7.13953 7.28483 7.78117L9.20228 9.69862C9.84392 10.3403 10.8129 10.5238 11.6447 10.1612C12.4766 9.79859 13.4456 9.9821 14.0872 10.6237L15.2538 11.7903C15.3103 11.8468 15.3385 11.8751 15.3614 11.9C15.9239 12.5121 15.9239 13.453 15.3614 14.0651C15.3385 14.09 15.3103 14.1183 15.2538 14.1748L14.5447 14.8838C13.9672 15.4613 13.1348 15.7037 12.3377 15.5265C6.90598 14.3195 2.66395 10.0775 1.45691 4.6458C1.27977 3.84863 1.52217 3.0162 2.0996 2.43877L2.80868 1.72969Z"
+                          stroke="white"
+                          strokeWidth="1.5"
+                        />
+                      </svg>
+                    </span>
+                    +225 2735966362
                   </a>
                   <a href="mailto:info@winichange.com" className="text-white flex items-center">
                     <span className="mr-2">
@@ -77,16 +96,16 @@ export default function Footer({color}: any) {
               <h5 className="text-xl text-white font-bold  mb-4">Services</h5>
               <ul className="list-none space-y-2 text-white/60">
                 <li>
-                  <a href="#" >Achat et Vente</a>
+                  <Link href="/ourServices" >Achat et Vente</Link>
                 </li>
                 <li>
-                  <a href="#" >Binance Direct</a>
+                  <Link href="/ourServices" >Binance Direct</Link>
                 </li>
                 <li>
-                  <a href="#" >Transfert d'Argent</a>
+                  <Link href="/ourServices" >Transfert d'Argent</Link>
                 </li>
                 <li>
-                  <a href="#" >Achat de Crédit <br /> d'appel</a>
+                  <Link href="/ourServices" >Achat de Crédit d'appel</Link>
                 </li>
               </ul>
             </div>
@@ -111,24 +130,24 @@ export default function Footer({color}: any) {
               <h5 className="text-xl text-white font-bold  mb-4">Suivez-Nous</h5>
               <ul className='flex items-center justify-center text-white text-3xl gap-4'>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <FaFacebook />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <FaXTwitter />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" >
+                  <Link href="https://www.instagram.com/winichange?igsh=MWI0eHQ1YjM3aXhwbw%3D%3D&utm_source=qr" >
                     <FaInstagram/>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" >
+                  <Link href="https://youtube.com/@winichange?si=4IwmS9J-mUM8aV7i" >
                     <FaYoutube />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
