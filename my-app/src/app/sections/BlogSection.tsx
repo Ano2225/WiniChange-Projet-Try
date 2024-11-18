@@ -1,24 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaClock, FaTag } from 'react-icons/fa';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
+import useInfiniteScroll from 'react-infinite-scroll-hook';
 
 interface Post {
   _id: string;
   title: string;
   description: string;
   mainImage: any;
-  slug: {
-    current: string;
-  };
+  slug: { current: string };
   readTime: string;
-  category: {
-    title: string;
-  };
+  category: { title: string };
   publishedAt: string;
 }
 
@@ -26,27 +23,60 @@ interface BlogSectionProps {
   posts: Post[];
 }
 
+const PostLoader = () => (
+  <div className='container mt-28 mb-10'>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[1, 2, 3].map((i) => (
+      <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
+        <div className="h-56 bg-gray-200" />
+        <div className="p-6">
+          <div className="flex items-center mb-4">
+            <div className="h-4 w-24 bg-gray-200 rounded mr-4" />
+            <div className="h-4 w-24 bg-gray-200 rounded" />
+          </div>
+          <div className="h-6 bg-gray-200 rounded mb-3" />
+          <div className="h-4 bg-gray-200 rounded mb-2" />
+          <div className="h-4 bg-gray-200 rounded mb-2" />
+          <div className="h-4 w-32 bg-gray-200 rounded" />
+        </div>
+      </div>
+    ))}
+  </div>
+  </div>
+);
+
 const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+  const [displayedPosts, setDisplayedPosts] = useState<Post[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasNextPage, setHasNextPage] = useState(true);
+  const postsPerPage = 3;
+
+  useEffect(() => {
+    const loadInitialPosts = async () => {
+      await new Promise(resolve => setTimeout(resolve, 1500)); 
+      setDisplayedPosts(posts.slice(0, postsPerPage));
+      setHasNextPage(posts.length > postsPerPage);
+      setIsLoading(false);
+    };
+    loadInitialPosts();
+  }, [posts]);
+
+  const loadMore = async () => {
+    await new Promise(resolve => setTimeout(resolve, 1000)); 
+    const nextPosts = posts.slice(displayedPosts.length, displayedPosts.length + postsPerPage);
+    setDisplayedPosts(prev => [...prev, ...nextPosts]);
+    setHasNextPage(displayedPosts.length + nextPosts.length < posts.length);
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
+  const [sentryRef] = useInfiniteScroll({
+    loading: isLoading,
+    hasNextPage,
+    onLoadMore: loadMore,
+    disabled: false,
+    rootMargin: '0px 0px 400px 0px',
+  });
+
+  if (isLoading) return <PostLoader />;
 
   return (
     <section className="py-20 pt-32 lg:pt-36">
@@ -68,17 +98,13 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
           />
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {posts.map((post) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayedPosts.map((post, index) => (
             <motion.div
               key={post._id}
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300"
             >
               <Link href={`/blog/${post.slug.current}`} className="block">
@@ -121,7 +147,17 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
               </Link>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
+        {hasNextPage && (
+          <div ref={sentryRef} className="flex justify-center mt-8">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              className="w-8 h-8 border-4 border-[#126e51] border-t-transparent rounded-full"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

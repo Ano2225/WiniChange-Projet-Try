@@ -39,7 +39,7 @@ const Partner = () => {
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
               src={partner2}
-              width={800}
+              width={600}
               height={400}
               alt="PartnerSmile"
               objectFit="cover"
@@ -65,22 +65,7 @@ const Partner = () => {
             </div>
           </div>
         </section>
-        <div className="py-16 bg-[#126e51]">
-      <div className=" text-white container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8">
-        <div className="max-w-xl">
-        <h1 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-8">
-          Devenez notre partenaire dès aujourd'hui !
-        </h1>
-          <p className='text-white mb-4'>Gagnez de l'argent en promouvant nos services tout en profitant des meilleurs taux et d'une rapidité inégalée. Rejoignez dès maintenant notre réseau de confiance.</p>
-        <div className='flex items-center justify-center'>
-            <button className="flex items-center gap-3 rounded-full bg-white text-[#126e51] font-bold px-8 py-3 text-sm lg:text-base shadow-lg hover:bg-white/80 transition duration-300 ease-in-out transform hover:scale-105">
-                <span>Go </span>
-                <FaArrowRightLong />
-            </button>
-        </div>
-        </div>
-      </div>
-    </div>
+        
     <section className="bg-gradient-to-b from-white to-gray-50 rounded-t-[5rem] py-16 px-6 md:px-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
       
