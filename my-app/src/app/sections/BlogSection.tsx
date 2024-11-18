@@ -6,14 +6,13 @@ import { motion } from 'framer-motion';
 import { FaArrowRight, FaClock, FaTag } from 'react-icons/fa';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
-import useInfiniteScroll from 'react-infinite-scroll-hook';
 
 interface Post {
   _id: string;
   title: string;
   description: string;
   mainImage: any;
-  slug: { current: string };
+  slug: string;
   readTime: string;
   category: { title: string };
   publishedAt: string;
@@ -24,8 +23,8 @@ interface BlogSectionProps {
 }
 
 const PostLoader = () => (
-  <div className='container mt-28 mb-10'>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div className="container mx-auto px-4 lg:px-8 py-20 pt-32 lg:pt-36">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {[1, 2, 3].map((i) => (
       <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
         <div className="h-56 bg-gray-200" />
@@ -48,35 +47,23 @@ const PostLoader = () => (
 const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
   const [displayedPosts, setDisplayedPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [hasNextPage, setHasNextPage] = useState(true);
-  const postsPerPage = 3;
 
   useEffect(() => {
-    const loadInitialPosts = async () => {
-      await new Promise(resolve => setTimeout(resolve, 1500)); 
-      setDisplayedPosts(posts.slice(0, postsPerPage));
-      setHasNextPage(posts.length > postsPerPage);
+    const loadPosts = async () => {
+      setIsLoading(true);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      const sortedPosts = [...posts].sort((a, b) => 
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
+      setDisplayedPosts(sortedPosts);
       setIsLoading(false);
     };
-    loadInitialPosts();
+    loadPosts();
   }, [posts]);
 
-  const loadMore = async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000)); 
-    const nextPosts = posts.slice(displayedPosts.length, displayedPosts.length + postsPerPage);
-    setDisplayedPosts(prev => [...prev, ...nextPosts]);
-    setHasNextPage(displayedPosts.length + nextPosts.length < posts.length);
-  };
-
-  const [sentryRef] = useInfiniteScroll({
-    loading: isLoading,
-    hasNextPage,
-    onLoadMore: loadMore,
-    disabled: false,
-    rootMargin: '0px 0px 400px 0px',
-  });
-
-  if (isLoading) return <PostLoader />;
+  if (isLoading) {
+    return <PostLoader />;
+  }
 
   return (
     <section className="py-20 pt-32 lg:pt-36">
@@ -107,7 +94,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300"
             >
-              <Link href={`/blog/${post.slug.current}`} className="block">
+              <Link href={`/blog/${post.slug}`} className="block">
                 <div className="relative h-56 overflow-hidden">
                   <Image
                     src={urlFor(post.mainImage).url()}
@@ -119,7 +106,6 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
                     {post.category.title}
                   </div>
                 </div>
-
                 <div className="p-6">
                   <div className="flex items-center text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
@@ -148,16 +134,6 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
             </motion.div>
           ))}
         </div>
-
-        {hasNextPage && (
-          <div ref={sentryRef} className="flex justify-center mt-8">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-              className="w-8 h-8 border-4 border-[#126e51] border-t-transparent rounded-full"
-            />
-          </div>
-        )}
       </div>
     </section>
   );
