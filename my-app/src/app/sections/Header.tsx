@@ -81,8 +81,8 @@ export const Header = () => {
                 </div>
             </div>
             {isMenuOpen && (
-                <div className="md:container md:px-10 my-2 py-5 rounded-[1.8rem] inset-0 bg-gray-200 font-semibold flex flex-col items-start px-4 justify-center lg:hidden">
-                    <nav className="flex flex-col items-start space-y-4 text-black/80 text-xl">
+                <div className="md:container md:px-10 my-2 py-5 rounded-[1.8rem] inset-0 bg-green-100 font-semibold flex flex-col items-start px-4 justify-center lg:hidden">
+                    <nav className="flex flex-col items-start space-y-4 text-black text-xl">
                         <a href="/aboutUs" >A propos</a>
                         <a href="/ourServices" >Services</a>
                         <a href="/blog" >Blog</a>
