@@ -35,12 +35,11 @@ export const Hero = () => {
                 Une expérience<br />
                 d'interopérabilité et<br />
                 d'interconnexion<br />
-                sans pareille.
               </>
             ) : (
               <>
                 Une expérience d'interopérabilité<br />
-                et d'interconnexion sans pareille.
+                et d'interconnexion.
               </>
             )}
           </h1>
