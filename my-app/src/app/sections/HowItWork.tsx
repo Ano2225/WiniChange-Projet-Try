@@ -58,29 +58,26 @@ export default function HowItWorks() {
         </h2>
 
         {/* Mobile Section */}
-        <div className="md:hidden mt-10 md:mt-20 flex flex-col items-center justify-center">
-          <div className="relative mb-6 w-full max-w-md flex justify-center items-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-emerald-500/20 rounded-full lg:w-80 lg:h-80 opacity-50 blur-lg z-0"></div>
+        <div className="md:hidden flex flex-col items-center mt-8">
+          <div className="relative mb-4 w-full max-w-[280px] flex justify-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-emerald-500/20 rounded-full w-60 h-60 opacity-50 blur-lg"></div>
             {selectedContent && (
               <Image
                 src={selectedContent.image}
                 alt={selectedContent.title}
-                width={200}
-                height={100}
-                className="relative z-10 rounded-lg "
+                width={140}
+                height={80}
+                className="relative z-10 object-contain"
               />
             )}
           </div>
           <motion.div
-            className="p-4 bg-white border-l-4 border-emerald-500 w-full max-w-md rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+            className="p-4 bg-white border-l-4 border-emerald-500 w-full max-w-[280px] rounded-lg shadow-md"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={(e, { offset }) => {
-              if (offset.x > 100) {
-                handleSwipe(-1);
-              } else if (offset.x < -100) {
-                handleSwipe(1);
-              }
+              if (offset.x > 50) handleSwipe(-1);
+              if (offset.x < -50) handleSwipe(1);
             }}
           >
             {steps.map((step) => (
@@ -88,24 +85,23 @@ export default function HowItWorks() {
                 key={step.id}
                 className={`transition-opacity duration-300 ${selectedStep === step.id ? 'block' : 'hidden'}`}
               >
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-xs font-bold text-white">
                     {step.id}
                   </div>
-                  <h3 className="text-xl text-emerald-600 font-semibold mb-2">{step.title}</h3>
+                  <h3 className="text-lg text-emerald-600 font-semibold">{step.title}</h3>
                 </div>
-                <p className="text-black/80 text-sm mt-2 ml-12">{step.description}</p>
+                <p className="text-black/80 text-sm mt-2 ml-9">{step.description}</p>
               </div>
             ))}
-            <div className="flex justify-center mt-4 space-x-2">
+            <div className="flex justify-center mt-3 space-x-1.5">
               {steps.map((step) => (
                 <motion.div
                   key={step.id}
-                  className={`h-1.5 rounded-full cursor-pointer ${
-                    selectedStep === step.id ? 'bg-emerald-500 w-6' : 'bg-gray-700 w-1.5'
+                  className={`h-1 rounded-full cursor-pointer ${
+                    selectedStep === step.id ? 'bg-emerald-500 w-4' : 'bg-gray-300 w-1'
                   }`}
                   onClick={() => setSelectedStep(step.id)}
-                  whileHover={{ scale: 1.2 }}
                 />
               ))}
             </div>
