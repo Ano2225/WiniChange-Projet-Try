@@ -39,7 +39,7 @@ const Partner = () => {
           <div className="flex-shrink-0 w-full md:w-1/2 flex items-center justify-center">
             <Image
               src={partner2}
-              width={400}
+              width={800}
               height={400}
               alt="PartnerSmile"
               objectFit="cover"
@@ -49,7 +49,7 @@ const Partner = () => {
           <div className="flex-1 w-full md:ml-5 py-8 md:px-20">
            <div className='text-center'>
            <h2 className="text-[#126e51] text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">Programme d'Affiliation</h2>
-           <p className='text-black/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
+           <p className='text-black/80'>Devenez partenaire direct et gagnez de l'argent en faisant la promotion de nos services</p>
            </div>
             <div className="flex flex-col space-y-4">
               {affiliateConditions.map((item) => (
@@ -107,7 +107,7 @@ const Partner = () => {
             <h3 className="text-xl font-semibold uppercase text-[#126e51] mb-4">Entreprise Crypto</h3>
             <p className="text-gray-700">
               Vous êtes une Entreprise officiellement enregistrée, et votre activité fait appel à l'usage de la cryptomonnaie.
-              <br /><br />
+              <br />
               <span className="font-semibold">Exemples :</span> Trader, Revendeur de crypto…
             </p>
           </motion.div>
@@ -119,7 +119,6 @@ const Partner = () => {
             <h3 className="text-xl font-semibold text-[#126e51] mb-4 uppercase">Services Financiers</h3>
             <p className="text-gray-700">
               Votre activité implique l'usage des transferts d'argent.
-              <br /><br />
               Vous êtes investisseur professionnel.
             </p>
           </motion.div>
