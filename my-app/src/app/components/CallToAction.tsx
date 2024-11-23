@@ -11,11 +11,11 @@ const CallToAction = () => {
 
       <div className="container mx-auto flex flex-col items-center justify-center text-center px-6 lg:px-8 relative z-10">
         <div className="max-w-2xl">
-          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
+          <h1 className="text-xl md:text-3xl font-extrabold text-gray-900 leading-tight mb-6">
             <span className="text-[#126e51]">Rejoignez-nous</span> dès aujourd'hui !
           </h1>
           
-          <p className="text-base lg:text-lg text-gray-600 mb-10 leading-relaxed">
+          <p className="text-sm lg:text-base text-gray-600 mb-10 leading-relaxed">
           Bénéficiez des taux les plus compétitifs et d'une rapidité hors du commun pour vos transactions.
            Faites comme de nombreux utilisateurs et choisissez Winichange pour tous vos échanges financiers.
           </p>
@@ -29,7 +29,7 @@ const CallToAction = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <button className="group flex items-center gap-3 rounded-full bg-[#126e51] text-white font-bold px-8 py-4 text-base 
+              <button className="group flex items-center gap-3 rounded-full bg-[#126e51] text-white font-bold px-6  py-3 text-base 
                                shadow-lg hover:bg-emerald-700 transition-all duration-300 ease-in-out 
                                hover:shadow-emerald-500/20 hover:shadow-xl relative overflow-hidden">
                 <span className="relative z-10">Nous rejoindre</span>

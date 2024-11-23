@@ -83,7 +83,7 @@ const SupportSection = () => {
                 </div>
               ))}
               {isTyping && (
-                <div className="px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg text-xs sm:text-sm shadow-lg max-w-xs bg-[#126e51] text-white border border-white/10 backdrop-blur-sm">
+                <div className="px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg text-xs sm:text-sm shadow-lg max-w-xs bg-white text-[#126e51] border border-white/10 backdrop-blur-sm">
                   <span className="animate-pulse">En cours de rédaction...</span>
                 </div>
               )}
@@ -113,16 +113,7 @@ const SupportSection = () => {
                   </h3>
                   <p className="text-xs sm:text-sm text-white/70 leading-relaxed">{option.description}</p>
                 </div>
-                <div className="ml-2 sm:ml-4">
-                  <svg 
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-white/50 group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
+                
               </a>
             ))}
           </div>

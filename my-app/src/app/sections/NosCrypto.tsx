@@ -23,7 +23,7 @@ const NosCrypto = () => {
   return (
     <section className="py-8 overflow-hidden md:min-h-auto min-h-[450px] h-auto">
       <div className="lg:container mx-auto px-4 my-14 mb-20 lg:my-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
+        <h2 className="text-xl md:text-3xl font-bold text-center mb-8 md:mb-16">
           <span className="text-[#126e51]">Coins et Blockchains</span> pris en charge
           <div className="mt-4 flex justify-center gap-2">
                     <div className="h-1 w-16 bg-[#126e51] rounded-full"></div>

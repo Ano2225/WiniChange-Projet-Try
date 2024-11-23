@@ -49,7 +49,7 @@ export default function HowItWorks() {
   return (
     <div className="py-14">
       <div className="container mx-auto px-4">
-        <h2 className="font-bold text-center mb-16 text-3xl md:text-4xl text-gray-900">
+        <h2 className="font-bold text-center mb-16 text-xl md:text-3xl text-gray-900">
           Comment <span className='text-[#126e51]'>ça marche ?</span>
           <div className="mt-4 flex justify-center gap-2">
                     <div className="h-1 w-16 bg-[#126e51] rounded-full"></div>
