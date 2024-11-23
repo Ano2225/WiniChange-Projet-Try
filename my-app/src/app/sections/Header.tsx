@@ -81,14 +81,14 @@ export const Header = () => {
                 </div>
             </div>
             {isMenuOpen && (
-                <div className="md:container md:px-10 my-2 py-5 rounded-[1.8rem] inset-0 bg-green-100 font-semibold flex flex-col items-start px-4 justify-center lg:hidden">
+                <div className="md:container md:px-10 my-2 py-5 rounded-[1.8rem] inset-0 bg-gray-200 border-2 border-[#126e51] font-semibold flex flex-col items-start px-4 justify-center lg:hidden">
                     <nav className="flex flex-col items-start space-y-4 text-black text-xl">
                         <a href="/aboutUs" >A propos</a>
                         <a href="/ourServices" >Services</a>
                         <a href="/blog" >Blog</a>
                         <a href="/partner" >Devenir Partenaire</a>
                     </nav>
-                    <hr className='w-full border-b-1 border-gray-300 mt-4 md:hidden'/>
+                    <hr className='w-full border-b-1 border-[#126e51] mt-4 md:hidden'/>
                     <div className="flex items-center space-x-4 my-4 md:hidden">
                         <a href="#" className='rounded-xl bg-[#126e51] text-white px-4 py-2 text-sm'>Connexion</a>
                         <a  href="#" className="inline-flex text-white px-4 py-2 rounded-xl text-sm bg-gray-500">Inscription</a>
