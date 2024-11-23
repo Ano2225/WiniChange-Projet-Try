@@ -16,8 +16,8 @@ const CallToAction = () => {
           </h1>
           
           <p className="text-base lg:text-lg text-gray-600 mb-10 leading-relaxed">
-            Profitez des meilleurs taux et d'une rapidité inégalée pour vos transactions. 
-            Rejoignez la communauté qui fait confiance à Winichange pour tous ses échanges financiers.
+          Bénéficiez des taux les plus compétitifs et d'une rapidité hors du commun pour vos transactions.
+           Faites comme de nombreux utilisateurs et choisissez Winichange pour tous vos échanges financiers.
           </p>
 
           <div className="relative">

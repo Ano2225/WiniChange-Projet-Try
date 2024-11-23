@@ -115,7 +115,7 @@ const Partner = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="text-lg text-gray-700 mb-8">
-            Saisissez cette opportunité en nous envoyant soigneusement votre demande de partenariat à travers ce formulaire.
+          Vous portez une attention particulière à notre service et souhaitez devenir notre partenaire. Nous vous invitons à formuler votre demande de partenariat.
           </p>
           
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
