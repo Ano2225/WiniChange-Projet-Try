@@ -55,7 +55,7 @@ const SupportSection = () => {
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
         <div className="lg:w-1/2 w-full">
-          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] w-full overflow-hidden rounded-xl shadow-xl bg-[#126e51]">
+          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] w-full overflow-hidden rounded-xl shadow-xl bg-white">
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 z-10"></div>
             <Image
               src={support}
@@ -93,8 +93,8 @@ const SupportSection = () => {
 
         <div className="lg:w-1/2 w-full">
           <h2 className="text-xl md:text-3xl font-bold mb-6 leading-tight text-gray-900">
-            <span className='text-[#126e51]'>Une assistance premium</span>
-            {' '}disponible à chaque instant
+            <span className='text-[#126e51]'>Notre service client est </span>
+            {' '}accessible 24h/24 et 7j/7
           </h2>
 
           <div className="space-y-3 sm:space-y-4">
@@ -102,7 +102,7 @@ const SupportSection = () => {
               <a
                 key={option.title}
                 href={option.link}
-                className="group flex items-center p-3 sm:p-4 rounded-lg transition-all duration-300 hover:-translate-y-0.5 bg-[#126e51] hover:bg-[#0d503b] shadow-lg hover:shadow-xl"
+                className="group flex items-center p-3 sm:p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 bg-[#126e51] hover:bg-[#0d503b] shadow-lg hover:shadow-xl"
               >
                 <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-white">
                   <option.icon className="h-4 w-4 sm:h-5 sm:w-5 text-[#126e51]" aria-hidden="true" />
