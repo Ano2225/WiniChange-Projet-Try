@@ -92,7 +92,7 @@ const SupportSection = () => {
         </div>
 
         <div className="lg:w-1/2 w-full">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 leading-tight text-gray-900">
+          <h2 className="text-xl md:text-3xl font-bold mb-6 leading-tight text-gray-900">
             <span className='text-[#126e51]'>Une assistance premium</span>
             {' '}disponible à chaque instant
           </h2>

@@ -6,6 +6,7 @@ import LogoDesktop from '@/app/assets/log1.png'
 import { IoMenu, IoClose } from "react-icons/io5";
 import { IoLogoAndroid, IoLogoApple } from "react-icons/io5";
 import LanguageSwitcher from '../utils/LanguageSwitcher';
+import Link from 'next/link';
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,14 +43,14 @@ export const Header = () => {
     return (
         <header className="fixed top-0 w-full z-50">
             <div className="md:container flex items-center text-center justify-center gap-2 w-full md:px-10 font-semibold px-0">
-                <a href="#" className="flex items-center  justify-center gap-2 uppercase flex-1 h-[2rem] py-2   bg-white border-[#126e51]  border-l-2 md:border-l-4 border-b-2 md:border-b-4 rounded-b-3xl hover:text-teal-600 transition duration-300 ease-in-out transform hover:scale-x-90">
+                <Link href="/soon-mobile-app" className="flex items-center  justify-center gap-2 uppercase flex-1 h-[2rem] py-2   bg-white border-[#126e51]  border-l-2 md:border-l-4 border-b-2 md:border-b-4 rounded-b-3xl hover:text-teal-600 transition duration-300 ease-in-out transform hover:scale-x-90">
                     <IoLogoApple className="w-5 h-5 text-[#126e51]" />
                     <div className='hidden md:block text-black'>Application IOS</div>
-                </a>
-                <a href="#" className="flex items-center justify-center gap-2 uppercase  flex-1 h-[2rem] bg-white border-[#126e51] border-l-2 md:border-l-4 border-b-2 md:border-b-4 rounded-b-3xl hover:text-teal-600 transition duration-300 ease-in-out transform hover:scale-x-90">
+                </Link>
+                <Link href="/soon-mobile-app" className="flex items-center justify-center gap-2 uppercase  flex-1 h-[2rem] bg-white border-[#126e51] border-l-2 md:border-l-4 border-b-2 md:border-b-4 rounded-b-3xl hover:text-teal-600 transition duration-300 ease-in-out transform hover:scale-x-90">
                     <IoLogoAndroid className="w-5 h-5 text-[#126e51]"/>
                     <div className='hidden md:block text-black'>Application Android</div>
-                </a>
+                </Link>
             </div>
 
             <div className={ `md:container w-full  py-2 md:px-4  mt-2 font-semibold transition-colors duration-300 ${isScrolled ? 'bg-white shadow-lg backdrop-blur-lg' : 'bg-gradient-to-l from-white to-green-200 bg-opacity-30 backdrop-blur-lg border-b border-white '} rounded-[1.8rem]`}>
