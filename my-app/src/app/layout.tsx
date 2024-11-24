@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ClientLayout>{children}</ClientLayout>
         <Script 
-          src="//code.jivosite.com/widget/x4enTeldRF"
+          src="//code.jivosite.com/widget/rYkZAvt9AM"
           strategy="lazyOnload" 
         />
       </body>
