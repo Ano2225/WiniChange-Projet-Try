@@ -46,7 +46,7 @@ const SupportSection = () => {
       title: 'Contacter le Support',
       description: 'Assistance personnalisée. Réponse garantie en moins de 5 minutes.',
       icon: FaComments,
-      link: '/contact',
+      link: 'mailto:info@winichange.com',
       color: "secondary"
     },
   ];
