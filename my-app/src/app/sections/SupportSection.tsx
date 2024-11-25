@@ -37,7 +37,7 @@ const SupportSection = () => {
   const supportOptions = [
     {
       title: 'Centre d\'aide',
-      description: 'Accédez à notre base de connaissances complète avec guides détaillés.',
+      description: 'Consultez notre base de connaissances détaillée.',
       icon: FaRegQuestionCircle,
       link: '/faq',
       color: "primary"
